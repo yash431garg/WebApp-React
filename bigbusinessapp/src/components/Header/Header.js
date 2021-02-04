@@ -1,18 +1,17 @@
 import React from 'react';
 import '../Header/Header.css';
-import { TransactionsTable } from '../Tables/TransactionsTable';
+// import { TransactionsTable } from '../Finance/Tables/TransactionsTable';
 
 //this func returns header and Transaction table as of now
 function Header() {
     return (
         <header>
             <ul className="ul">
-                <li className="li"><a href="/">BigBusiness</a></li>
-                <li className="li"><a href="/transaction">Transaction History</a></li>
-                <li className="li"><a href="contact.asp">Reminders and Dues</a></li>
+                <li className="li"><a href="/" title='Go to Home.'>BigBusiness</a></li>
+                <li className="li"><a href="/mainfinance" title='Go to Finance Page.'>Finance</a></li>
+                <li className="li"><a href="contact.asp" title='Go to About!'>About</a></li>
             </ul>
-            <br/>
-            <TransactionsTable/>
+            <br />
         </header>
     )
 }

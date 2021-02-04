@@ -1,5 +1,9 @@
 
+  
+
 # **Welcome to **BigBusiness App**..!**
+
+  
 
   
 
@@ -11,85 +15,65 @@
 
   
 
-## This Project as of now contains the following.. 📑
-
   
 
-# Components > Basic Components as of now..
+## Project Structure ( till this commit ) 📑
 
-  
+	# Components
+		Finance
+		Header
+		Routes
+		A NotFound Page.
+	# Containers
+		Transaction
+		Some Basic JSON Data
+	* App.js is where you enter the App
+	``and using routes[points to Routes.js] here, you can write logic to navigate to Components[pages] currently managed by you.
 
-### Header
 
-  
-
-### Table
-
-  
-
-  
-
-# Containers > Basic Containers as of now..
-
-  
-
-### Transaction
 
   
 
   
 
-# Basic data from local json
-
   
 
-  
+##  Dependencies (as we're still developing, these maynot be final!)
+#### "react-bootstrap": "^1.4.3"
+###### *Reference (/)*
 
-## This Project uses few React dependencies (to make life somewhat easier)..[Check 'package.json' if you're interested]
+#### **Bootstrap v5.0.0-beta1**
+###### *Reference (https://getbootstrap.com/)*
 
-  
+#### "react-icons": "^4.1.0"
+###### *Reference (/)*
 
-# "react-router-dom": "^5.2.0"
+#### "react-router-dom": "^5.2.0"
+###### *Reference (https://reactrouter.com/web/guides/quick-start)*
 
-  
+#### "react-table": "^7.6.3",
+###### *Reference (https://react-table.tanstack.com/)*
 
-### This library is used to implement Routing through components.
-
-  
-
-#### *Reference (https://reactrouter.com/web/guides/quick-start)*
-
-  
-
-  
-
-# "react-table": "^7.6.3",
-
-  
-
-### This library is used to generate dynamic <Tables/> with huge datasets.
-
-  
-
-#### *Reference (https://react-table.tanstack.com/)*
-
-  
-
-  
 
 ## To run this project...
-
-  
+Requires Node.Js [https://nodejs.org/en/]
 
 1. clone this repo to your machine. **💻**
 
   
 
-2. go to project's **_root_** directory
+  
+
+2. go to project's **_root_** directory in node.js cmd.
 
   
 
-3. run **npm install** > *This installs all the above mentioned libraries into your project environment.*
+  
+
+3. run **'npm install'**
+		 *This installs all the dependencies mentioned in package.json into your local project.*
+
+  
 
   
 
@@ -97,11 +81,17 @@
 
   
 
+  
+
 5. 😄
 
   
 
+  
+
 ##### will update further...
+
+  
 
   
 

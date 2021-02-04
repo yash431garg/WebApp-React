@@ -1,9 +1,11 @@
 import React from 'react'
 
 //this page is shown when url match not found
-function NotFound() {
+const NotFound = () => {
     return (
-        <h3 >Not Found! 404</h3>
+        <div className='text-center'>
+            <h3>Not Found..!</h3>
+        </div>
     )
 }
 
