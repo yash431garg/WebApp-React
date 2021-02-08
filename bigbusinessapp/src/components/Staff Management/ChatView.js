@@ -7,7 +7,7 @@ export class ChatView extends Component {
         return (
             <div className='chatView'>
                 <div className='textBoxView'>
-                    <input id='send' type='text' ></input>
+                    <input id='send' type='text' />
                 </div>
             </div>
         );

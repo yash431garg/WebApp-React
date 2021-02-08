@@ -4,7 +4,8 @@
   width: 18vw;
 }
 .btn-primary {
-  margin-left: 10vw;
+  margin-left: 9vw;
+  margin-right: 1.5vw;
   width: 8vw;
 }
 .card-text {
@@ -64,5 +65,13 @@
   width: 45vw;
   display: block;
 }
-.attendanceView div {
+.payrollBreakup{
+  margin-left:10vw;
+}
+.holidays span{
+  color:red;
+}
+.leaves span{
+  color:grey;
+
 }
