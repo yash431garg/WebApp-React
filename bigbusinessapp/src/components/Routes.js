@@ -5,7 +5,7 @@ import Header from './Header/Header';
 import NotFound from './NotFound';
 import { TransactionsTable } from './Tables/TransactionsTable';
 import  StaffManagement  from './Staff Management/StaffManagement';
-import {StaffAdminDashboard} from './Staff Management/StaffAdminDashboard';
+import StaffAdminDashboard from './Staff Management/StaffAdminDashboard';
 // this function routes through different components by checking urlpath.
 function Routes() {
     return (

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import './StaffManagement.css';
-import {setEmployeeData} from '../redux-state-management/actionCreators';
+import { setEmployeeData, setPayRollView } from '../redux-state-management/actionCreators';
 const StaffMemberCards = props => {
     return (
         <Card >
@@ -11,7 +11,7 @@ const StaffMemberCards = props => {
             <Card.Body>
                 <Card.Text>
                     Name : {props.staffDetails.employeeName} <br />
-                        Phone Number : {props.staffDetails.employeePhoneNumber}
+                    Phone Number : {props.staffDetails.employeePhoneNumber}
                 </Card.Text>
                 <Button onClick={e => props.payrollBreakup(props.staffDetails)} >PayRoll BreakUp</Button>
             </Card.Body>
@@ -22,8 +22,9 @@ const StaffMemberCards = props => {
 const mapStateToProps = state => ({ employeeData: state.employeeData });
 const mapDispatchToProps = (dispatch) => ({
     payrollBreakup(employeeData) {
-      dispatch(setEmployeeData(employeeData));
+        dispatch(setEmployeeData(employeeData));
+        dispatch(setPayRollView(true));
     }
-  });
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(StaffMemberCards);
