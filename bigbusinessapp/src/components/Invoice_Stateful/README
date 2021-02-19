@@ -1,0 +1,15 @@
+- create form for getting name, qty, rate values
+- get the input values as object and store it in an array
+- display the array values into a table with add or delete or edit options as well
+
+- Save Invoice as PDF
+- add item to invcoie
+
+- RECEIVER
+
+# Things Left
+
+- Validation Checks
+- Clearing earlier values when once clicked AddToInvoice
+- Table not getting updated once itemObject pushed to inputsArray
+- Get From Details and Invoice(No, date, state) details
