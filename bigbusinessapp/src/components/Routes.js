@@ -7,7 +7,8 @@ import NotFound from "./NotFound";
 // import TransactionsTable from '../components/Finance/Tables/TransactionsTable';
 import MainFinance from "./Finance/MainFinance";
 // import index from '../App';
-import Invoice from "./Invoice/Invoice";
+import Invoice from "./InvoiceGeneration/Invoice";
+// import Invoice from "./InvoiceManagement/";
 
 // this function routes through different components by checking urlpath.
 function Routes() {
@@ -33,6 +34,7 @@ function Routes() {
       <Route exact path="/MainFinance" component={MainFinance} />
       {/* <Route exact path='/table' component={TransactionsTable} /> */}
       <Route exact path="/invoice" component={Invoice} />
+      <Route exact path="/manageinvoice" component={Invoice} />
       <Route path="*" component={NotFound} />
     </Switch>
   );
