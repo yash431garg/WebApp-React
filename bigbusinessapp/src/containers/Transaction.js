@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import { getListData } from '../API';
-import { TransactionsTable } from '../components/Tables/TransactionsTable';
+import { TransactionsTable } from '../components/Finance/Tables/TransactionsTable';
 
 
 //this class does nothing major as of now!
