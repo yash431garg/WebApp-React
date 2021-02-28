@@ -13,10 +13,9 @@ const ItemDetailsTable = (props) => {
         <th>EDIT</th>
         <th>DELETE</th>
       </tr>
-      {itemInputs.map((item) => {
-        console.log(item);
+      {itemInputs.map((item, index) => {
         return (
-          <tr>
+          <tr key={index}>
             <td>{item.name}</td>
             <td>{item.quantity}</td>
             <td>{item.rate}</td>

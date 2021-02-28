@@ -3,8 +3,6 @@ import React, { useContext } from "react";
 import FormElement from "./elements/FormElement";
 import { InvoiceContext } from "./Invoice";
 
-import getDetails from "./InvoicePDF";
-
 const ItemDetailsForm = (props) => {
   const { handleItemInputsAdd } = useContext(InvoiceContext);
   const { item } = props;
@@ -37,12 +35,7 @@ const ItemDetailsForm = (props) => {
         formValues={formValues}
         objectName={objectName}
       />
-      <button
-        onClick={() => {
-          console.log("Cliecked");
-          handleItemInputsAdd();
-        }}
-      >
+      <button onClick={() => handleItemInputsAdd()}>
         Add to InvoiceTable
       </button>
     </>
