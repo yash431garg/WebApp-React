@@ -33,6 +33,8 @@ function Routes() {
       <Route exact path="/MainFinance" component={MainFinance} />
       {/* <Route exact path='/table' component={TransactionsTable} /> */}
       <Route exact path="/Page" component={Page} />
+      <Route exact path="#remain" component={MainFinance} />
+      <Route exact path="#due" component={MainFinance} />
     </Switch>
   );
 }

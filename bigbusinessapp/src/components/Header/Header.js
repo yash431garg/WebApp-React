@@ -26,10 +26,10 @@ function Header() {
         </li>
 
         <li className="li_end">
-          <Link>Reminders</Link>
+          <a href="#remain">Reminders</a>
         </li>
         <li className="li_end">
-          <Link>Dues</Link>
+          <a href="#due">Dues</a>
         </li>
       </ul>
       <br />
