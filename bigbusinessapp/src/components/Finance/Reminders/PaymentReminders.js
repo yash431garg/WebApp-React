@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Reminder from './Reminder';
 import { SiAddthis } from 'react-icons/si';
+import Reminder from './Reminder';
 import NewReminder from './NewReminder';
 
 const PaymentReminders = (props) => {

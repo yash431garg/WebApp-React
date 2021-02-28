@@ -9,7 +9,6 @@ import Header from './components/Header/Header';
 // react-bootstrap here
 // import { Container, Row, Col } from 'react-bootstrap';
 
-
 //Entry point for the App
 class App extends Component {
   render() {

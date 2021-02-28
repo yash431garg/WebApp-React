@@ -6,6 +6,10 @@ import { Switch, Route } from 'react-router-dom';
 import NotFound from './NotFound';
 // import TransactionsTable from '../components/Finance/Tables/TransactionsTable';
 import MainFinance from './Finance/MainFinance';
+import RegisterMain from './Login/RegisterMain';
+import LoginMain from './Login/LoginMain';
+
+
 // import index from '../App';
 
 // this function routes through different components by checking urlpath.
@@ -17,7 +21,8 @@ function Routes() {
                 <p className='active' style={{ display:'inline-block',marginLeft: '45%'}}>click on finance!</p>
             </div>)} />
             <Route exact path='/MainFinance' component={MainFinance} />
-            {/* <Route exact path='/table' component={TransactionsTable} /> */}
+            <Route exact path='/register' component={RegisterMain} />
+            <Route exact path='/login' component={LoginMain} />
             <Route path='*' component={NotFound} />
         </Switch>
     )
