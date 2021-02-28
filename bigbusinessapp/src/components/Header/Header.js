@@ -1,19 +1,40 @@
-import React from 'react';
-import '../Header/Header.css';
+import React from "react";
+import "../Header/Header.css";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+// import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 // import { TransactionsTable } from '../Finance/Tables/TransactionsTable';
 
 //this func returns header and Transaction table as of now
 function Header() {
-    return (
-        <header>
-            <ul className="ul">
-                <li className="li"><a href="/" title='Go to Home.'>BigBusiness</a></li>
-                <li className="li"><a href="/mainfinance" title='Go to Finance Page.'>Finance</a></li>
-                <li className="li"><a href="contact.asp" title='Go to About!'>About</a></li>
-            </ul>
-            <br />
-        </header>
-    )
+  return (
+    <header>
+      <ul className="ul">
+        <li className="li">
+          <Link to="/">BigBusiness</Link>
+        </li>
+        <li className="li">
+          <Link to="/mainfinance">Finance</Link>
+        </li>
+        <li className="li">
+          <Link to="contact.asp">About</Link>
+        </li>
+        <li className="li">
+          <Link to="/page">
+            <AccountCircleIcon />
+          </Link>
+        </li>
+
+        <li className="li_end">
+          <Link>Reminders</Link>
+        </li>
+        <li className="li_end">
+          <Link>Dues</Link>
+        </li>
+      </ul>
+      <br />
+    </header>
+  );
 }
 
 export default Header;
