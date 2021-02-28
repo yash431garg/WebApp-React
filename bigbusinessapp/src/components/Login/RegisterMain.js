@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Form, Card, Button, Container } from 'react-bootstrap';
-import firebase from '../../contexts/firebase';
-import { LoginContext } from "../../contexts/LoginContext";
+import firebase from '../../containers/firebase';
+import { LoginContext } from "../../containers/LoginContext";
 
 const RegisterMain = () => {
 
