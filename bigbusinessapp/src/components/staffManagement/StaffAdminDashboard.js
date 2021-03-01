@@ -17,20 +17,13 @@ const StaffAdminDashboard = (props) => {
         holidays: date => getDate(date) === 2, // Highlights Tuesdays
         leaves: date => getDate(date) === 3
     }
-    let modifiersClassNames = {
-        holidays: 'holidays',
-        leaves: 'leaves'
-    }
-    function monthChange() {
-        console.log("Month Change");
-    }
     return (
         <div>
             <div className='adminDashboard'>
                 <ListGroup>
                     {StaffList.map(staffMember => { return <ListGroup.Item ><Button onClick={e => props.changeEmployeeData({ staffMember })}>{staffMember.employeeName}</Button></ListGroup.Item> })}
                 </ListGroup>
-                <ChatView className='chatView' empDetails={StaffList[0].employeeName}></ChatView>
+                <ChatView className='chatView'></ChatView>
                 <div className='attendanceView'>
                     <AdminViewEmployeeHolidays />
                 </div>

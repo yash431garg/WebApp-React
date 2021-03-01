@@ -1,40 +1,33 @@
-import React, { Component } from "react";
-import './StaffManagement.css';
-import "react-datepicker/dist/react-datepicker.css";
+import React, { useState } from "react";
 import { connect } from 'react-redux';
-import { DateRangePickerCalendar, START_DATE } from 'react-nice-dates';
-import { getDay, getDate,getMonth } from 'date-fns';
-import { Card, Table } from 'react-bootstrap';
+import DayPicker from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
 
+import { getDay, getDate, getMonth } from 'date-fns';
+import { Card, Table } from 'react-bootstrap';
+import './StaffManagement.css';
 
 
 const AdminViewEmployeeHolidays = (props) => {
-    const leaveList = ["10-02-2021"];
+    const [leaveList, setLeaveList] = useState([10, 1, 5, 6]);
 
     let modifiers = {
-        disabled: date => getDay(date) === 6, // Disables Saturdays
-        holidays: date => holiday(date), // Highlights Tuesdays
-        leaves: date => getDate(date) === 3
+        disabled: date => getDay(date) === 6,
+        leaves: date => getDate(date) === 3,
     }
-
-    function holiday(date) {
-        leaveList.map((leaveDay) => {
-            let cond =  getDate(date) === parseInt(leaveDay.split("-")[0]) && getMonth(date) === parseInt(leaveDay.split("-")[1])-1;
-            if(cond)
-                console.log(date);
-            return cond;
-        });
-    }
+    let holidays = [new Date(2021, 2, 12), new Date(2021, 2, 14)];
+    console.log(modifiers);
     let modifiersClassNames = {
         holidays: '-holidays',
         leaves: 'leaves'
     }
+    function updateLaves(e) {
+        getMonth(e);
+        console.log(getMonth(e));
+    }
     return (
         <div>
-            <DateRangePickerCalendar className='attendanceCalender' modifiers={modifiers}
-                modifiersClassNames={modifiersClassNames}
-                startDate={new Date()}
-                endDate={new Date()} />
+            <DayPicker className='attendanceCalender' modifiers={modifiers} modifiersClassNames={modifiersClassNames} selectedDays={holidays} onMonthChange={e => updateLaves(e)} />
             <div>
                 <Card >
                     <Card.Header>Leave Request History  <p>Remaining Leaves : </p></Card.Header>
