@@ -27,8 +27,8 @@ export const TransactionsTable = () => {
 
 
     return (
-        <div>
-            <TableGlobalFilter filter={globalfilter} setFilter={setGlobalFilter} />
+        <> 
+            <TableGlobalFilter filter={globalfilter} setFilter={setGlobalFilter} /> 
             <table {...getTableProps()}>
                 <thead>
                     {headerGroups.map((headerGroup) => (
@@ -63,6 +63,6 @@ export const TransactionsTable = () => {
 
                 </tbody>
             </table>
-        </div>
+        </>
     )
 }
