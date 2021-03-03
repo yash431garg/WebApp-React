@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 // import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 // import Transaction from '../containers/Transaction';
@@ -8,18 +8,20 @@ import NotFound from './NotFound';
 import MainFinance from './Finance/MainFinance';
 import RegisterMain from './Login/RegisterMain';
 import LoginMain from './Login/LoginMain';
+import { AuthContext } from '../containers/AuthContext';
+import Dashboard from './Home/Dashboard';
 
 
 // import index from '../App';
 
 // this function routes through different components by checking urlpath.
 function Routes() {
+    const { loginreducer } = useContext(AuthContext);
+    const [state] = loginreducer;
+    console.log(state)
     return (
         <Switch>
-            <Route exact path='/' render={() => (<div>
-                <h1 style={{ marginLeft: '35%', marginTop: '18%' }}>Welcome to HomePage.</h1>
-                <p className='active' style={{ display:'inline-block',marginLeft: '45%'}}>click on finance!</p>
-            </div>)} />
+            <Route exact path='/' component={Dashboard} />
             <Route exact path='/MainFinance' component={MainFinance} />
             <Route exact path='/register' component={RegisterMain} />
             <Route exact path='/login' component={LoginMain} />

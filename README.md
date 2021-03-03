@@ -1,3 +1,4 @@
+  
 
   
 
@@ -6,6 +7,8 @@
   
 
 # **Welcome to **BigBusiness App**..!**
+
+  
 
   
 
@@ -33,7 +36,11 @@
 
   
 
+  
+
 ## Project Structure ( till this commit ) 📑
+
+  
 
   
 
@@ -45,12 +52,17 @@
 
   
 
+  Home
+
 Login/Register
 
   
+
   
 
 Finance
+
+  
 
   
 
@@ -62,7 +74,11 @@ Header
 
   
 
+  
+
 Routes
+
+  
 
   
 
@@ -74,23 +90,31 @@ A NotFound Page.
 
   
 
+  
+
 # Containers
+
+  
+
+AuthContext(Reducer)
 
   
 
 Firebase
 
   
-  
+
   
 
 Login
 
   
-  
+
   
 
 Transaction
+
+  
 
   
 
@@ -102,7 +126,11 @@ Some Basic JSON Data
 
   
 
+  
+
 * App.js is where you enter the App
+
+  
 
   
 
@@ -122,7 +150,11 @@ Some Basic JSON Data
 
   
 
+  
+
 ## Dependencies (as we're still developing, these maynot be final!) and you can find these in 'package.json'.
+
+  
 
   
 
@@ -134,7 +166,11 @@ Some Basic JSON Data
 
   
 
+  
+
 ###### *Reference (/)*
+
+  
 
   
 
@@ -148,7 +184,11 @@ Some Basic JSON Data
 
   
 
+  
+
 ###### *Reference (https://getbootstrap.com/)*
+
+  
 
   
 
@@ -162,7 +202,11 @@ Some Basic JSON Data
 
   
 
+  
+
 ###### *Reference (/)*
+
+  
 
   
 
@@ -176,7 +220,11 @@ Some Basic JSON Data
 
   
 
+  
+
 ###### *Reference (https://reactrouter.com/web/guides/quick-start)*
+
+  
 
   
 
@@ -190,7 +238,11 @@ Some Basic JSON Data
 
   
 
+  
+
 ###### *Reference (https://react-table.tanstack.com/)*
+
+  
 
   
 
@@ -204,6 +256,8 @@ Some Basic JSON Data
 
   
 
+  
+
 Requires Node.Js [https://nodejs.org/en/]
 
   
@@ -212,7 +266,11 @@ Requires Node.Js [https://nodejs.org/en/]
 
   
 
+  
+
 1. clone this repo to your machine. **💻**
+
+  
 
   
 
@@ -236,13 +294,19 @@ Requires Node.Js [https://nodejs.org/en/]
 
   
 
+  
+
 3. run **'npm install'**.
 
   
 
   
 
+  
+
 *This installs all the dependencies mentioned in package.json into your local project.*
+
+  
 
   
 
@@ -266,6 +330,8 @@ Requires Node.Js [https://nodejs.org/en/]
 
   
 
+  
+
 5. 😄
 
   
@@ -278,7 +344,11 @@ Requires Node.Js [https://nodejs.org/en/]
 
   
 
+  
+
 ##### will update further...
+
+  
 
   
 

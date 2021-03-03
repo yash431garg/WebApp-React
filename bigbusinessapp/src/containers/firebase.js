@@ -1,4 +1,4 @@
-import firebase from 'firebase/app';
+import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 require('dotenv').config();
@@ -12,5 +12,26 @@ const firebaseConfig = {
   messagingSenderId: process.env.REACT_APP_MESSENGING_ID,
   appId: process.env.REACT_APP_APP_ID
 };
-firebase.initializeApp(firebaseConfig);
-export default firebase
+
+class firebase {
+  constructor() {
+    app.initializeApp(firebaseConfig);
+    this.auth = app.auth();
+    this.normalauth = app.auth;
+    this.database = app.database();
+  }
+
+  login(phone, appverifier) {
+    const countryCode = '+91';
+
+    return this.auth.signInWithPhoneNumber(countryCode.concat(phone), appverifier);
+  }
+
+
+  logout() {
+    return this.auth.signOut();
+  }
+}
+
+
+export default new firebase()
