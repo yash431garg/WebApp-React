@@ -6,7 +6,9 @@ const FormElement = (props) => {
   return (
     <form>
       <fieldset>
-        <legend>{formname.toUpperCase()}</legend>
+        <legend style={{ textAlign: "center" }}>
+          {formname.toUpperCase()}
+        </legend>
         {formValues.map((value, index) => (
           <InputElement
             value={value}

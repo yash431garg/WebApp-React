@@ -24,8 +24,11 @@ const InputElement = (props) => {
 
   return (
     <>
-      <label>{value.key.toUpperCase()}</label>
+      <label
+        style={{ display: "block", margin: "0px 0px 0px 5px" }}
+      >{`${value.key.toUpperCase()}:`}</label>
       <input
+        style={{ display: "block", width: "40vw", margin: "0px 0px 0px 5px" }}
         type={value.type}
         name={value.key}
         value={value.value}

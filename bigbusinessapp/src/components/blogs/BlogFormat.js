@@ -1,9 +1,9 @@
 let blogs = [
-    {
-        title:"Business Score",
-        date:"21-01-2021",
-        image:'bigbusinessapp/src/assets/images/BigBusiness.jpg',
-        content:`I still remember in August we were working on my startup idea which is to build a business management app, as a team we were figuring out our UVP ( unique value proposition ). On the other end, my brother wanted to start a trading business of masks and medical equipment that was an actual need of the hour for people at that time. My brother found a buyer and he started looking out for a seller; he started looking in the local directories, and finally, he got a seller ( let's name him Raju ) from Punjab after having a conversation for few days or a week. My brother felt that he was a trustworthy guy because he shared his GST number, address, pictures. 
+  {
+    title: "Business Score",
+    date: "21-01-2021",
+
+    content: `I still remember in August we were working on my startup idea which is to build a business management app, as a team we were figuring out our UVP ( unique value proposition ). On the other end, my brother wanted to start a trading business of masks and medical equipment that was an actual need of the hour for people at that time. My brother found a buyer and he started looking out for a seller; he started looking in the local directories, and finally, he got a seller ( let's name him Raju ) from Punjab after having a conversation for few days or a week. My brother felt that he was a trustworthy guy because he shared his GST number, address, pictures. 
         \n
         Now my brother requests my dad and asks him for an investment of 15,000. My dad gives him because he wanted him to progress in the business. Indeed that's not a huge amount, my brother wanted to start on a small note. 
         
@@ -43,10 +43,8 @@ let blogs = [
         
         \n
         
-        HAPPY B SCORING !`
-    }
-
-
+        HAPPY B SCORING !`,
+  },
 ];
 
 export default blogs;

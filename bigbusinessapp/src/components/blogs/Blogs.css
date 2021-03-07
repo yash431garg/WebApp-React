@@ -1,3 +1,20 @@
-.card-body{
-    width:none !important;
+.blogs > h2 {
+  text-align: center;
+}
+.blogs > .p_less {
+  font-size: 1.5em;
+  font-weight: lighter;
+  padding: 0px 50px 0px 50px;
+}
+.blogs > .p_more {
+  font-size: 1.5em;
+  font-weight: lighter;
+  padding: 0px 50px 0px 50px;
+  display: none;
+}
+.blogs > .p_link {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0px 50px 0px 50px;
+  cursor: pointer;
 }

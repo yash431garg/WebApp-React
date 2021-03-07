@@ -1,11 +1,15 @@
 import React, { useContext } from "react";
 import { InvoiceContext } from "./Invoice";
+import HighlightOffIcon from "@material-ui/icons/HighlightOff";
+import "./ItemDetail.css";
 
 const ItemDetailsTable = (props) => {
   const { itemInputs } = props;
-  const { handleItemInputsEdit, handleItemInputsDelete } = useContext(InvoiceContext);
+  const { handleItemInputsEdit, handleItemInputsDelete } = useContext(
+    InvoiceContext
+  );
   return (
-    <table>
+    <table className="tableDetail">
       <tr>
         <th>NAME</th>
         <th>QUANTITY</th>
@@ -20,13 +24,29 @@ const ItemDetailsTable = (props) => {
             <td>{item.quantity}</td>
             <td>{item.rate}</td>
             <td>
-              <button onClick={() => handleItemInputsEdit(item.id)}>
-                EDIT
+              <button
+                style={{
+                  outline: " none",
+                  border: " none",
+                  backgroundColor: "white",
+                  fontSize: "1.5em",
+                }}
+                onClick={() => handleItemInputsEdit(item.id)}
+              >
+                <i class="far fa-edit"></i>
               </button>
             </td>
             <td>
-              <button onClick={() => handleItemInputsDelete(item.id)}>
-                DELETE
+              <button
+                style={{
+                  outline: " none",
+                  border: " none",
+                  backgroundColor: "white",
+                  fontSize: "2em",
+                }}
+                onClick={() => handleItemInputsDelete(item.id)}
+              >
+                <HighlightOffIcon />
               </button>
             </td>
           </tr>
