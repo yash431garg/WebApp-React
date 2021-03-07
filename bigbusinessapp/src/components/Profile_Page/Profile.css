@@ -15,7 +15,7 @@
   margin: 20px;
 }
 .Profile_Main > p:hover {
-  font-size: 2rem;
+  font-size: 1.7rem;
   cursor: pointer;
 }
 .Profile_Type {
@@ -24,5 +24,4 @@
 }
 .Profile_Img {
   width: fit-content;
-  border-radius: ;
 }

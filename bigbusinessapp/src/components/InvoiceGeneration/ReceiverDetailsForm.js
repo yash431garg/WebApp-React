@@ -37,8 +37,8 @@ const ReceiverDetailsForm = (props) => {
   ];
 
   const formname = "Receiver Details";
-  // const objectName = receiver.toString();
   const objectName = "receiver";
+  // const objectName = receiver.toString();
   return (
     <FormElement
       formname={formname}

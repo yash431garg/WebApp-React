@@ -1,29 +1,71 @@
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
 }
 
-li {
-    float: left;
+.li {
+  float: left;
+  font-size: 1.2em;
 }
-
+.li_finance {
+  float: left;
+  font-size: 1.2em;
+}
+.li_end {
+  float: right;
+  font-size: 1.2em;
+}
+.li_end > p {
+  display: none;
+  position: absolute;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #333333;
+  color: white;
+}
+.li_end:hover > p {
+  display: inline;
+  position: absolute;
+}
+.li_finance_d {
+  display: none;
+  position: absolute;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #333333;
+}
+.li_finance_r {
+  display: none;
+  position: absolute;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #333333;
+}
+.li_finance:hover .li_finance_r {
+  display: inline;
+  position: absolute;
+}
+.li_finance:hover .li_finance_d {
+  display: inline;
+  left: 56px;
+  position: absolute;
+}
 li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: #eaeaea;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 .active {
-    background-color: #4CAF50;
+  background-color: #4caf50;
 }
 
 /* Change the link color to #111 (black) on hover */
 
 li a:hover {
-    background-color: #111;
+  /* background-color: #111; */
+  text-decoration: none;
+  color: white;
 }

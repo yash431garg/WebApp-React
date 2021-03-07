@@ -1,46 +1,55 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import Reminder from './Reminder';
-import { SiAddthis } from 'react-icons/si';
-import NewReminder from './NewReminder';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import Reminder from "./Reminder";
+import { SiAddthis } from "react-icons/si";
+import NewReminder from "./NewReminder";
+import { lightGreen } from "@material-ui/core/colors";
 
 const PaymentReminders = (props) => {
-    const [showNewReminder, setshowNewReminder] = useState(false);
-    const [redata, setReminder] = useState([{
-        id: 0,
-        name: 'Bb',
-        amount: '2300',
-        date: '02/05/2021'
-    },]);
+  const [showNewReminder, setshowNewReminder] = useState(false);
+  const [redata, setReminder] = useState([
+    {
+      id: 0,
+      name: "Bb",
+      amount: "2300",
+      date: "02/05/2021",
+    },
+  ]);
 
-    const AddNewReminder = (redat) => {
+  const AddNewReminder = (redat) => {
+    const id = Math.floor(Math.random() * 10) + 1;
+    const newtask = { id, ...redat };
+    console.log(newtask);
+    setReminder([...redata, newtask]);
+    console.log(redata);
+  };
 
-        const id = Math.floor(Math.random() * 10) + 1;
-        const newtask = { id, ...redat };
-        console.log(newtask);
-        setReminder([...redata, newtask]);
-        console.log(redata);
-    }
+  const DeleteReminder = (id) => {
+    setReminder(redata.filter((task) => task.id !== id));
+  };
 
-    const DeleteReminder = (id) => {
-        setReminder(redata.filter((task) => task.id !== id))
-    }
-
-    return (
-        <div>
-            <h2>{props.title} <SiAddthis style={{ color: !showNewReminder ? 'green' : 'red' }} onClick={() => setshowNewReminder(!showNewReminder)} title='Click to Add New Reminder.' /></h2>
-            {showNewReminder && <NewReminder onSaveReminder={AddNewReminder} />}
-            <Reminder redata={redata} onDelete={DeleteReminder} />
-        </div>
-    )
-}
+  return (
+    <div>
+      <h2 style={{ fontWeight: "lighter" }}>
+        {props.title}{" "}
+        <SiAddthis
+          style={{ color: !showNewReminder ? "blue" : "red" }}
+          onClick={() => setshowNewReminder(!showNewReminder)}
+          title="Click to Add New Reminder."
+        />
+      </h2>
+      {showNewReminder && <NewReminder onSaveReminder={AddNewReminder} />}
+      <Reminder redata={redata} onDelete={DeleteReminder} />
+    </div>
+  );
+};
 
 PaymentReminders.defaultProps = {
-    title: 'Add Reminder',
-}
+  title: "Add Reminder",
+};
 
 PaymentReminders.propTypes = {
-    title: PropTypes.string.isRequired
-}
+  title: PropTypes.string.isRequired,
+};
 
-export default PaymentReminders
+export default PaymentReminders;

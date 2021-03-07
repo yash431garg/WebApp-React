@@ -1,17 +1,13 @@
-import React, { useState, useContext } from "react";
-
+import React, { useState } from "react";
 import ReceiverDetailsForm from "./ReceiverDetailsForm";
 import ItemDetailsForm from "./ItemDetailsForm";
 import ItemDetailsTable from "./ItemDetailsTable";
 
 import getDetails from "./InvoicePDF";
-// import { InvoiceDataContext } from "../InvoiceManagement/InvoiceData";
 
 export const InvoiceContext = React.createContext();
 
 const Invoice = () => {
-  // const { addInvoiceObject } = useContext(InvoiceDataContext);
-
   const receiverSchema = {
     id: 0,
     name: "",
@@ -74,23 +70,8 @@ const Invoice = () => {
       receiver.gstin !== "" &&
       itemInputs.length !== 0
     ) {
-      let d = new Date();
-      const dd_mm_yyyy = `${d.getDate()}-${
-        d.getMonth() + 1
-      }-${d.getFullYear()}`;
-      const hh_mm = `${d.getHours()}:${d.getMinutes()}`;
-
-      const InvoiceObject = {
-        InvoiceId: Math.round(d.getTime() * Math.random()),
-        ReceiverDetails: receiver,
-        ItemInputsArray: itemInputs,
-        IncludeGST: includeGST,
-        CreationDate: dd_mm_yyyy,
-        Creationtime: hh_mm,
-      };
-
-      // addInvoiceObject(InvoiceObject);
-      getDetails({ InvoiceObject });
+      getDetails({ receiver, itemInputs });
+      setFormEmpty(false);
     } else setFormEmpty(true);
   };
 
@@ -102,39 +83,24 @@ const Invoice = () => {
     handleItemInputsEdit,
   };
 
-  const [includeGST, setIncludeGST] = useState(true);
-
   return (
     <InvoiceContext.Provider value={InvoiceContextValue}>
       <ReceiverDetailsForm receiver={receiver} />
       <ItemDetailsForm item={item} />
       <ItemDetailsTable itemInputs={itemInputs} />
-      <label htmlFor="With SGST and CGST">
-        <input
-          type="radio"
-          value="With SGST and CGST"
-          name="gst"
-          onChange={(event) => {
-            setIncludeGST(true);
-          }}
-          defaultChecked
-        />
-        With SGST and CGST
-      </label>
-      <br />
-      <label htmlFor="Without SGST and CGST">
-        <input
-          type="radio"
-          value="Without SGST and CGST"
-          name="gst"
-          onChange={(event) => {
-            setIncludeGST(false);
-          }}
-        />
-        Without SGST and CGST
-      </label>
-      <br />
-      <button onClick={() => generateInvoice()}>Generate Invoice as PDF</button>
+      <button
+        style={{
+          margin: "20px",
+          padding: "5px",
+          backgroundColor: "#007bff",
+          color: "white",
+          border: "none",
+          cursor: "pointer",
+        }}
+        onClick={() => generateInvoice()}
+      >
+        Generate Invoice as PDF
+      </button>
       <>
         {formEmpty &&
           setTimeout(() => {

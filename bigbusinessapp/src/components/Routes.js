@@ -1,41 +1,29 @@
 import React from "react";
-// import React from 'react';
 import { Switch, Route } from "react-router-dom";
-// import Transaction from '../containers/Transaction';
-// import Header from './Header/Header';
 import NotFound from "./NotFound";
-// import TransactionsTable from '../components/Finance/Tables/TransactionsTable';
-import MainFinance from "./Finance/MainFinance";
-// import index from '../App';
+import StaffManagement from "./staffManagement/StaffManagement";
+import StaffAdminDashboard from "./staffManagement/StaffAdminDashboard";
+import Blogs from "./blogs/Blogs.js";
+import Inventory from "./inventoryManagement/Invetory";
 import Invoice from "./InvoiceGeneration/Invoice";
-import ManageInvoiceTable from "./InvoiceManagement/ManageInvoiceTable";
-// import Invoice from "./InvoiceManagement/";
+import Page from "./Profile_Page/Page";
+import MainFinance from "./Finance/MainFinance";
+import LoginMain from "./login/LoginMain";
 
 // this function routes through different components by checking urlpath.
 function Routes() {
   return (
     <Switch>
-      <Route
-        exact
-        path="/"
-        render={() => (
-          <div>
-            <h1 style={{ marginLeft: "35%", marginTop: "18%" }}>
-              Welcome to HomePage.
-            </h1>
-            <p
-              className="active"
-              style={{ display: "inline-block", marginLeft: "45%" }}
-            >
-              click on finance!
-            </p>
-          </div>
-        )}
-      />
+      <Route exact path="#remainder" component={MainFinance} />
+      <Route exact path="#due" component={MainFinance} />
       <Route exact path="/MainFinance" component={MainFinance} />
-      {/* <Route exact path='/table' component={TransactionsTable} /> */}
+      <Route exact path="/blogs" component={Blogs} />
+      <Route exact path="/Page" component={Page} />
+      <Route exact path="/staff" component={StaffManagement} />
+      <Route exact path="/inventory" component={Inventory} />
       <Route exact path="/invoice" component={Invoice} />
-      <Route exact path="/manageinvoice" component={ManageInvoiceTable} />
+      <Route exact path="/admin" component={StaffAdminDashboard} />
+      <Route exact path="/login" component={LoginMain} />
       <Route path="*" component={NotFound} />
     </Switch>
   );
