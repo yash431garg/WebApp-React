@@ -2,34 +2,31 @@ import firebase from 'firebase/app';
 import Firebase from './Firebase';
 import 'firebase/storage';
 import 'firebase/analytics';
+
 const db = Firebase.ref("/Users/uid1/");
 class FirebaseCRUD {
 
+    userUid = "uid1";
 
-    getInventory() {
-        let path = "/Users/uid1/";
-        ['invoice','profile','staffDetails','inventory'].forEach((item)=>{
-            Firebase.ref(path+item).on('value',function(snapshot){
-                console.log(snapshot.key);
-                console.log(snapshot.val());
+    get(path) {
+        let result = [];
+            Firebase.ref('Users/'+this.userUid+'/'+path).on('value',function(snapshot){
+                result.push(snapshot.val());
             });
-        });
+        return result;
+    }
 
-        // db.on('value', function (snapshot) {
-        //     snapshot.forEach(function (childSnapshot) {
-        //         var data = childSnapshot.val();
-        //         console.log(data);
-        //     });
-        // });
-        
-
-        firebase.database().ref("/Users/uid1/").child("invoice").set({
-            'invoice id': "in-id-1",
-            'name': "Cinthol",
-            'price': "28",
-            'quantity': "400",
-            'total price': "400"
-        });
+    post(path,data){
+        firebase.database().ref("/Users/"+this.userUid).child(path).push(data).then(
+            res => {
+                console.log(res);
+                return res;
+            },
+            err => {
+                console.log(err);
+                return err;
+            }
+        );
     }
 }
 
