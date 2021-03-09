@@ -1,27 +1,26 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import firebaseDB from '../../../containers/Firebase';
 import "./Dues.css";
 
 const PaymentDues = () => {
-  const [redata] = useState([
-    {
-      id: 0,
-      name: "Bb",
-      amount: "2300",
-      date: "09/01/2021",
-    },
-    {
-      id: 1,
-      name: "Cc",
-      amount: "6559",
-      date: "15/01/2021",
-    },
-  ]);
+  const [dues,setDues] = useState([]);
+  useEffect(() => {
+    firebaseDB.ref('Users/uid1').child('dues').on('value',function(snapshot){
+      let json = snapshot.val();
+      let keys = Object.keys(json);
+      let vals = Object.values(json);
+      for(let i=0;i<keys.length;i++){
+        vals[i].id = keys[i]; 
+      }
+      setDues(vals);
+    });
+  })
   return (
     <div className="dues">
       <h3>Dues List:</h3>
-      <p>{redata.id}</p>
-      {redata.map((task, index) => (
+      <p>{dues.id}</p>
+      {dues.map((task, index) => (
         <div
           key={index}
           style={{
@@ -31,9 +30,9 @@ const PaymentDues = () => {
             width: "fit-content",
           }}
         >
-          <h5>Name :{task.name}</h5>
+          <h5>Name :{task.title}</h5>
           <p>Amount :{task.amount} </p>
-          <p>Date :{task.date}</p>
+          <p>Date :{task.reminderDate}</p>
         </div>
       ))}
     </div>

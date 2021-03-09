@@ -11,8 +11,8 @@ const StaffMemberCards = (props) => {
     <Card>
       <Card.Body>
         <Card.Text>
-          Name : {props.staffDetails.employeeName} <br />
-          Phone Number : {props.staffDetails.employeePhoneNumber}
+          Name : {props.staffDetails.firstName} {props.staffDetails.lastName} <br />
+          Phone Number : {props.staffDetails.mobileNumber}
         </Card.Text>
         <Button onClick={(e) => props.payrollBreakup(props.staffDetails)}>
           PayRoll BreakUp

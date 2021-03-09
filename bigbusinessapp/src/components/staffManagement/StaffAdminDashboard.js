@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect,useState } from "react";
 import { getDay, getDate } from "date-fns";
 import { ListGroup } from "react-bootstrap";
 import { Card, Table, Button } from "react-bootstrap";
@@ -10,6 +10,8 @@ import { connect } from "react-redux";
 import { setAdminEmployeeDataView } from "../redux-state-management/actionCreators";
 import AdminViewEmployeeHolidays from "./AdminViewEmployeeHolidays";
 import "./StaffManagement.css";
+import firebaseDB from '../../containers/Firebase';
+
 
 const StaffAdminDashboard = (props) => {
   let holidayList = [];
@@ -18,24 +20,39 @@ const StaffAdminDashboard = (props) => {
     holidays: (date) => getDate(date) === 2, // Highlights Tuesdays
     leaves: (date) => getDate(date) === 3,
   };
+  const [employeesData, setEmployeesData] = useState([]);
+
+  useEffect(() => {
+    firebaseDB.ref('Users/uid1').child('staffDetails').on('value',function(snapshot){
+      let json = snapshot.val();
+      let keys = Object.keys(json);
+      let vals = Object.values(json);
+      for(let i=0;i<keys.length;i++){
+        vals[i].id = keys[i]; 
+      }
+      setEmployeesData(vals);
+
+    });
+    
+  }, []);
+  let leaves = ["23-01-2020","21-01-2019"];
+  let holidays = ["23-01-2020","21-01-2019"];
   return (
     <div className="adminDashboard">
       <div className="admin_staff">
-        {StaffList.map((staffMember) => {
+        {employeesData.map((staffMember) => {
           return (
-            <ListGroup.Item>
-              <Button
-                onClick={(e) => props.changeEmployeeData({ staffMember })}
-              >
-                {staffMember.employeeName}
-              </Button>
+            <ListGroup.Item  onClick={(e) => props.changeEmployeeData({ staffMember })}>
+              
+                {staffMember.firstName} {staffMember.lastName}
+             
             </ListGroup.Item>
           );
         })}
       </div>
       <ChatView className="chatView"></ChatView>
       <div className="attendanceView">
-        <AdminViewEmployeeHolidays />
+        <AdminViewEmployeeHolidays leaves={leaves} holidays={holidays}/>
       </div>
     </div>
   );

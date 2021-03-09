@@ -17,7 +17,7 @@ const Reminder = ({ redata, onDelete }) => {
           }}
         >
           <h5>
-            Name :{task.name}
+            Name :{task.title}
             <span style={{ marginLeft: "20px" }}>
               <FaTimes
                 style={{ color: true ? "red" : "default" }}
@@ -27,7 +27,7 @@ const Reminder = ({ redata, onDelete }) => {
             </span>
           </h5>
           <p>Amount :{task.amount} </p>
-          <p>Date :{task.date}</p>
+          <p>Date :{task.reminderDate}</p>
         </div>
       ))}
     </div>

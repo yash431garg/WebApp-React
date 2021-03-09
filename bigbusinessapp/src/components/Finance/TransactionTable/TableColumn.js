@@ -2,22 +2,22 @@
 export const COLUMNS = [
   {
     Header: "TransactionID",
-    accessor: "TransactionId",
+    accessor: "transactionID",
   },
   {
-    Header: "Name",
-    accessor: "first_name",
+    Header: "Invoice ID",
+    accessor: "invoice-id",
   },
   {
     Header: "Amount",
-    accessor: "Amount",
+    accessor: "amount",
   },
   {
     Header: "Date",
-    accessor: "Due_Date",
+    accessor: "date",
   },
   {
     Header: "Merchant name",
-    accessor: "Yash",
+    accessor: "merchantName",
   },
 ];

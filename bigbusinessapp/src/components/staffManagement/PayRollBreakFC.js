@@ -55,7 +55,7 @@ const PayRollBreakFC = (props) => {
         <Button onClick={() => props.closePayRollView()}>Close View</Button>
       </div>
       <div>
-        <p>Employee Name: {props.employeeName}</p>
+        <p>Employee Name: {props.firstName} {props.lastName} </p>
         <p>PaySlip Month:{selectedMonth} </p>
         <p>Year: {selectedYear}</p>
         <p>Total Amount : {totalAmount}</p>

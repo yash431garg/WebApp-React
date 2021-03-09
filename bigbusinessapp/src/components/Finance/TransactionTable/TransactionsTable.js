@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useState,useMemo ,useEffect,useRef } from "react";
 import {
   useTable,
   useSortBy,
@@ -8,12 +8,33 @@ import {
 import DataTransaction from "./mock_data.json";
 import { COLUMNS } from "./TableColumn";
 import { TableGlobalFilter } from "./TableGlobalFilter";
+import FirebaseCRUD from '../../../containers/FirebaseCRUD';
 import "./Table.css";
+import firebaseDB from '../../../containers/Firebase';
+
 
 export const TransactionsTable = () => {
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => DataTransaction, []);
-
+  let [data,setData] = useState([]);
+  const dataKeys = [];
+  let dataJson = [];
+  const datavals = [];
+  useEffect(() => {
+    firebaseDB.ref('Users/uid1').child('transaction-history').on('value',function(snapshot){
+      console.log("Getting Data");
+      let json = snapshot.val();
+      let keys = Object.keys(json);
+      let vals = Object.values(json);
+      for(let i=0;i<keys.length;i++){
+        vals[i].id = keys[i]; 
+      }
+      setData(vals);
+      console.log(vals);
+    });
+    
+    setData(datavals);
+  }, []);
+  
   const tableInstance = useTable(
     {
       //useTable takes in columns, json data and returns an TableInstance
@@ -42,25 +63,6 @@ export const TransactionsTable = () => {
 
   return (
     <>
-      {/* <div className="search_bar">
-        <TableGlobalFilter filter={globalfilter} setFilter={setGlobalFilter} />
-        <span>
-          <button
-            className="btn btn-primary"
-            onClick={previousPage}
-            title="previous page"
-          >
-            Prev
-          </button>
-          <button
-            className="btn btn-primary"
-            onClick={nextPage}
-            title="next page"
-          >
-            Next
-          </button>
-        </span>
-      </div> */}
       <h3
         style={{ fontWeight: "lighter", fontSize: "3em", textAlign: "center" }}
       >

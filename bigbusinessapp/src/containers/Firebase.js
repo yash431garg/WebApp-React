@@ -13,6 +13,6 @@ var firebaseConfig = {
     measurementId: "G-F2K459TVZZ"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+var firebaseDB = firebase.initializeApp(firebaseConfig);
 
-export default firebase.database();
+export default firebaseDB.database();

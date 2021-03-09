@@ -1,23 +1,20 @@
-import firebase from 'firebase/app';
-import Firebase from './Firebase';
+import firebaseDb from "./Firebase";  
 import 'firebase/storage';
-import 'firebase/analytics';
-
-const db = Firebase.ref("/Users/uid1/");
-class FirebaseCRUD {
-
+import 'firebase/database';
+export default class FirebaseCRUD {
+    
     userUid = "uid1";
 
     get(path) {
         let result = [];
-            Firebase.ref('Users/'+this.userUid+'/'+path).on('value',function(snapshot){
+            firebaseDb.ref('Users/'+this.userUid+'/'+path).on('value',function(snapshot){
                 result.push(snapshot.val());
             });
         return result;
     }
 
     post(path,data){
-        firebase.database().ref("/Users/"+this.userUid).child(path).push(data).then(
+        firebaseDb.database().ref("/Users/"+this.userUid).child(path).push(data).then(
             res => {
                 console.log(res);
                 return res;
@@ -30,4 +27,3 @@ class FirebaseCRUD {
     }
 }
 
-export default FirebaseCRUD;
