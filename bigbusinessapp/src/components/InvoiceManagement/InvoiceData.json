@@ -1,0 +1,110 @@
+{
+  "Users": {
+    "uid1": {
+      "profile": {
+        "firstName": "CHARAN",
+        "lastName": "XYZ",
+        "emailId": "boppesricharan@gmail.com",
+        "mobileNumber": "+916309833542",
+        "businessName": "big business",
+        "businessType": "small scale"
+      },
+      "transaction-history": {
+        "TH-id1": {
+          "merchantName": "Raju Kirana General Stores",
+          "amount": "2000",
+          "paymentType": "Credit",
+          "date": "22/11/2020",
+          "invoice-id": "in-id-1"
+        },
+        "TH-id2": {
+          "merchantName": "Venkat Cutting Shop",
+          "amount": "1000",
+          "paymentType": "Debit",
+          "date": "24/02/2021",
+          "invoice-id": "in-id-2"
+        }
+      },
+      "reminders": {
+        "card1": {
+          "title": "XYZ",
+          "amount": "2500",
+          "paymentType": "Pay/Receive",
+          "reminderTime": "8:00PM/Expected Time of payment",
+          "reminderDate": "25-01-2021/Classify as payment or dues as oer date of payment",
+          "status": "Paid/Unpaid"
+        }
+      },
+      "dues": {
+        "card1": {
+          "title": "XYZ",
+          "amount": "2500",
+          "paymentType": "Pay/Receive",
+          "reminderTime": "8:00PM/Expected Time of payment",
+          "reminderDate": "25-01-2021/Classify as payment or dues as oer date of payment",
+          "status": "Paid/Unpaid"
+        }
+      },
+      "inventory": {
+        "productId1": {
+          "name": "soap",
+          "quantity": "400",
+          "uom": "gms",
+          "unit": "50",
+          "price": "100",
+          "totalPrice": "4000"
+        },
+        "productId2": {
+          "name": "butter",
+          "quantity": "300",
+          "uom": "gms",
+          "unit": "100",
+          "price": "130",
+          "totalPrice": "6000"
+        }
+      },
+      "staffDetails": {
+        "uid2forEmployee": {
+          "firstName": "CHARAN",
+          "lastName": "XYZ",
+          "emailId": "boppesricharan@gmail.com",
+          "mobileNumber": "+916309833542",
+          "imageSrc": "",
+          "designation": "As per employer",
+          "package": "",
+          "leaves": {
+            "2021": {
+              "febuary": {
+                "days": [20, 21]
+              }
+            }
+          },
+          "salary": {
+            "2021": {
+              "febuary": {
+                "incentives": [20, 21],
+                "salaryStatus": "paid/notPaid",
+                "advanceAmount": "",
+                "advancePaid": "yes/no"
+              }
+            }
+          }
+        }
+      },
+      "invoice": {
+        "in-id-1": {
+          "invoiceName": "invoiceName1",
+          "businessName": "BIG1",
+          "invoiceType": "Tax/No Tax/Product/service",
+          "products": {
+            "productId1": "quantity1",
+            "productId2": "quantity2",
+            "productId3": "quantity3"
+          },
+          "CGST": "2.5%",
+          "SGST": "2.5%"
+        }
+      }
+    }
+  }
+}

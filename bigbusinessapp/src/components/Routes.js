@@ -9,6 +9,7 @@ import Invoice from "./InvoiceGeneration/Invoice";
 import Page from "./Profile_Page/Page";
 import MainFinance from "./Finance/MainFinance";
 import LoginMain from "./login/LoginMain";
+import ManageInvoiceTable from "./InvoiceManagement/ManageInvoiceTable";
 
 // this function routes through different components by checking urlpath.
 function Routes() {
@@ -22,6 +23,7 @@ function Routes() {
       <Route exact path="/staff" component={StaffManagement} />
       <Route exact path="/inventory" component={Inventory} />
       <Route exact path="/invoice" component={Invoice} />
+      <Route exact path="/invoicemanage" component={ManageInvoiceTable} />
       <Route exact path="/admin" component={StaffAdminDashboard} />
       <Route exact path="/login" component={LoginMain} />
       <Route path="*" component={NotFound} />

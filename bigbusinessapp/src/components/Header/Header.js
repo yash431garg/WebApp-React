@@ -15,8 +15,8 @@ function Header() {
         </li>
         <li className="li_finance">
           <Link to="/mainfinance">Finance</Link>
-          <a className="li_finance_r" href="#remainder">
-            Remainder
+          <a className="li_finance_r" href="#reminder">
+            Reminder
           </a>
           <a className="li_finance_d" href="#due">
             Dues
