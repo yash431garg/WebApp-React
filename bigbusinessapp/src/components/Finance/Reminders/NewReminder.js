@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 
 const NewReminder = ({ onSaveReminder }) => {
-  const [name, setName] = useState("");
-  const [transtype, setTransType] = useState("");
+  const [title, setName] = useState("");
+  const [paymentType, setTransType] = useState("");
   const [amount, setAmount] = useState("");
-  const [date, setDate] = useState("");
+  const [reminderDate, setDate] = useState("");
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (!name) {
+    if (!title) {
       alert("Please add a name!");
       return;
     }
-    onSaveReminder({ name, amount, date });
+    onSaveReminder({ title, amount,paymentType, reminderDate,status:'Unpaid'});
     setName("");
     setAmount("");
     setDate("");
-    console.log(transtype);
   };
 
   return (
@@ -30,7 +29,7 @@ const NewReminder = ({ onSaveReminder }) => {
               <input
                 type="text"
                 name="name"
-                value={name}
+                value={title}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Enter a Business Name."
               />
@@ -44,7 +43,7 @@ const NewReminder = ({ onSaveReminder }) => {
             <span>
               <input
                 type="radio"
-                value={transtype}
+                value={paymentType}
                 onChange={(e) => setTransType(e.target.value)}
               />
             </span>
@@ -79,7 +78,7 @@ const NewReminder = ({ onSaveReminder }) => {
               <input
                 type="Date"
                 name="date"
-                value={date}
+                value={reminderDate}
                 onChange={(e) => setDate(e.target.value)}
                 placeholder="Pick a Date."
               />

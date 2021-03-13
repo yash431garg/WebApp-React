@@ -3,13 +3,21 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button, InputGroup, FormControl } from "react-bootstrap";
 import { addInventoryItem } from "../redux-state-management/actionCreators";
 import { connect } from "react-redux";
+import firebaseDB from '../../containers/Firebase';
 
 const InventoryItem = (props) => {
-  let [productName, setProductName] = useState(props.productName);
-  let [productPrice, setProductPrice] = useState(props.productPrice);
-  let [productQuantity, setProductQuantity] = useState(props.productQuantity);
-  let [showModal, setShowModal] = useState(false);
+  let [name, setProductName] = useState(props.name);
+  let [price, setProductPrice] = useState(props.price);
+  let [quantity, setProductQuantity] = useState(props.quantity);
+  let id = useState(props.id);
+  let [showModal, setShowModal] = useState(false); 
 
+  useEffect(()=>{
+    console.log(props.prodName);
+    setProductName(props.prodName);
+    setProductPrice(props.price);
+    setProductQuantity(props.quantity);
+  },[]);
   function handleShow() {
     setShowModal(true);
   }
@@ -20,12 +28,24 @@ const InventoryItem = (props) => {
     setProductPrice = "";
     setProductQuantity = "";
   }
-  useEffect(() => {
-    console.log(props);
-    if (props.productName) {
-      console.log(props.productName);
+  
+  function firebaseAction(data){
+
+    if(props.itemState.includes('Add')){
+      delete data.id;
+      firebaseDB.ref('Users/uid1').child('inventory').push(data);
     }
-  }, []);
+      
+    else{      
+      let id =  data.id[0];
+      delete data.id;
+      firebaseDB.ref('Users/uid1/inventory').child(id).update(data);
+    }
+      
+
+    props.submission(data);
+    setShowModal(false);
+  }
 
   return (
     <div>
@@ -36,7 +56,7 @@ const InventoryItem = (props) => {
       </div>
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Add Product</Modal.Title>
+          <Modal.Title>{props.itemState}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form>
@@ -44,27 +64,27 @@ const InventoryItem = (props) => {
             <input
               style={{ display: "block" }}
               type="text"
-              name="productName"
+              name="name"
               placeholder="Product Name"
-              value={props.prodName}
+              defaultValue={name}
               onChange={(e) => setProductName(e.target.value)}
             />
             <label>Product Price</label>
             <input
               style={{ display: "block" }}
               type="number"
-              name="productPrice"
+              name="price"
               placeholder="Product Price"
-              value={props.productPrice}
+              defaultValue={price}
               onChange={(e) => setProductPrice(e.target.value)}
             />
             <label>Product Quantity</label>
             <input
               style={{ display: "block" }}
               type="number"
-              name="productQuantity"
+              name="quantity"
               placeholder="Product Quantity"
-              value={props.productQuantity}
+              defaultValue={quantity}
               onChange={(e) => setProductQuantity(e.target.value)}
             />
           </form>
@@ -73,12 +93,13 @@ const InventoryItem = (props) => {
           <Button
             variant="primary"
             onClick={(e) => {
-              props.submission({
-                productName: productName,
-                productPrice: productPrice,
-                productQuantity: productQuantity,
-              });
-              setShowModal(false);
+              firebaseAction({
+                name: name,
+                price: price,
+                quantity: quantity,
+                id:id
+              })
+              
             }}
           >
             {" "}
@@ -90,7 +111,7 @@ const InventoryItem = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({ productName: state.productName });
+const mapStateToProps = (state) => ({ name: state.name });
 const mapDispatchToProps = (dispatch) => ({
   submission(inventoryItem) {
     console.log("Inside Redux");

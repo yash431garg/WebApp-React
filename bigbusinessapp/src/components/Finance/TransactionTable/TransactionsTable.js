@@ -5,7 +5,6 @@ import {
   useGlobalFilter,
   usePagination,
 } from "react-table";
-import DataTransaction from "./mock_data.json";
 import { COLUMNS } from "./TableColumn";
 import { TableGlobalFilter } from "./TableGlobalFilter";
 import FirebaseCRUD from '../../../containers/FirebaseCRUD';

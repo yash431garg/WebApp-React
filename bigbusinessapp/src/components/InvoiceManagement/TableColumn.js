@@ -1,19 +1,11 @@
-// these columns are Headers in TransactionTable
 export const COLUMNS = [
   {
-    Header: "Name(PDF)",
-    accessor: "Name",
+    id:"invoiceName",
+    Header: "Invoice Name",
+    accessor: "invoiceName"
   },
   {
+    id:"invoiceDate",
     Header: "Creation Date",
-    accessor: "CreationDate",
-  },
-  // {
-  //     Header: 'FileSize',
-  //     accessor: 'FileSize'
-  // },
-  // {
-  //     Header: ':',
-  //     accessor: ':'
-  // }
-];
+    accessor: "invoiceDate"
+  }];

@@ -29,7 +29,7 @@ const ItemDetailsForm = (props) => {
   // const objectName = item.toString();
   const objectName = "item";
   return (
-    <>
+    <div>
       <FormElement
         formname={formname}
         formValues={formValues}
@@ -48,7 +48,7 @@ const ItemDetailsForm = (props) => {
       >
         Add to InvoiceTable
       </button>
-    </>
+    </div>
   );
 };
 

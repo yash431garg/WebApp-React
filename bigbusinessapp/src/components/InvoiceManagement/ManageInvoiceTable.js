@@ -1,19 +1,31 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect, useState } from "react";
 import {
   useTable,
   useSortBy,
   useGlobalFilter,
   usePagination,
 } from "react-table";
+
 import getDetails from "../InvoiceGeneration/InvoicePDF";
-import InvoiceData from "./InvoiceData.json";
 import { COLUMNS } from "./TableColumn";
-// import "./TableCss.css";
 import { TableGlobalFilter } from "./TableGlobalFilter";
+import firebaseDB from '../../containers/Firebase';
 
 const ManageInvoiceTable = () => {
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => InvoiceData, []);
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    firebaseDB.ref('Users/uid1').child('invoice').on('value', function (snapshot) {
+      let json = snapshot.val();
+      let keys = Object.keys(json);
+      let vals = Object.values(json);
+      for (let i = 0; i < keys.length; i++) {
+        vals[i].id = keys[i];
+      }
+      console.log(vals);
+      setData(vals);
+    });
+  }, []);
 
   const tableInstance = useTable(
     {
@@ -41,45 +53,34 @@ const ManageInvoiceTable = () => {
 
   const { globalfilter } = state; //globalfilter prop
 
-  const a_style = {
-    color: "white",
-    textDecoration: "none",
-  };
-
-  const InvoiceObject = InvoiceData[0];
-
   return (
-    <>
-      <div>
-        <TableGlobalFilter filter={globalfilter} setFilter={setGlobalFilter} />{" "}
+    <div>
+      <div className="search_bar">
+        <TableGlobalFilter filter={globalfilter} setFilter={setGlobalFilter} />
         <span>
           <button
-            className="btn btn-secondary"
+            className="btn btn-primary"
             onClick={previousPage}
             title="previous page"
           >
             Prev
           </button>
           <button
-            className="btn btn-secondary"
-            style={{ marginLeft: "15px" }}
+            className="btn btn-primary"
             onClick={nextPage}
             title="next page"
           >
             Next
           </button>
-          <button
-            className="btn btn-secondary"
-            style={{ marginLeft: "15px" }}
-            title="Add a new invoice"
-          >
-            <a style={a_style} href="/invoice">
-              Add Invoice
-            </a>
-          </button>
         </span>
       </div>
-      <table {...getTableProps()}>
+      <h3
+        style={{ fontWeight: "lighter", fontSize: "3em", textAlign: "center" }}
+      >
+        Transactions:
+      </h3>
+
+      <table {...getTableProps()} className="table">
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -102,7 +103,6 @@ const ManageInvoiceTable = () => {
         <tbody {...getTableBodyProps()}>
           {page.map((row) => {
             prepareRow(row);
-            console.log(row);
             return (
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
@@ -113,7 +113,7 @@ const ManageInvoiceTable = () => {
                 <td>
                   <button
                     style={{ border: `none` }}
-                    onClick={() => getDetails({ InvoiceObject })}
+                    onClick={() => getDetails()}
                   >
                     :
                   </button>
@@ -123,44 +123,8 @@ const ManageInvoiceTable = () => {
           })}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 
 export default ManageInvoiceTable;
-
-// import React from "react";
-
-// const manageInvoice = () => {
-//     return <>
-//         <input placeholder="filter by name" />
-//         <button>Sort</button>
-
-//         <input type="file" />
-//     </>
-// };
-
-// export default manageInvoice;
-
-// import React, { useEffect, useRef } from "react";
-
-// const FileInput = ({ value, ...rest }) => {
-//     console.log(value, rest);
-//     const inputRef = useRef();
-//     console.log(inputRef);
-
-//     useEffect(() => {
-//         console.log(value);
-//         if (value === "") {
-//             inputRef.current.value = "";
-//         } else {
-//             inputRef.current.files = value;
-//         }
-//     }, [value]);
-
-//     return <input {...rest} type="file" ref={inputRef} />;
-// };
-
-// export default function ab() {
-//     return <FileInput value="" />;
-// };

@@ -3,21 +3,11 @@ import PropTypes from "prop-types";
 import Reminder from "./Reminder";
 import { SiAddthis } from "react-icons/si";
 import NewReminder from "./NewReminder";
-import { lightGreen } from "@material-ui/core/colors";
 import firebaseDB from '../../../containers/Firebase';
 
 const PaymentReminders = (props) => {
   const [showNewReminder, setshowNewReminder] = useState(false);
-  const [redata, setReminder] = useState([
-    {
-      id: 0,
-      name: "Bb",
-      amount: "2300",
-      date: "02/05/2021",
-    },
-  ]);
-
-
+  const [redata, setReminder] = useState([]);
   useEffect(() =>{
     firebaseDB.ref('Users/uid1').child('reminders').on('value',function(snapshot){
       let json = snapshot.val();
@@ -34,11 +24,8 @@ const PaymentReminders = (props) => {
   },[]);
 
   const AddNewReminder = (redat) => {
-    const id = Math.floor(Math.random() * 10) + 1;
-    const newtask = { id, ...redat };
-    console.log(newtask);
-    setReminder([...redata, newtask]);
-    console.log(redata);
+    firebaseDB.ref('Users/uid1').child('reminders').push(redat);
+
   };
 
   const DeleteReminder = (id) => {
