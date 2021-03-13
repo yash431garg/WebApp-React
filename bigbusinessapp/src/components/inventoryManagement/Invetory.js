@@ -34,8 +34,10 @@ const Inventory = (props) => {
   return items.length > 0 ? (
     items.map((ele, index) => {
       return (
-        <div>
+        
           <div className="product_detail">
+          {(index===0)?  <InventoryItem itemState="Add Item" valChange="Add" />:''}
+        <div>
             <p>Product Name : {ele.name}</p>
             <p>Product Price : {ele.price}</p>
             <p>Product Quantiity : {ele.quantity}</p>
@@ -48,7 +50,7 @@ const Inventory = (props) => {
               valChange="Update"
             />
           </div>
-          <InventoryItem itemState="Add Item" valChange="Add" />
+         
         </div>
       );
     })

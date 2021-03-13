@@ -1,8 +1,7 @@
 let blogs = [
   {
+    id: 0,
     title: "Business Score",
-    date: "21-01-2021",
-
     content: `I still remember in August we were working on my startup idea which is to build a business management app, as a team we were figuring out our UVP ( unique value proposition ). On the other end, my brother wanted to start a trading business of masks and medical equipment that was an actual need of the hour for people at that time. My brother found a buyer and he started looking out for a seller; he started looking in the local directories, and finally, he got a seller ( let's name him Raju ) from Punjab after having a conversation for few days or a week. My brother felt that he was a trustworthy guy because he shared his GST number, address, pictures. 
         \n
         Now my brother requests my dad and asks him for an investment of 15,000. My dad gives him because he wanted him to progress in the business. Indeed that's not a huge amount, my brother wanted to start on a small note. 
@@ -44,6 +43,12 @@ let blogs = [
         \n
         
         HAPPY B SCORING !`,
+  },
+  {
+    id: 1,
+    title: "Yash Garg",
+    content:
+      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
   },
 ];
 

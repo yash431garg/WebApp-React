@@ -1,6 +1,5 @@
 .dues {
   display: flex;
-
   flex-direction: column;
 }
 .dues > h3 {

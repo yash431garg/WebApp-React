@@ -1,4 +1,4 @@
-.container {
+.container_main {
   padding-left: 0;
   margin: 0;
   display: flex;
@@ -8,4 +8,9 @@
   text-align: center;
   font-weight: lighter;
   font-size: 3em;
+}
+.sub_header {
+  background-color: red;
+  height: 50px;
+  width: 100%;
 }

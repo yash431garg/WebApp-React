@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import Reminder from "./Reminder";
 import { SiAddthis } from "react-icons/si";
@@ -21,7 +21,7 @@ const PaymentReminders = (props) => {
 
 
     console.log(redata);
-  },[]);
+  }, []);
 
   const AddNewReminder = (redat) => {
     firebaseDB.ref('Users/uid1').child('reminders').push(redat);

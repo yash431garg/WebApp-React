@@ -20,7 +20,7 @@ const NewReminder = ({ onSaveReminder }) => {
   };
 
   return (
-    <div style={{ margin: "20px" }}>
+    <div style={{ margin: "30px" }}>
       <form onSubmit={onSubmit}>
         <div className="row" style={{ flexWrap: "nowrap" }}>
           <label className="col-2.5">
