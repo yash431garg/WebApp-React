@@ -25,6 +25,7 @@ function Routes() {
       <Route exact path="/invoice" component={Invoice} />
       <Route exact path="/invoicemanage" component={ManageInvoiceTable} />
       <Route exact path="/admin" component={StaffAdminDashboard} />
+
       <Route exact path="/login" component={LoginMain} />
       <Route path="*" component={NotFound} />
     </Switch>

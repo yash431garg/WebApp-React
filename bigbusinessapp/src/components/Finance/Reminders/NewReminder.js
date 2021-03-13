@@ -21,7 +21,7 @@ const NewReminder = ({ onSaveReminder }) => {
   };
 
   return (
-    <div style={{ margin: "20px" }}>
+    <div style={{ margin: "30px" }}>
       <form onSubmit={onSubmit}>
         <div className="row" style={{ flexWrap: "nowrap" }}>
           <label className="col-2.5">
@@ -39,22 +39,22 @@ const NewReminder = ({ onSaveReminder }) => {
         </div>
         <div className="row" style={{ flexWrap: "nowrap" }}>
           <label className="col-2.5">Transaction Type:</label>
-          <label className="col-2">
-            Receive :{" "}
-            <span>
-              <input
-                type="radio"
-                value={transtype}
-                onChange={(e) => setTransType(e.target.value)}
-              />
-            </span>
-          </label>{" "}
-          <label className="col-8">
-            Pay :{" "}
-            <span>
-              <input type="radio" />
-            </span>
-          </label>
+          <select className="col-2">
+            <option
+              type="radio"
+              value={transtype}
+              onChange={(e) => setTransType(e.target.value)}
+            >
+              Receive
+            </option>
+            <option
+              type="radio"
+              value={transtype}
+              onChange={(e) => setTransType(e.target.value)}
+            >
+              Pay
+            </option>
+          </select>{" "}
         </div>
         <div className="row" style={{ flexWrap: "nowrap" }}>
           <label className="col-2.5">

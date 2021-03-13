@@ -10,7 +10,15 @@ import "./MainFinance.css";
 
 const MainFinance = () => {
   return (
-    <div className="container">
+    <div className="container_main">
+      <div className="sub_header">
+        <a className="li_finance_r" href="#reminder">
+          Reminder
+        </a>
+        <a className="li_finance_d" href="#due">
+          Dues
+        </a>
+      </div>
       <div className="transaction">
         <TransactionsTable />
       </div>

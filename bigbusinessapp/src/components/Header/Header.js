@@ -1,10 +1,8 @@
 import React from "react";
 import "../Header/Header.css";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-// import { Link } from "react-scroll";
 import { Link } from "react-router-dom";
+// import { Link } from "react-scroll";
 // import { TransactionsTable } from '../Finance/Tables/TransactionsTable';
-
 //this func returns header and Transaction table as of now
 function Header() {
   return (
@@ -13,46 +11,44 @@ function Header() {
         <li className="li">
           <Link to="/">BigBusiness</Link>
         </li>
-        <li className="li_finance">
-          <Link to="/mainfinance">Finance</Link>
-          <a className="li_finance_r" href="#reminder">
-            Reminder
-          </a>
-          <a className="li_finance_d" href="#due">
-            Dues
-          </a>
-        </li>
-        <li className="li">
-          <Link to="contact.asp">About</Link>
-        </li>
-        <li className="li">
+        <li className="li_end">
           <Link to="/page">
-            <AccountCircleIcon />
+            <i class="fas fa-user-circle"></i>
           </Link>
+        </li>
+        <li className="li_finance">
+          <Link to="/mainfinance">
+            <i class="fas fa-wallet"></i>
+          </Link>
+        </li>
+        <li className="li_end">
+          <Link to="contact.asp">
+            <i class="fas fa-info"></i>
+          </Link>
+          <p>About</p>
         </li>
 
         <li className="li_end">
           <Link to="/inventory">
             <i class="fas fa-file-invoice"></i>
           </Link>
-          <p>inventory</p>
+          <p>Inventory</p>
         </li>
         <li className="li_end">
           <Link to="/invoice">
             <i class="fas fa-cart-arrow-down"></i>
           </Link>
-          <p>invoice</p>
+          <p>Invoice</p>
         </li>
         <li className="li_end">
           <Link to="/blogs">
             <i class="fas fa-blog"></i>
           </Link>
-          <p>blogs</p>
+          <p>Blogs</p>
         </li>
         <li className="li_end"></li>
         <li className="li_end"></li>
       </ul>
-      <br />
     </header>
   );
 }
