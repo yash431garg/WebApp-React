@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/bigbussinessapp-testing/static/css/main.05638f72.chunk.css",
+    "main.js": "/bigbussinessapp-testing/static/js/main.2407f457.chunk.js",
+    "main.js.map": "/bigbussinessapp-testing/static/js/main.2407f457.chunk.js.map",
+    "polyfills-dom.js": "/bigbussinessapp-testing/static/js/polyfills-dom.4df870fc.chunk.js",
+    "polyfills-dom.js.map": "/bigbussinessapp-testing/static/js/polyfills-dom.4df870fc.chunk.js.map",
+    "runtime-main.js": "/bigbussinessapp-testing/static/js/runtime-main.f2712830.js",
+    "runtime-main.js.map": "/bigbussinessapp-testing/static/js/runtime-main.f2712830.js.map",
+    "static/js/3.12b798bd.chunk.js": "/bigbussinessapp-testing/static/js/3.12b798bd.chunk.js",
+    "static/js/3.12b798bd.chunk.js.map": "/bigbussinessapp-testing/static/js/3.12b798bd.chunk.js.map",
+    "static/css/4.d624adbd.chunk.css": "/bigbussinessapp-testing/static/css/4.d624adbd.chunk.css",
+    "static/js/4.b907e4c2.chunk.js": "/bigbussinessapp-testing/static/js/4.b907e4c2.chunk.js",
+    "static/js/4.b907e4c2.chunk.js.map": "/bigbussinessapp-testing/static/js/4.b907e4c2.chunk.js.map",
+    "static/js/5.ebbbd301.chunk.js": "/bigbussinessapp-testing/static/js/5.ebbbd301.chunk.js",
+    "static/js/5.ebbbd301.chunk.js.map": "/bigbussinessapp-testing/static/js/5.ebbbd301.chunk.js.map",
+    "static/js/6.3f063f4e.chunk.js": "/bigbussinessapp-testing/static/js/6.3f063f4e.chunk.js",
+    "static/js/6.3f063f4e.chunk.js.map": "/bigbussinessapp-testing/static/js/6.3f063f4e.chunk.js.map",
+    "static/js/7.459aaebf.chunk.js": "/bigbussinessapp-testing/static/js/7.459aaebf.chunk.js",
+    "static/js/7.459aaebf.chunk.js.map": "/bigbussinessapp-testing/static/js/7.459aaebf.chunk.js.map",
+    "static/js/8.e188e4b7.chunk.js": "/bigbussinessapp-testing/static/js/8.e188e4b7.chunk.js",
+    "static/js/8.e188e4b7.chunk.js.map": "/bigbussinessapp-testing/static/js/8.e188e4b7.chunk.js.map",
+    "index.html": "/bigbussinessapp-testing/index.html",
+    "static/css/4.d624adbd.chunk.css.map": "/bigbussinessapp-testing/static/css/4.d624adbd.chunk.css.map",
+    "static/css/main.05638f72.chunk.css.map": "/bigbussinessapp-testing/static/css/main.05638f72.chunk.css.map",
+    "static/js/3.12b798bd.chunk.js.LICENSE.txt": "/bigbussinessapp-testing/static/js/3.12b798bd.chunk.js.LICENSE.txt",
+    "static/js/4.b907e4c2.chunk.js.LICENSE.txt": "/bigbussinessapp-testing/static/js/4.b907e4c2.chunk.js.LICENSE.txt",
+    "static/js/7.459aaebf.chunk.js.LICENSE.txt": "/bigbussinessapp-testing/static/js/7.459aaebf.chunk.js.LICENSE.txt",
+    "static/js/8.e188e4b7.chunk.js.LICENSE.txt": "/bigbussinessapp-testing/static/js/8.e188e4b7.chunk.js.LICENSE.txt",
+    "static/js/polyfills-dom.4df870fc.chunk.js.LICENSE.txt": "/bigbussinessapp-testing/static/js/polyfills-dom.4df870fc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f2712830.js",
+    "static/css/4.d624adbd.chunk.css",
+    "static/js/4.b907e4c2.chunk.js",
+    "static/css/main.05638f72.chunk.css",
+    "static/js/main.2407f457.chunk.js"
+  ]
+}
