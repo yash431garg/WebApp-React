@@ -1,0 +1,30 @@
+.invoice_table tr td:nth-child(2){
+    width:5px;
+}
+.invoice_table{
+    width:98%;
+    margin-right:20px;
+}
+
+.invoice_table thead{
+    display:none;
+}
+.invoice_table tbody tr td{
+    border:none;
+}
+.invoice_table tbody tr {
+    border:1px solid lightgray;
+    border-radius: 25%;
+    margin:5px;
+}
+.input{
+    border-bottom:1px solid black;
+    width:70%;
+}
+.icons{
+    margin:5px;
+    width:5vw;
+}
+button,th{
+    background-color: #5273EB !important;
+  }

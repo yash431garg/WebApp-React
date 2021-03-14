@@ -1,0 +1,10 @@
+.adminDashboard {
+  display: flex;
+  flex-direction: row;
+}
+.admin_staff {
+  width: fit-content;
+}
+.container{
+  margin:0px  !important;
+}

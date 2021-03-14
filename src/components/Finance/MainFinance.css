@@ -1,0 +1,29 @@
+.container_main {
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.transaction_h3 {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 3em;
+}
+/* .sub_header {
+  width: 100%;
+  display:flex;
+  justify-content:flex-end;
+} */
+/* .li_finance_d {
+  margin: 0px 10px 0px 25px;
+  font-size:1.3em;
+  color:black;
+  
+}
+.li_finance_r {
+  margin: 0px 10px 0px 25px;
+  
+  font-size:1.3em;
+  color:black;
+} */
+
