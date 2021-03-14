@@ -15,6 +15,7 @@
 .invoice_table tbody tr {
     border:1px solid lightgray;
     border-radius: 25%;
+    margin:5px;
 }
 .input{
     border-bottom:1px solid black;

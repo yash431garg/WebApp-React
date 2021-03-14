@@ -55,7 +55,7 @@ const Inventory = (props) => {
                     <Card.Text>
                       <h3>{ele.name}</h3>  <p>{ele.quantity} {ele.uom}</p><br />
                 Price : <span>&#8377;</span>{ele.price}<br />
-                Quantities : {ele.quantity}
+                Quantity : {ele.quantity}
                     </Card.Text>
                     <InventoryItem
                       itemState="Edit Item"
