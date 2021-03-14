@@ -1,7 +1,5 @@
 import React from "react";
-
 import FormElement from "./elements/FormElement";
-import "./css/ReceiverDetailsForm.css";
 
 const ReceiverDetailsForm = (props) => {
   const { receiver } = props;
@@ -12,6 +10,11 @@ const ReceiverDetailsForm = (props) => {
       value: receiver["name"],
     },
     {
+      key: "address",
+      type: "text",
+      value: receiver["address"],
+    },
+    {
       key: "email",
       type: "email",
       value: receiver["email"],
@@ -20,11 +23,6 @@ const ReceiverDetailsForm = (props) => {
       key: "mobile",
       type: "tel",
       value: receiver["mobile"],
-    },
-    {
-      key: "address",
-      type: "text",
-      value: receiver["address"],
     },
     {
       key: "gstin",

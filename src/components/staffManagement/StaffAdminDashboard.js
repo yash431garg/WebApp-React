@@ -9,7 +9,8 @@ import { connect } from "react-redux";
 import { setAdminEmployeeDataView } from "../redux-state-management/actionCreators";
 import AdminViewEmployeeHolidays from "./AdminViewEmployeeHolidays";
 import "./StaffManagement.css";
-import firebaseDB from '../../containers/Firebase';
+import firebase from "../../containers/Firebase";
+
 
 
 const StaffAdminDashboard = (props) => {
@@ -22,7 +23,7 @@ const StaffAdminDashboard = (props) => {
   const [employeesData, setEmployeesData] = useState([]);
 
   useEffect(() => {
-    firebaseDB.ref('Users/uid1').child('staffDetails').on('value',function(snapshot){
+    firebase.database.ref('Users/uid1').child('staffDetails').on('value',function(snapshot){
       let json = snapshot.val();
       let keys = Object.keys(json);
       let vals = Object.values(json);

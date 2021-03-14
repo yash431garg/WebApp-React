@@ -1,24 +1,7 @@
 .input_search{
     width:70vw;
 }
-.search_bar{
 
-  padding: 10px;
-  /* box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.75); */
-  width: fit-content;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.search_bar > i{
-    padding: 0px 15px 0px 15px;
-}
-.search_bar > input{
-    padding: 2px;
-  outline-width: 0;
-  border: none;
-  border-bottom: 1px solid #222831;
-}
 .image{
     width:25vw;
 }
@@ -29,7 +12,6 @@
 }
 .view{
     display:flex;
-    flex-direction: column;
 }
 .buttonUpdate{
     padding:0 !important;

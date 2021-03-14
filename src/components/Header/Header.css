@@ -54,3 +54,7 @@ li a:hover {
 .active {
   background-color: #4caf50;
 }
+
+#logout{
+  background-color: transparent;
+}

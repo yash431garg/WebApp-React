@@ -5,9 +5,9 @@ import { addInventoryItem } from "../redux-state-management/actionCreators";
 import { connect } from "react-redux";
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
-import firebaseDB from '../../containers/Firebase';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import "./card.css";
+import firebase from "../../containers/Firebase";
 
 const InventoryItem = (props) => {
   let [name, setProductName] = useState(props.name);
@@ -41,13 +41,13 @@ const InventoryItem = (props) => {
 
     if(props.itemState.includes('Add')){
       delete data.id;
-      firebaseDB.ref('Users/uid1').child('inventory').push(data);
+      firebase.database.ref('Users/uid1').child('inventory').push(data);
     }
       
     else{      
       let id =  data.id[0];
       delete data.id;
-      firebaseDB.ref('Users/uid1/inventory').child(id).update(data);
+      firebase.database.ref('Users/uid1/inventory').child(id).update(data);
     }
       
 

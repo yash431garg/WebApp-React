@@ -1,16 +1,9 @@
 .invoice_table tr td:nth-child(2){
     width:5px;
 }
-.table_tr{
-    padding: 70px;
-}
-
 .invoice_table{
     width:98%;
     margin-right:20px;
-    border-collapse: separate;
-
-    border-spacing: 2em;
 }
 
 .invoice_table thead{
@@ -20,15 +13,12 @@
     border:none;
 }
 .invoice_table tbody tr {
-    border:2px solid black;
+    border:1px solid lightgray;
     border-radius: 25%;
     margin:5px;
 }
-td{
-    border-radius:1px solid black ;
-}
 .input{
-    
+    border-bottom:1px solid black;
     width:70%;
 }
 .icons{
@@ -38,7 +28,3 @@ td{
 button,th{
     background-color: #5273EB !important;
   }
-
-.threeDots.threeDots.threeDots.threeDots{
-    background-color:transparent !important;
-}

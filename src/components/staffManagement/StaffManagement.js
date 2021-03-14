@@ -3,14 +3,15 @@ import PayRollBreakFC from "./PayRollBreakFC";
 import { connect } from "react-redux";
 import StaffMemberCards from "./StaffMemberCards";
 import store from "../redux-state-management/store";
-import firebaseDB from '../../containers/Firebase';
+import firebase from "../../containers/Firebase";
+
 
 const StaffManagement = () => {
   const [employeeData, setEmployeeData] = useState();
   const [showPayrollView, setShowPayrollView] = useState(false);
   const [employeesData,setEmployeesData] = useState([]);
   useEffect(() => {
-    firebaseDB.ref('Users/uid1').child('staffDetails').on('value',function(snapshot){
+    firebase.database.ref('Users/uid1').child('staffDetails').on('value',function(snapshot){
       let json = snapshot.val();
       let keys = Object.keys(json);
       let vals = Object.values(json);

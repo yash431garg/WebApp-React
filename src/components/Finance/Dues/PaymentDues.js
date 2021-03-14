@@ -1,13 +1,13 @@
 import React from "react";
 import { useState,useEffect } from "react";
-import firebaseDB from '../../../containers/Firebase';
 import "./Dues.css";
 import {Button} from 'react-bootstrap';
+import firebase from "../../../containers/Firebase";
 
 const PaymentDues = () => {
   const [dues,setDues] = useState([]);
   useEffect(() => {
-    firebaseDB.ref('Users/uid1').child('dues').on('value',function(snapshot){
+    firebase.database.ref('Users/uid1').child('dues').on('value',function(snapshot){
       let json = snapshot.val();
       let keys = Object.keys(json);
       let vals = Object.values(json);

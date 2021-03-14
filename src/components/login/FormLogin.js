@@ -1,42 +1,35 @@
-import React, { useContext } from "react";
-import { Form, Button } from "react-bootstrap";
-import { LoginContext } from "../../containers/LoginContext";
+import React, { useContext } from 'react';
+import { Form, Button } from 'react-bootstrap';
+import { AuthContext } from '../../containers/AuthContext';
+
 
 const FormLogin = () => {
-  const { mainform, mobile, validation, viewdb } = useContext(LoginContext);
+    const { loginreducer, initiallogin } = useContext(AuthContext);
+    const [state, dispatch] = loginreducer;
+    const [handleInitialLogin] = initiallogin;
 
-  const [displayMainForm] = mainform;
-  const [userMobileNum, setUserMobileNum] = mobile;
-  const [checkValidations] = validation;
-  const [viewDb] = viewdb;
+    // const [displayMainForm] = mainform;
+    // const [userMobileNum, setUserMobileNum] = mobile;
+    // const [checkValidations] = validation;
+    // const [viewDb] = viewdb;
 
-  return (
-    <div className="login_form">
-      <Form autoComplete="off" onSubmit={checkValidations}>
-        <Form.Group id="Name">
-          <Form.Label>Mobile Number</Form.Label>
-          <Form.Control
-            type="tel"
-            name="mobile"
-            value={userMobileNum}
-            onChange={(e) => setUserMobileNum(e.target.value)}
-            required
-          />
-          <span>enter '+91 9000900012'</span>
-        </Form.Group>
-        <Button className="w-100 text-center mt-2" type="submit">
-          Next
-        </Button>
-        <Button
-          className="w-100 text-center mt-2"
-          type="button"
-          onClick={viewDb}
-        >
-          View DB
-        </Button>
-      </Form>
-    </div>
-  );
-};
 
-export default FormLogin;
+
+    return (
+        <>
+            <div>
+                <Form autoComplete='off' onSubmit={handleInitialLogin} >
+                    <Form.Group id='Name'>
+                        <div id='recaptcha_ref'></div>
+                        {/* <Form.Label>Enter Mobile Number</Form.Label> */}
+                        <Form.Control type='tel' name='UserPhoneNumber' value={state.UserPhoneNumber} placeholder='Enter Mobile Number' onChange={(e) => dispatch({ type: 'loginformdata', field: e.target.name, value: e.target.value })} autoFocus required />
+                        {/* <code style={{color:'grey'}}>Example: '9000900012'</code> */}
+                    </Form.Group>
+                    <Button style={{marginLeft:'35px'}} className='button' type='submit'>Login/Sign Up</Button>
+                </Form>
+            </div>
+        </>
+    )
+}
+
+export default FormLogin

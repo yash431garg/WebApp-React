@@ -7,9 +7,9 @@ import {
 } from "react-table";
 import { COLUMNS } from "./TableColumn";
 import { TableGlobalFilter } from "./TableGlobalFilter";
-import FirebaseCRUD from "../../../containers/FirebaseCRUD";
 import "./Table.css";
-import firebaseDB from "../../../containers/Firebase";
+import firebase from "../../../containers/Firebase";
+
 // import transactionIcon from "../../../assets/transactionIcon.svg";
 
 export const TransactionsTable = () => {
@@ -19,7 +19,7 @@ export const TransactionsTable = () => {
   let dataJson = [];
   const datavals = [];
   useEffect(() => {
-    firebaseDB
+    firebase.database
       .ref("Users/uid1")
       .child("transaction-history")
       .on("value", function (snapshot) {

@@ -1,39 +1,46 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Form, Card, Button, Container } from 'react-bootstrap';
-import { LoginContext } from "../../containers/LoginContext";
-import firebase from 'firebase';
+import { AuthContext } from '../../containers/AuthContext';
+import {useHistory} from 'react-router-dom';
+// import firebase from '../../containers/firebase';
+// import { LoginContext } from "../../containers/AuthContext";
+
 const RegisterMain = () => {
-
-    const { mobile, registrationform } = useContext(LoginContext);
-    const [displayRegisterForm] = registrationform;
-    const [userMobileNum] = mobile;
-
-    const REGISTERED_USERS_DB = firebase.database().ref('REGISTERED_USERS');
+    const history  = useHistory();
 
     const reg_FormData = {
         username: '',
         bname: '',
         email: '',
         btype: '',
-        city: '',
+        // city: '',
         phone: ''
     }
 
     const [registrationFinalState, setRegisterFinalState] = useState(reg_FormData);
-    //    const [checkValidUser, setCheckValidUser]= useState(userValid);
+    const { loginreducer } = useContext(AuthContext);
+    const [state, dispatch] = loginreducer;
+    console.log(state);
 
-    //    useEffect(() => {
-    //        console.log(registrationFinalState);
-    //    }, [registrationFinalState])
+
 
 
     const handleFormDataChange = (event) => {
         const { name, value } = event.target;
-        setRegisterFinalState({
-            ...registrationFinalState,
-            [name]: value,
-        });
-        console.log(registrationFinalState)
+        if (name === 'phone') {
+            const countrycode = '+91'
+            const ccphne = countrycode.concat(value);
+            // console.log(ccphne)
+            setRegisterFinalState({
+                ...registrationFinalState,
+                [name]: ccphne,
+            });
+        } else {
+            setRegisterFinalState({
+                ...registrationFinalState,
+                [name]: value,
+            });
+        }
     }
 
     const checkValidations = () => {
@@ -42,9 +49,9 @@ const RegisterMain = () => {
             && registrationFinalState.bname
             && registrationFinalState.email
             && registrationFinalState.btype && registrationFinalState.btype !== '--Choose--'
-            && registrationFinalState.city
+            // && registrationFinalState.city
             && registrationFinalState.phone) {
-            createNewUserDB(registrationFinalState);
+            return true;
         }
 
     }
@@ -52,18 +59,18 @@ const RegisterMain = () => {
     const onFormSubmit = (e) => {
         e.preventDefault();
         checkValidations()
-        //    createNewUserDB(registrationFinalState);
+        if (checkValidations()) {
+            dispatch({ type: 'onregister', payload: registrationFinalState })
+        }
+        console.log('new user: ', state.newuserdata);
+        dispatch({type:'newuserregistersuccess'})
+        history.push('/dashboard');
     }
 
-    const createNewUserDB = (userData) => {
-        //    const userValid = viewDB();
-        console.table(userData);
-        REGISTERED_USERS_DB.child(userMobileNum).set({ ...userData, 'uid': userMobileNum }, (error) => { console.error(error) });
-    }
 
     return (
         <>
-            <div style={{ display: displayRegisterForm }}>
+            <div style={{ display: "displayRegisterForm" }}>
                 <Container className='d-flex justify-content-center' style={{ minHeight: '100vh' }}>
                     <div className='w-100' style={{ maxWidth: '400px' }}>
                         <Card>
@@ -93,13 +100,13 @@ const RegisterMain = () => {
                                             <option>Freelancer</option>
                                         </Form.Control>
                                     </Form.Group>
-                                    <Form.Group id='city'>
+                                    {/* <Form.Group id='city'>
                                         <Form.Label>City</Form.Label>
                                         <Form.Control type='text' value={registrationFinalState.city} name='city' onChange={(e) => handleFormDataChange(e)} required />
-                                    </Form.Group>
+                                    </Form.Group> */}
                                     <Form.Group id='phone'>
                                         <Form.Label>Phone</Form.Label>
-                                        <Form.Control className='alert-info' type='tel' value={userMobileNum} name='phone' onChange={(e) => handleFormDataChange(e)} required />
+                                        <Form.Control  className='alert-info' type='tel' value={state.UserPhoneNumber} name='phone' onChange={(e) => handleFormDataChange(e)} required />
                                     </Form.Group>
                                     <Button className='w-100 text-center mt-2' type='submit'>Sign Up</Button>
                                 </Form>
