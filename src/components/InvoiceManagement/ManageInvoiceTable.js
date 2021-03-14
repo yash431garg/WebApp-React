@@ -62,11 +62,11 @@ const ManageInvoiceTable = () => {
   }
   return (
     <div>
-    <h3 >Invoice</h3>
+    <h3 style={{marginLeft:"25px"}}>Invoice</h3>
       <div className="search_bar">
         <TableGlobalFilter  filter={globalfilter} setFilter={setGlobalFilter} />
-        <Sort className='icons'/>{'    '}
-        <i class="fas fa-filter"></i>{'    '}
+        <Sort className='icons inpIcon'/>{'    '}
+        <i class="fas fa-filter inpIcon"></i>{'    '}
         <AddCircleOutlineIcon className='icons' /> {'    '}
         <span>
           
@@ -106,12 +106,8 @@ const ManageInvoiceTable = () => {
                   );
                 })}
                 <td>
-                  <button
-                    style={{ border: `none` }}
-                   
-                  >
+                  
                     <MoreVertIcon onClick={() => getPDFDetails()}/>
-                  </button>
                 </td>
               </tr>
             );

@@ -36,7 +36,7 @@ const PaymentReminders = (props) => {
 
   return (
     <div>
-      <h2 style={{ fontWeight: "lighter" }}>
+      <h2 style={{ fontWeight: "lighter",marginLeft:"20px"}}>
         {props.title}{" "}
         <SiAddthis
           style={{ color: !showNewReminder ? "blue" : "red" }}

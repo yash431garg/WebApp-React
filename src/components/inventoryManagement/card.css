@@ -1,5 +1,6 @@
-.input_search{
+.input1{
     width:70vw;
+    margin-left:20px;
 }
 
 .image{
@@ -37,4 +38,7 @@
 }
 .page{
     margin-left: 10px;
+}
+.inpIcon{
+    margin:10px;
 }

@@ -20,7 +20,7 @@ function Header() {
           <h5>BigBusiness</h5>
         </li>
 
-        <li className="li" style={{ marginLeft: '50%', paddingTop: '20px', marginRight: '0' }}><><button id='logout' className={state.isUserLoggedin ? ('btn btn-success !important') : ('btn btn-danger !important')} type="button" onClick={() => firebase.logout(state.isUserLoggedin).then(() => window.location.assign('/'))}>log out</button></></li>
+        <li className="li" style={{ marginLeft: '42%', paddingTop: '20px', marginRight: '0' }}><><button id='logout' className={state.isUserLoggedin ? ('btn btn-success !important') : ('btn btn-danger !important')} type="button" onClick={() => firebase.logout(state.isUserLoggedin).then(() => window.location.assign('/'))}>log out</button></></li>
 
 
         <li className="li_end">
@@ -56,7 +56,12 @@ function Header() {
           </Link>
           <p>Invoice</p>
         </li>
-
+        <li className="li_end">
+          <Link to="/invoicemanage">
+            <i class="fas fa-file-invoice"></i>
+          </Link>
+          <p>Invoice</p>
+        </li>
         <li className="li_end">
           <Link to="/inventory">
             <i class="fas fa-cart-arrow-down"></i>

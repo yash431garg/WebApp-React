@@ -6,7 +6,6 @@ const Reminder = ({ redata, onDelete }) => {
   return (
     <div className="remainder_main">
       <div className="remainder_table">
-        <h3>Reminders List: </h3>
         <p>{redata.id}</p>
         <div
           style={{

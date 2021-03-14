@@ -38,10 +38,10 @@ const Inventory = (props) => {
     <div className='page'>
     <h3>Inventory</h3>
       <form>
-        <input className='input_search' type="text" name="name" placeholder="Search Item" /><SearchIcon/>{'       '}
+        <input className='input_search inpIcon' type="text" name="name" placeholder="Search Item" /><SearchIcon/>{'       '}
         <Sort/>{'    '}
-        <i class="fas fa-filter"></i>{'    '}
-        <InventoryItem className='addItem' itemState="Add Item" valChange="Add" />
+        <i class="fas fa-filter inpIcon"></i>{'    '}
+        <InventoryItem className='addItem inpIcon' itemState="Add Item" valChange="Add" />
       </form>
       <div className='view'>
         <div className='cards_container'>
