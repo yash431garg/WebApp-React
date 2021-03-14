@@ -1,7 +1,16 @@
-#name,
+#add_to_invoice--button {
+  margin: 20px 0px 0px 0px;
+  padding: 5px;
+  background-color: #5273EB;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* #name,
 #quantity,
 #rate,
 label,
 input {
   display: inline;
-}
+} */

@@ -1,12 +1,13 @@
 .tableDetail {
   width: 100%;
+  max-width: 1070px;
 }
 
 .tableDetail th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
-  background-color: seagreen;
+  background-color: #5273eb;
   color: white;
   border: 1px solid #ddd;
 }

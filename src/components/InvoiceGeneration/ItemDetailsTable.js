@@ -11,11 +11,11 @@ const ItemDetailsTable = (props) => {
   return (
     <table className="tableDetail">
       <tr>
-        <th>NAME</th>
-        <th>QUANTITY</th>
-        <th>RATE</th>
-        <th>EDIT</th>
-        <th>DELETE</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Rate</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
       {itemInputs.map((item, index) => {
         return (

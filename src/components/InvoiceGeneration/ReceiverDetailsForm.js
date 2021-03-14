@@ -1,7 +1,6 @@
 import React from "react";
-
+// import "./css/ReceiverDetailsForm.css";
 import FormElement from "./elements/FormElement";
-import "./css/ReceiverDetailsForm.css";
 
 const ReceiverDetailsForm = (props) => {
   const { receiver } = props;
@@ -12,15 +11,11 @@ const ReceiverDetailsForm = (props) => {
       value: receiver["name"],
     },
     {
-      key: "email",
-      type: "email",
-      value: receiver["email"],
-    },
-    {
       key: "mobile",
       type: "tel",
       value: receiver["mobile"],
     },
+
     {
       key: "address",
       type: "text",
@@ -32,13 +27,18 @@ const ReceiverDetailsForm = (props) => {
       value: receiver["gstin"],
     },
     {
+      key: "email",
+      type: "email",
+      value: receiver["email"],
+    },
+    {
       key: "region",
       type: "text",
       value: receiver["region"],
     },
   ];
 
-  const formname = "Receiver Details";
+  const formname = "Invoice Details";
   const objectName = "receiver";
   // const objectName = receiver.toString();
   return (

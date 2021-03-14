@@ -6,16 +6,16 @@ const FormElement = (props) => {
   return (
     <form>
       <fieldset>
-        <legend style={{ textAlign: "center" }}>
-          {formname.toUpperCase()}
-        </legend>
-        {formValues.map((value, index) => (
-          <InputElement
-            value={value}
-            key={index.toString()}
-            objectName={objectName}
-          />
-        ))}
+        <legend>{formname.toUpperCase()}</legend>
+        <div id="form_input_elements">
+          {formValues.map((value, index) => (
+            <InputElement
+              value={value}
+              key={index.toString()}
+              objectName={objectName}
+            />
+          ))}
+        </div>
       </fieldset>
     </form>
   );

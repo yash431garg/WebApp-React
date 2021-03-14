@@ -35,17 +35,7 @@ const ItemDetailsForm = (props) => {
         formValues={formValues}
         objectName={objectName}
       />
-      <button
-        style={{
-          margin: "20px",
-          padding: "5px",
-          backgroundColor: "#007bff",
-          color: "white",
-          border: "none",
-          cursor: "pointer",
-        }}
-        onClick={() => handleItemInputsAdd()}
-      >
+      <button id="add_to_invoice--button" onClick={() => handleItemInputsAdd()}>
         Add to InvoiceTable
       </button>
     </>

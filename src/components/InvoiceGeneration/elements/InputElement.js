@@ -22,9 +22,18 @@ const InputElement = (props) => {
     }
   };
 
+  const mySentence = value.key;
+  const words = mySentence.split(" ");
+
+  let labelvalue = words
+    .map((word) => word[0].toUpperCase() + word.substring(1))
+    .join(" ");
+
+  labelvalue = labelvalue === "Gstin" ? "GSTIN" : labelvalue;
+
   return (
-    <div id={value.key}>
-      <label>{`${value.key.toUpperCase()}:`}</label>
+    <div className="label_input_container" id={value.key}>
+      <label>{`${labelvalue}`}</label>
       <input
         type={value.type}
         name={value.key}

@@ -85,27 +85,30 @@ const Invoice = () => {
 
   return (
     <InvoiceContext.Provider value={InvoiceContextValue}>
-      <div id="container">
-        <div id="details_container">
+      <div id="main_container">
+        <div id="container">
           <div id="receiver_details_container">
             <ReceiverDetailsForm receiver={receiver} />
           </div>
           <div id="item_details_container">
             <ItemDetailsForm item={item} />
           </div>
+          <ItemDetailsTable itemInputs={itemInputs} />
+          <button
+            id="generate_invoice--button"
+            onClick={() => generateInvoice()}
+          >
+            Generate Invoice as PDF
+          </button>
+          <>
+            {formEmpty &&
+              setTimeout(() => {
+                setFormEmpty(false);
+              }, 5000) && (
+                <p>PLEASE FILL RECEIVER DETAILS AND ITEM DETAILS FORM</p>
+              )}
+          </>
         </div>
-        <ItemDetailsTable itemInputs={itemInputs} />
-        <button id="generate_invoice--button" onClick={() => generateInvoice()}>
-          Generate Invoice as PDF
-        </button>
-        <>
-          {formEmpty &&
-            setTimeout(() => {
-              setFormEmpty(false);
-            }, 5000) && (
-              <p>PLEASE FILL RECEIVER DETAILS AND ITEM DETAILS FORM</p>
-            )}
-        </>
       </div>
     </InvoiceContext.Provider>
   );
