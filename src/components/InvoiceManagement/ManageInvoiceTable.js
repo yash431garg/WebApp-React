@@ -65,7 +65,7 @@ const ManageInvoiceTable = () => {
   }
   return (
     <div>
-      <h3 style={{ textAlign: "center" }}>Invoice</h3>
+      <h3 style={{ marginLeft: "25px" }}>Invoice</h3>
       <div className="search_bar" style={{ float: "right" }}>
         <TableGlobalFilter filter={globalfilter} setFilter={setGlobalFilter} />
         <Sort className="icons" />
