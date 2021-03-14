@@ -1,0 +1,25 @@
+.table tr td:nth-child(2){
+    width:5px;
+}
+.table{
+    width:95%;
+}
+
+.table thead{
+    display:none;
+}
+.table tbody tr td{
+    border:none;
+}
+.table tbody tr {
+    border:1px solid lightgray;
+    border-radius: 25%;
+}
+.input{
+    border-bottom:1px solid black;
+    width:70%;
+}
+.icons{
+    margin:5px;
+    width:5vw;
+}

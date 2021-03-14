@@ -4,8 +4,9 @@ export const COLUMNS = [
     Header: "Invoice Name",
     accessor: "invoiceName"
   },
-  {
-    id:"invoiceDate",
-    Header: "Creation Date",
-    accessor: "invoiceDate"
-  }];
+  // {
+  //   id:"invoiceDate",
+  //   Header: "Creation Date",
+  //   accessor: "invoiceDate"
+  // }
+];

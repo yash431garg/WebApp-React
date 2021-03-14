@@ -1,0 +1,37 @@
+.input_search{
+    width:70vw;
+}
+
+.image{
+    width:25vw;
+}
+.displaying{
+    border:1px black solid;
+    margin:5px;
+    min-width:15vw;
+}
+.view{
+    display:flex;
+}
+.buttonUpdate{
+    padding:0 !important;
+}
+.cards_container{
+    margin-left:10px;
+    display: flex;
+    
+}
+.cards_container .card{
+    padding:20px;
+}
+.inventoryItem{
+    padding:10px;
+    min-width:15vw;
+}
+.buttonStyle{
+    float:right;
+}
+
+.inventoryItem .card .card-body{
+    padding:0px;
+}
