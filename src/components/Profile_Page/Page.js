@@ -1,6 +1,5 @@
 import React from "react";
 import Profile from "./Profile";
-import { connect } from "react-redux";
 
 function Page() {
   return (
