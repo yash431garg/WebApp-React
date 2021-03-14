@@ -25,7 +25,7 @@ const FormLogin = () => {
                         <Form.Control type='tel' name='UserPhoneNumber' value={state.UserPhoneNumber} placeholder='Enter Mobile Number' onChange={(e) => dispatch({ type: 'loginformdata', field: e.target.name, value: e.target.value })} autoFocus required />
                         {/* <code style={{color:'grey'}}>Example: '9000900012'</code> */}
                     </Form.Group>
-                    <Button style={{marginLeft:'35px'}} className='button' type='submit'>Login/Sign Up</Button>
+                    <Button style={{marginLeft:'30px'}} className='button' type='submit'>Login/Sign Up</Button>
                 </Form>
             </div>
         </>
