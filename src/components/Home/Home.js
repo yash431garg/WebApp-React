@@ -28,7 +28,7 @@ function Home() {
                 type="text"
                 placeholder="Enter Mobile Number"
               ></input>
-              <button className="button">Sign Up/Log in</button>
+              <button className="button">Sign Up</button>
             </div>
           </div>
           <img src={headIcon}></img>

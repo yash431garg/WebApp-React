@@ -4,10 +4,10 @@ import InventoryItem from "./InventoryItem";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./card.css";
 import { connect } from "react-redux";
-import firebaseDB from '../../containers/Firebase';
+import firebaseDB from "../../containers/Firebase";
 import Sort from "@material-ui/icons/Sort";
-import SearchIcon from '@material-ui/icons/Search';
-import FilterListIcon from '@material-ui/icons/FilterList';
+import SearchIcon from "@material-ui/icons/Search";
+import FilterListIcon from "@material-ui/icons/FilterList";
 let items = [
   { productName: "Brush", productPrice: "20", productQuantity: "5" },
 ];
@@ -15,17 +15,18 @@ const Inventory = (props) => {
   let [items, setItems] = useState([]);
   //For page load events
   useEffect(() => {
-    firebaseDB.ref('Users/uid1').child('inventory').on('value', function (snapshot) {
-      let json = snapshot.val();
-      let keys = Object.keys(json);
-      let vals = Object.values(json);
-      for (let i = 0; i < keys.length; i++) {
-        vals[i].id = keys[i];
-      }
-      setItems(vals);
-
-    });
-
+    firebaseDB
+      .ref("Users/uid1")
+      .child("inventory")
+      .on("value", function (snapshot) {
+        let json = snapshot.val();
+        let keys = Object.keys(json);
+        let vals = Object.values(json);
+        for (let i = 0; i < keys.length; i++) {
+          vals[i].id = keys[i];
+        }
+        setItems(vals);
+      });
   }, []);
   let defaultProps = {
     productName: "",
@@ -34,54 +35,68 @@ const Inventory = (props) => {
   };
 
   return (
-    <div className='page'>
-    <h3>Inventory</h3>
+    <div className="page">
+      <h3>Inventory</h3>
       <form>
-        <input className='input_search' type="text" name="name" placeholder="Search Item" /><SearchIcon/>{'       '}
-        <Sort/>{'    '}
-        <i class="fas fa-filter"></i>{'    '}
-        <InventoryItem className='addItem' itemState="Add Item" valChange="Add" />
+        <div className="search_bar">
+          <input
+            className="input_search"
+            type="text"
+            name="name"
+            placeholder="Search Item"
+          />
+          <SearchIcon />
+          {"   "}
+          <i class="fas fa-filter"></i>
+          <Sort />
+          <InventoryItem
+            className="addItem"
+            itemState="Add Item"
+            valChange="Add"
+          />
+        </div>
       </form>
-      <div className='view'>
-        <div className='cards_container'>
+      <div className="view">
+        <div className="cards_container">
           {items.map((ele, index) => {
-
             return (
-
-              <div className='inventoryItem'>
-
+              <div className="inventoryItem">
                 <Card>
                   <Card.Body>
                     <Card.Text>
-                      <h3>{ele.name}</h3>  <p>{ele.quantity} {ele.uom}</p><br />
-                Price : <span>&#8377;</span>{ele.price}<br />
-                Quantity : {ele.quantity}
+                      <h3>{ele.name}</h3>{" "}
+                      <p>
+                        {ele.quantity} {ele.uom}
+                      </p>
+                      <br />
+                      Price : <span>&#8377;</span>
+                      {ele.price}
+                      <br />
+                      Quantity : {ele.quantity}
                     </Card.Text>
                     <InventoryItem
                       itemState="Edit Item"
                       prodName={ele.name}
                       productPrice={ele.price}
                       productQuantity={ele.quantity}
-                      valChange="Update" />
-                      <InventoryItem
+                      valChange="Update"
+                    />
+                    <InventoryItem
                       itemState="Delete Item"
                       prodName={ele.name}
                       productPrice={ele.price}
                       productQuantity={ele.quantity}
-                      valChange="Delete" />
-
+                      valChange="Delete"
+                    />
                   </Card.Body>
-
                 </Card>
               </div>
-
-
             );
           })}
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 const mapStateToProps = (state) => {

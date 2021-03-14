@@ -1,9 +1,16 @@
 .invoice_table tr td:nth-child(2){
     width:5px;
 }
+.table_tr{
+    padding: 70px;
+}
+
 .invoice_table{
     width:98%;
     margin-right:20px;
+    border-collapse: separate;
+
+    border-spacing: 2em;
 }
 
 .invoice_table thead{
@@ -13,9 +20,12 @@
     border:none;
 }
 .invoice_table tbody tr {
-    border:1px solid lightgray;
+    border:2px solid black;
     border-radius: 25%;
     margin:5px;
+}
+td{
+    border-radius:1px solid black ;
 }
 .input{
     border-bottom:1px solid black;
