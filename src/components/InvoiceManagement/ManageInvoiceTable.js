@@ -15,6 +15,7 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import './InvoiceManagement.css';
+
 const ManageInvoiceTable = () => {
   const columns = useMemo(() => COLUMNS, []);
   const [data, setData] = useState([]);
@@ -65,7 +66,7 @@ const ManageInvoiceTable = () => {
       <div className="search_bar">
         <TableGlobalFilter  filter={globalfilter} setFilter={setGlobalFilter} />
         <Sort className='icons'/>{'    '}
-        <FilterListIcon className='icons'/>{'    '}
+        <i class="fas fa-filter"></i>{'    '}
         <AddCircleOutlineIcon className='icons' /> {'    '}
         <span>
           

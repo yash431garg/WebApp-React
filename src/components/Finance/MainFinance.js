@@ -18,11 +18,11 @@ const MainFinance = () => {
       <hr style={{ border: "1px solid #384259", width: "98vw" }} noshade="" />
 
       <div id="remainder">
-        <h3 className="transaction_h3">Reminders : </h3>
+        <h3 className="transaction_h3">Reminders</h3>
         <PaymentReminders />
       </div>
       <div id="due">
-        <h3 className="transaction_h3">Dues :</h3>
+        <h3 className="transaction_h3">Dues</h3>
         <PaymentDues />
       </div>
     </div>
