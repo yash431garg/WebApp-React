@@ -4,7 +4,6 @@ import { ListGroup } from "react-bootstrap";
 import { Card, Table, Button } from "react-bootstrap";
 import { DateRangePickerCalendar, START_DATE } from "react-nice-dates";
 import "react-nice-dates/build/style.css";
-import { StaffList } from "./StaffList";
 import ChatView from "./ChatView";
 import { connect } from "react-redux";
 import { setAdminEmployeeDataView } from "../redux-state-management/actionCreators";

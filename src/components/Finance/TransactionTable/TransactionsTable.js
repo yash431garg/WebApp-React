@@ -73,7 +73,7 @@ export const TransactionsTable = () => {
           textAlign: "center",
         }}
       >
-        Transactions history:
+        Transactions History:
       </h3>
       {/* <img className="table_img" src={transactionIcon}></img> */}
       <table {...getTableProps()} className="table">

@@ -10,3 +10,10 @@
   width: 40%;
   float: right;
 }
+.financeCard{
+  padding: "30px";
+  border: "2px solid black";
+  min-width: 10vw;
+  margin:'10px';
+  box-sizing: border-box;
+}

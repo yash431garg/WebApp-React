@@ -10,7 +10,7 @@ ul {
 .li {
   float: left;
   font-size: 1.2em;
-  margin: 0px 0px 0px 50px;
+  margin: 0px 0px 0px 10px;
 }
 .li_img {
   width: 40px;

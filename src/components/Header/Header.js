@@ -13,7 +13,7 @@ function Header() {
           <Link to="/">
             <img className="li_img" src={logo}></img>
           </Link>
-          <h4>BigBusiness</h4>
+          <h5>BigBusiness</h5>
         </li>
 
         <li className="li_end">

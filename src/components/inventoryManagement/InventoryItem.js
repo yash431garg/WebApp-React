@@ -3,7 +3,11 @@ import React, { useState, useEffect } from "react";
 import { Modal, Button, InputGroup, FormControl } from "react-bootstrap";
 import { addInventoryItem } from "../redux-state-management/actionCreators";
 import { connect } from "react-redux";
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 import firebaseDB from '../../containers/Firebase';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import "./card.css";
 
 const InventoryItem = (props) => {
   let [name, setProductName] = useState(props.name);
@@ -17,16 +21,20 @@ const InventoryItem = (props) => {
     setProductName(props.prodName);
     setProductPrice(props.price);
     setProductQuantity(props.quantity);
+    if(props.valChange=='Delete'){
+      setShowModal(false);
+    }
   },[]);
   function handleShow() {
-    setShowModal(true);
+    if(props.valChange==='Delete'){
+      setShowModal(false);
+    }
+    else
+      setShowModal(true);
   }
 
   function handleClose() {
     setShowModal(false);
-    setProductName = "";
-    setProductPrice = "";
-    setProductQuantity = "";
   }
   
   function firebaseAction(data){
@@ -48,10 +56,15 @@ const InventoryItem = (props) => {
   }
 
   return (
-    <div>
+    <div className='buttonStyle'>
       <div style={{ padding: "10px" }}>
         <Button variant="primary" onClick={handleShow} size="sm">
-          {props.itemState}
+        {(props.valChange==='Delete')?<DeleteIcon/>:''}
+          {(props.valChange==='Update')?<EditIcon/>:''} 
+          {(props.valChange==='Add')?<AddCircleOutlineIcon/>:''}  
+          {'    '}
+        {props.itemState}
+          
         </Button>
       </div>
       <Modal show={showModal} onHide={handleClose}>

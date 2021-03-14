@@ -1,8 +1,7 @@
 import React from "react";
 import { FaTimes } from "react-icons/fa";
 import "./Remainder.css";
-// import remainderIcon from "../../../assets/remainderIcon.svg";
-
+import {Button} from 'react-bootstrap';
 const Reminder = ({ redata, onDelete }) => {
   return (
     <div className="remainder_main">
@@ -18,27 +17,25 @@ const Reminder = ({ redata, onDelete }) => {
           }}
         >
           {redata.map((task, index) => (
-            <div
+            <div className='financeCard'
               key={index}
               style={{
                 padding: "30px",
                 border: "2px solid black",
-                width: "fit-content",
+                width: "15vw",
                 boxSizing: "border-box",
+                margin:'10px'
               }}
             >
               <h5>
                 Name :{task.title}
-                <span style={{ marginLeft: "20px" }}>
-                  <FaTimes
-                    style={{ color: true ? "red" : "default" }}
-                    onClick={() => onDelete(task.id)}
-                    title="Delete this Task?"
-                  />
-                </span>
+                
               </h5>
               <p>Amount :{task.amount} </p>
               <p style={{ width: "100px" }}>Date :{task.reminderDate}</p>
+              
+              <Button>Delete </Button>{'   '}<Button>Edit </Button> 
+              
             </div>
           ))}
         </div>

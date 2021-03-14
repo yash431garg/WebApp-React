@@ -1,6 +1,4 @@
 import React, { useState, useReducer,useEffect } from "react";
-import { StaffList } from "./StaffList";
-
 import PayRollBreakFC from "./PayRollBreakFC";
 import { connect } from "react-redux";
 import StaffMemberCards from "./StaffMemberCards";

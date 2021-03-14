@@ -10,7 +10,11 @@ import getDetails from "../InvoiceGeneration/InvoicePDF";
 import { COLUMNS } from "./TableColumn";
 import { TableGlobalFilter } from "./TableGlobalFilter";
 import firebaseDB from '../../containers/Firebase';
-
+import Sort from "@material-ui/icons/Sort";
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+import FilterListIcon from '@material-ui/icons/FilterList';
+import './InvoiceManagement.css';
 const ManageInvoiceTable = () => {
   const columns = useMemo(() => COLUMNS, []);
   const [data, setData] = useState([]);
@@ -52,35 +56,24 @@ const ManageInvoiceTable = () => {
   } = tableInstance;
 
   const { globalfilter } = state; //globalfilter prop
-
+  function getPDFDetails(){
+    console.log("Inside Get Details");
+  }
   return (
     <div>
+    <h3 >Invoice</h3>
       <div className="search_bar">
-        <TableGlobalFilter filter={globalfilter} setFilter={setGlobalFilter} />
+        <TableGlobalFilter  filter={globalfilter} setFilter={setGlobalFilter} />
+        <Sort className='icons'/>{'    '}
+        <FilterListIcon className='icons'/>{'    '}
+        <AddCircleOutlineIcon className='icons' /> {'    '}
         <span>
-          <button
-            className="btn btn-primary"
-            onClick={previousPage}
-            title="previous page"
-          >
-            Prev
-          </button>
-          <button
-            className="btn btn-primary"
-            onClick={nextPage}
-            title="next page"
-          >
-            Next
-          </button>
+          
         </span>
       </div>
-      <h3
-        style={{ fontWeight: "lighter", fontSize: "3em", textAlign: "center" }}
-      >
-        Transactions:
-      </h3>
+      
 
-      <table {...getTableProps()} className="table">
+      <table {...getTableProps()} className="invoice_table">
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -107,15 +100,16 @@ const ManageInvoiceTable = () => {
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
+                    
                     <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                   );
                 })}
                 <td>
                   <button
                     style={{ border: `none` }}
-                    onClick={() => getDetails()}
+                   
                   >
-                    :
+                    <MoreVertIcon onClick={() => getPDFDetails()}/>
                   </button>
                 </td>
               </tr>
