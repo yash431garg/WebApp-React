@@ -107,8 +107,8 @@ const ManageInvoiceTable = () => {
                   );
                 })}
                 <td>
-                  <button style={{ border: `none` }}>
-                    <MoreVertIcon onClick={() => getPDFDetails()} />
+                  <button  className='threeDots' style={{ border: `none` }}>
+                    <MoreVertIcon  onClick={() => getPDFDetails()} />
                   </button>
                 </td>
               </tr>
