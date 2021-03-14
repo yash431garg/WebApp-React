@@ -1,0 +1,24 @@
+.about_main_icon {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 30em;
+}
+.head_circle_icon {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 20em;
+}
+.about {
+  display: flex;
+  padding: 80px;
+}
+.about_data {
+  margin: 0px 500px 0px 0px;
+}
+.about > img {
+  width: 20em;
+}

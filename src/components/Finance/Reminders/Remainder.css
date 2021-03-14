@@ -1,7 +1,12 @@
-.remainder {
+.remainder_main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  
 }
-.remainder > h3 {
+.remainder_main > h3 {
   font-weight: lighter;
+}
+.remainder_icon{
+  width: 40%;
+  float: right;
 }

@@ -1,0 +1,14 @@
+.blog_images {
+  margin: 40px;
+}
+.blog_images > img {
+  margin: 0px 30px 0px 30px;
+}
+.blog_left_leave{
+  position: absolute;
+}
+.blog_right_leave{
+  position: absolute;
+  right: 0;
+ z-index: -1;
+}

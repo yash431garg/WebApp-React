@@ -5,9 +5,7 @@ import Routes from "./components/Routes";
 import Header from "./components/Header/Header";
 //Entry point for the App
 class App extends Component {
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
   render() {
     return (
       <Provider store={store}>

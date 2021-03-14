@@ -1,0 +1,17 @@
+.sign {
+  display: flex;
+  padding: 100px;
+}
+.sign_data {
+  margin: 0px 0px 0px 250px;
+}
+.sign > img {
+  width: 25em;
+}
+.sign_button {
+  outline: none;
+  border-radius: 10px;
+  background-color: #2f2e41;
+  color: white;
+  border: none;
+}
