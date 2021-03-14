@@ -15,7 +15,7 @@
     border:none;
 }
 .invoice_table tbody tr {
-    border:1px solid lightgray;
+    border:1px solid black;
     border-radius: 25%;
     margin:5px;
 

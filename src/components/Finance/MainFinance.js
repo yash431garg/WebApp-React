@@ -11,7 +11,7 @@ import "./MainFinance.css";
 const MainFinance = () => {
   return (
     <div className="container_main">
-    <h3>Finance</h3>
+    <h3 className='header'>Finance</h3>
       <div className="transaction">
         <TransactionsTable />
       </div>
