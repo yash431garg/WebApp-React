@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./ItemDetailsForm.css";
+import "./css/ItemDetailsForm.css";
 import FormElement from "./elements/FormElement";
 import { InvoiceContext } from "./Invoice";
 
@@ -29,13 +29,12 @@ const ItemDetailsForm = (props) => {
   // const objectName = item.toString();
   const objectName = "item";
   return (
-    <div style={{ display: "grid" }} className="item_detail">
+    <>
       <FormElement
         formname={formname}
         formValues={formValues}
         objectName={objectName}
       />
-
       <button
         style={{
           margin: "20px",
@@ -49,7 +48,7 @@ const ItemDetailsForm = (props) => {
       >
         Add to InvoiceTable
       </button>
-    </div>
+    </>
   );
 };
 

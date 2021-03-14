@@ -1,0 +1,12 @@
+.tableDetail {
+  width: 100%;
+}
+
+.tableDetail th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: seagreen;
+  color: white;
+  border: 1px solid #ddd;
+}
