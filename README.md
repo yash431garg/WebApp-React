@@ -1,3 +1,4 @@
+
 # **Welcome to **BigBusiness App**..!**
 
 ## This project is being developed using *[reactjs](https://reactjs.org/)*;
@@ -7,26 +8,42 @@
 ## Project Structure ( till this commit ) 📑
 
 # Components
+
 Login/Register
+
 Home
+
 Finance
+
 Inventory Management
+
 Invoice Generation
+
 Invoice Management
+
 Staff Management
+
 Blogs
+
 Profile
+
 Header
+
 Routes
+
 About
+
 A NotFound Page.
 
   
 # Containers
 
 Authentication Context
+
 Firebase 
+
 Login
+
 
 Some Basic JSON Data
 * App.js is where you enter the App
