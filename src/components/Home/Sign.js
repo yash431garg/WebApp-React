@@ -7,7 +7,7 @@ function Sign() {
     <div>
       <h1 style={{ textAlign: "center" }}>Sing Up</h1>
       <div className="sign">
-        <img src={signIcon}></img>
+        <img src={signIcon} alt='signIcon'></img>
         <div className="sign_data">
           <h2>Enter your mobile number</h2>
           <p>

@@ -33,7 +33,7 @@ const ItemDetailsTable = (props) => {
                 }}
                 onClick={() => handleItemInputsEdit(item.id)}
               >
-                <i class="far fa-edit"></i>
+                <i className="far fa-edit"></i>
               </button>
             </td>
             <td>

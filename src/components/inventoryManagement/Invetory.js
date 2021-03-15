@@ -40,7 +40,7 @@ const Inventory = (props) => {
       <form>
         <input className='input_search' type="text" name="name" placeholder="Search Item" /><SearchIcon/>{'       '}
         <Sort/>{'    '}
-        <i class="fas fa-filter"></i>{'    '}
+        <i className="fas fa-filter"></i>{'    '}
         <InventoryItem className='addItem' itemState="Add Item" valChange="Add" />
       </form>
       <div className='view'>

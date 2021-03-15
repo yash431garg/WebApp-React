@@ -7,7 +7,7 @@ function Blog() {
   return (
     <div>
       <div className="footer">
-        <img src={map}></img>
+        <img src={map} alt='map'></img>
         <div className="footer_info">
           <h2>Address</h2>
           <h2>We would love to hear from you.</h2>

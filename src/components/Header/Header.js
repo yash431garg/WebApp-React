@@ -25,41 +25,41 @@ function Header() {
 
         <li className="li_end">
           <Link to="/page">
-            <i class="fas fa-user-circle"></i>
+            <i className="fas fa-user-circle"></i>
           </Link>
         </li>
         <li className="li_end">
           <Link to="/staff">
-            <i class="fas fa-users"></i>
+            <i className="fas fa-users"></i>
           </Link>
         </li>
         <li className="li_finance">
           <Link to="/mainfinance">
-            <i class="fas fa-wallet"></i>
+            <i className="fas fa-wallet"></i>
           </Link>
         </li>
         <li className="li_end">
           <Link to="/about">
-            <i class="fas fa-info"></i>
+            <i className="fas fa-info"></i>
           </Link>
           <p>About</p>
         </li>
         <li className="li_end">
           <Link to="/blogs">
-            <i class="fas fa-blog"></i>
+            <i className="fas fa-blog"></i>
           </Link>
           <p>Blogs</p>
         </li>
         <li className="li_end">
           <Link to="/invoice">
-            <i class="fas fa-file-invoice"></i>
+            <i className="fas fa-file-invoice"></i>
           </Link>
           <p>Invoice</p>
         </li>
 
         <li className="li_end">
           <Link to="/inventory">
-            <i class="fas fa-cart-arrow-down"></i>
+            <i className="fas fa-cart-arrow-down"></i>
           </Link>
           <p>Inventory</p>
         </li>

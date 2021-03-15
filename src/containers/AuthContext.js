@@ -1,6 +1,8 @@
 import React, { createContext, useEffect, useReducer } from 'react';
 import { useHistory } from 'react-router';
 import firebase from '../containers/Firebase';
+
+//Auth Context
 export const AuthContext = createContext();
 
 

@@ -6,7 +6,6 @@ import Header from "./components/Header/Header";
 import AuthContextProvider from "./containers/AuthContext";
 //Entry point for the App
 class App extends Component {
-  componentDidMount() { }
   render() {
     return (
       <Provider store={store}>

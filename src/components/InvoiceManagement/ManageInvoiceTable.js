@@ -66,7 +66,7 @@ const ManageInvoiceTable = () => {
       <div className="search_bar">
         <TableGlobalFilter  filter={globalfilter} setFilter={setGlobalFilter} />
         <Sort className='icons'/>{'    '}
-        <i class="fas fa-filter"></i>{'    '}
+        <i className="fas fa-filter"></i>{'    '}
         <AddCircleOutlineIcon className='icons' /> {'    '}
         <span>
           
