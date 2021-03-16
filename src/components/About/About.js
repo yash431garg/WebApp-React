@@ -3,36 +3,30 @@ import "./About.css";
 // import headIcon from "../../assets/headIcon.svg";
 import aboutIcon from "../../assets/aboutIcon.svg";
 import aboutLeader from "../../assets/aboutLeader.svg";
+import Slider from "../Slider/Slider";
 
-function Home() {
+function About() {
   return (
-    <div>
+    <div className="about_main">
       <img src={aboutIcon} className="about_main_icon"></img>
 
       <div className="about">
         <div className="about_data">
-          <h2>Welcome to BigBusiness</h2>
+          <h2>BigBusiness App</h2>
+
           <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Cssical Latin literature from 45 BC,
-            making it over 2000 years old.
+            With Big Business App, one can seamlessly manage their businesses in
+            one single place through the web and mobile application or simply
+            integrate our app into their existing systems. Every time you use
+            our application we give you an added benefit called a B score. It
+            depicts the health and trustworthiness of a business. Our aim is to
+            build an efficient ecosystem for trustworthy business
           </p>
         </div>
       </div>
-      <div className="about">
-        <div className="about_data">
-          <h2>Our Mission</h2>
-          <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Cssical Latin literature from 45 BC,
-            making it over 2000 years old.
-          </p>
-        </div>
-      </div>
-      <img className="about_leader" src={aboutLeader}></img>
+
+      <Slider />
     </div>
   );
 }
-export default Home;
+export default About;

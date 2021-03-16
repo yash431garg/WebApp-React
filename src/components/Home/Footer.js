@@ -1,7 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import map from "../../assets/map.svg";
-import footer from "../../assets/footer.svg";
+import map from "../../assets/map.png";
 
 function Blog() {
   return (
@@ -12,7 +11,7 @@ function Blog() {
           <h2>Address</h2>
           <h2>We would love to hear from you.</h2>
           <p>We are always availbale to address the need of our user</p>
-          <p>+917893455678</p>
+          <p>+917386197412</p>
         </div>
       </div>
     </div>

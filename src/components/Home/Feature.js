@@ -18,9 +18,11 @@ function Feature() {
         <div className="invoice_data">
           <h2>Invoice</h2>
           <p>
-            Generation of inward and outward invoices in simple clicks, track
-            income-expense transactions, financial reports, and forecasting on a
-            single dashboard.
+            We provide you with a single place to generate invoices manually as
+            well as an AI assistant to automate the process. There are
+            pre-existing invoice templates available to save time. One can scan
+            inward invoices and turn an invoice into a QR code for easy
+            transactions.
           </p>
         </div>
       </div>
@@ -29,10 +31,10 @@ function Feature() {
         <div className="inventory_data">
           <h2>Inventory</h2>
           <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Cssical Latin literature from 45 BC,
-            making it over 2000 years old.
+            We have automated your business inventory wherein the data gets
+            pre-populated. Here, you just need to add the quantity of your
+            product and your invoices will be ready. One can also easily
+            customize the same.
           </p>
         </div>
         <img src={inventoryIcon}></img>
@@ -43,10 +45,10 @@ function Feature() {
         <div className="finance_data">
           <h2>Finance</h2>
           <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Cssical Latin literature from 45 BC,
-            making it over 2000 years old.
+            Finance is one of the most crucial activities in businesses, and
+            ensuring everything is maintained makes life easy during auditing.
+            With Big business App, you can easily track and manage all the
+            expenses and incomes, including purchases and returns.
           </p>
         </div>
         <img className="right_leave" src={rightLeaves}></img>
@@ -56,10 +58,10 @@ function Feature() {
         <div className="staff_data">
           <h2>Staff Mangement</h2>
           <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Cssical Latin literature from 45 BC,
-            making it over 2000 years old.
+            Ensuring your relations with staff is key to your business success.
+            You can do away with manual registers with a single click marking of
+            attendance of your employees. This in turn can help you manage
+            payrolls, assign tasks dynamically and manage incentives.
           </p>
         </div>
         <img src={staffIcon}></img>

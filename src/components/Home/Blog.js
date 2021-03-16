@@ -8,7 +8,13 @@ import rightLeave from "../../assets/rightLeave.svg";
 function Blog() {
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>Blogs</h1>
+      <h1 style={{ textAlign: "center" }}>
+        {" "}
+        <a href="/blogs" style={{ textDecoration: "none", color: "black" }}>
+          {" "}
+          Blogs
+        </a>
+      </h1>
       <img className="blog_left_leave" src={leftLeave}></img>
 
       <div className="blog_images">

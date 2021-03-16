@@ -11,7 +11,10 @@ function Contact() {
         <div className="contact_data">
           <h2>Contact Us</h2>
           <div className="contact_icons">
-            <a href={""} target={"_blank"}>
+            <a
+              href={"https://www.instagram.com/big_businessapp"}
+              target={"_blank"}
+            >
               <i class="fab fa-instagram"></i>
             </a>
 
@@ -34,10 +37,15 @@ function Contact() {
             >
               <i class="fab fa-twitter-square"></i>
             </a>
-            <a href={""} target={"_blank"}>
+            <a href={"mailto:cc.bigbusiness@gmail.com"} target={"_blank"}>
               <i class="far fa-envelope"></i>
             </a>
-            <a href={""} target={"_blank"}>
+            <a
+              href={
+                "https://api.whatsapp.com/message/75NQHK4OOG5NM1?_fb_noscript="
+              }
+              target={"_blank"}
+            >
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>

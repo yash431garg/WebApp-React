@@ -4,14 +4,14 @@
   z-index: -1;
   top: 0;
   right: 0;
-  width: 30em;
+  width: 35em;
 }
 .head_circle_icon {
   position: absolute;
   z-index: -1;
   top: 0;
   right: 0;
-  width: 20em;
+  width: 25em;
 }
 .head {
   display: flex;
@@ -26,12 +26,12 @@
   font-size: 1.1em;
 }
 .head > img {
-  width: 20em;
+  width: 23em;
 }
 .login_option{
   border-radius: 2px solid black;
   padding: 10px;
-  box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.75);
+  /* box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.75); */
   width: fit-content;
   display: flex;
   justify-content: center;
