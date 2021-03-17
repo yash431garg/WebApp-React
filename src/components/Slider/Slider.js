@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import "./Slider.css";
 import SliderData from "./SliderData";
-import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+// import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+
+setTimeout(() => {
+  console.log("Yash");
+}, 3000);
+
 const Slider = ({ slides = SliderData }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
-  console.log(length);
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
+  setTimeout(nextSlide, 3000);
 
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
+  // const prevSlide = () => {
+  //   setCurrent(current === 0 ? length - 1 : current - 1);
+  // };
 
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;
@@ -21,12 +26,9 @@ const Slider = ({ slides = SliderData }) => {
 
   return (
     <section className="slider">
-      <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
-      <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
+      {/* <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
+      <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} /> */}
       {SliderData.map((slide, index) => {
-        {
-          console.log(slide.image);
-        }
         return (
           <div
             className={index === current ? "slide active" : "slide"}

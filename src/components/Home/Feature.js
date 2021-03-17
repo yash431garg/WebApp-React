@@ -11,12 +11,16 @@ import leftLeaves from "../../assets/leftLeaves.svg";
 function Feature() {
   return (
     <div>
-      <h1 style={{ textAlign: "center" }}>Features</h1>
+      <h1
+        style={{ textAlign: "center", fontSize: "3em", fontWeight: "bolder" }}
+      >
+        FEATURES
+      </h1>
       <img className="left_leave_home" src={leftLeaves}></img>
       <div className="invoice">
         <img src={invoiceIcon}></img>
         <div className="invoice_data">
-          <h2>Invoice</h2>
+          <h2>INVOICE</h2>
           <p>
             We provide you with a single place to generate invoices manually as
             well as an AI assistant to automate the process. There are
@@ -29,7 +33,7 @@ function Feature() {
 
       <div className="inventory">
         <div className="inventory_data">
-          <h2>Inventory</h2>
+          <h2>INVENTORY</h2>
           <p>
             We have automated your business inventory wherein the data gets
             pre-populated. Here, you just need to add the quantity of your
@@ -43,7 +47,7 @@ function Feature() {
       <div className="finance">
         <img src={financeIcon}></img>
         <div className="finance_data">
-          <h2>Finance</h2>
+          <h2>FINANCE</h2>
           <p>
             Finance is one of the most crucial activities in businesses, and
             ensuring everything is maintained makes life easy during auditing.
@@ -56,7 +60,7 @@ function Feature() {
 
       <div className="staff">
         <div className="staff_data">
-          <h2>Staff Mangement</h2>
+          <h2>STAFF MANAGEMENT</h2>
           <p>
             Ensuring your relations with staff is key to your business success.
             You can do away with manual registers with a single click marking of

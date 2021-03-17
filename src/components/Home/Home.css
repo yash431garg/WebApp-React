@@ -4,7 +4,7 @@
   z-index: -1;
   top: 0;
   right: 0;
-  width: 35em;
+  width: 33em;
 }
 .head_circle_icon {
   position: absolute;
@@ -26,7 +26,7 @@
   font-size: 1.1em;
 }
 .head > img {
-  width: 23em;
+  width: 22em;
 }
 .login_option{
   border-radius: 2px solid black;

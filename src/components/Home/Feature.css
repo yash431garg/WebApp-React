@@ -50,21 +50,22 @@
 .staff > img {
   width: 20em;
 }
-.right_leave{
+.right_leave {
   position: absolute;
   right: 0;
   z-index: -1;
   width: 15em !important;
   height: auto;
-  
 }
-.left_leave_home{
+.left_leave_home {
   position: absolute;
   z-index: -1;
   top: 50%;
-  
 }
-p{
+p {
   font-size: 1.3em;
-  
+}
+h2 {
+  font-size: 2em;
+  font-weight: bolder;
 }

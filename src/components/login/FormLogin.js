@@ -38,11 +38,11 @@ const FormLogin = () => {
       {/* <code style={{color:'grey'}}>Example: '9000900012'</code> */}
 
       <Button
-        style={{ marginLeft: "30px", width: "300px" }}
+        style={{ marginLeft: "30px", width: "180px" }}
         className="button"
         type="submit"
       >
-        Sign Up/Login
+        Sign Up
       </Button>
     </Form>
   );

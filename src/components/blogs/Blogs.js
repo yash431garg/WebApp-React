@@ -12,11 +12,16 @@ function Blogs() {
         title={BlogsNew[0].title}
         content={BlogsNew[0].content}
       />
-      {/* <Blog
+      <Blog
         id={BlogsNew[1].id}
         title={BlogsNew[1].title}
         content={BlogsNew[1].content}
-      /> */}
+      />
+      <Blog
+        id={BlogsNew[2].id}
+        title={BlogsNew[2].title}
+        content={BlogsNew[2].content}
+      />
     </div>
   );
 }

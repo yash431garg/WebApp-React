@@ -1,14 +1,14 @@
 import React from "react";
 import "./About.css";
 // import headIcon from "../../assets/headIcon.svg";
-import aboutIcon from "../../assets/aboutIcon.svg";
-import aboutLeader from "../../assets/aboutLeader.svg";
+// import aboutIcon from "../../assets/aboutIcon.svg";
+// import aboutLeader from "../../assets/aboutLeader.svg";
 import Slider from "../Slider/Slider";
 
 function About() {
   return (
     <div className="about_main">
-      <img src={aboutIcon} className="about_main_icon"></img>
+      {/* <img src={aboutIcon} className="about_main_icon"></img> */}
 
       <div className="about">
         <div className="about_data">
