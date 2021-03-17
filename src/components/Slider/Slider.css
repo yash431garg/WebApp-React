@@ -10,13 +10,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 3vw;
 }
 .slider >img {
   width: 15em;
 }
 .slider {
   position: relative;
-  height: 100vh;
+  height: 78vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,4 +67,7 @@
 
 .active{
   background-color: white !important;
+}
+p{
+  text-align: justify;
 }

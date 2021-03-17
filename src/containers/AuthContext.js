@@ -15,7 +15,6 @@ const reducer = (state, action) => {
             return { ...state, [action.field]: action.value }
         }
         case 'CHECK_IF_USER_ALREADY_REGISTERED': {
-            console.table('data from dispatch', action.value);
             return { ...state, data: action.value }
         }
         case 'IF_OLD_USER': {
