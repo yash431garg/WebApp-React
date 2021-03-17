@@ -1,15 +1,15 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
-import NotFound from "./NotFound";
-import StaffManagement from "./staffManagement/StaffManagement";
-import StaffAdminDashboard from "./staffManagement/StaffAdminDashboard";
+import { Route, Switch } from "react-router-dom";
 import Blogs from "./blogs/Blogs.js";
+import MainFinance from "./Finance/MainFinance";
 import Inventory from "./inventoryManagement/Invetory";
 import Invoice from "./InvoiceGeneration/Invoice";
-import Page from "./Profile_Page/Page";
-import MainFinance from "./Finance/MainFinance";
-import LoginMain from "./login/LoginMain";
 import ManageInvoiceTable from "./InvoiceManagement/ManageInvoiceTable";
+import LoginMain from "./login/LoginMain";
+import NotFound from "./NotFound";
+import Page from "./Profile_Page/Page";
+import StaffAdminDashboard from "./staffManagement/StaffAdminDashboard";
+import StaffManagement from "./staffManagement/StaffManagement";
 
 // this function routes through different components by checking urlpath.
 function Routes() {
