@@ -1,59 +1,18 @@
+import blog1 from "../../assets/blog1.png";
+import blog2 from "../../assets/blog2.png";
+import blog3 from "../../assets/blog3.png";
 let blogs = [
   {
     id: 0,
-    title: "What is big business",
+    title: "What is big business app",
+    img: blog1,
 
-    content: `Manage your business ecosystem seamlessly at a single place
-    As we work towards growing our business, managing everyday tasks can become a hassle. There are 100s of software catering to all major business verticals like HR, Sales, Accounts, etc, with features that you may or may not require. On the other hand, one needs to manage and track all these software that can lead to confusion and thus reducing the overall efficiency of the business.
-    
-    
-    Most importantly, such software caters to large business organizations, leaving the MSME and micro-businesses behind who cannot afford and end up over-complicating their operations.
-    
-    
-    Big Business App aims to support product-based retail & wholesale stores, Micro Businesses, and franchise-based businesses in increasing the efficiency of their business operations.
-    
-    
-    With Big Business App, one can seamlessly manage their businesses in one single place through the web and mobile application or simply integrate our app into their existing systems. We also provide benefits in terms of loans as a reward for ethical business behavior through our concept of B-Score.
-    
-    
-    How can Big Business App help manage a business
-    
-    
-    
-    MSMEs like a wholesaler of garments, chemical industry, or a franchise can easily use the Big Business app to manage their:
-    
-    
-    
-    Business Score: it depicts the health and trustworthiness of a business. Get points every time your business does a good activity on Big Business Apps like sending Invoices, paying salary to staff on time, good customer experience, paying GST, meet quarterly goals, etc. You can avail of loans and be part of our trustworthy business community for achieving the par B score. 
-    
-    
-    Accounting: Generation of inward and outward invoices in simple clicks, track income-expense transactions, financial reports, and forecasting on a single dashboard.
-    
-    
-    Inventory: Manage your purchase orders, return sales, quotes, and products in your inventory to ensure seamless transactions.
-    
-    
-    Staff: Track your employee's leaves, attendance, payrolls and assign tasks to get the most out of the people in your organization.
-    
-    
-    Customer Relationships: Handle happy and angry customers with your services on a priority basis through one single app.
-    
-    
-    
-    
-    
-    
-    For companies to grow from small business to MSME to a full-fledged enterprise market leader, one needs to achieve business efficiency and customer satisfaction.
-    
-    
-    Big Business App envisions to reduce the business failure rate in India by making them more efficient in terms of financial and operations management using technology.
-    
-    
-    We aim to enable small businesses to leverage the efficiency technology provides in an easy and seamless manner, keeping in mind your employees who will be using the same. Move from your inefficient notebooks and sheets, contact us to get a tour of our Bigbusinessapp today at cc.bigbusiness@gmail.com / +91 7386197412`,
+    content: `With big business application you can Manage your business ecosystem seamlessly at a single place As we work towards growing our business, managing everyday tasks can become a hassle.\n There are 100s of software catering to all major business verticals like HR, Sales, Accounts, etc, with features that you may or may not require. On the other hand, one needs to manage and track all these software that can lead to confusion and thus reducing the overall efficiency of the business. Most importantly, such software caters to large business organizations, leaving the MSME and micro-businesses behind who cannot afford and end up over-complicating their operations.Big Business App aims to support product-based retail & wholesale stores, Micro Businesses, and franchise-based businesses in increasing the efficiency of their business operations.With Big Business App, one can seamlessly manage their businesses in one single place through the web and mobile application or simply integrate our app into their existing systems. We also provide benefits in terms of loans as a reward for ethical business behavior through our concept of B-Score.How can Big Business App help manage a business MSMEs like a wholesaler of garments, chemical industry, or a franchise can easily use the Big Business app to manage their:Business Score: it depicts the health and trustworthiness of a business. Get points every time your business does a good activity on Big Business Apps like sending Invoices, paying salary to staff on time, good customer experience, paying GST, meet quarterly goals, etc. You can avail of loans and be part of our trustworthy business community for achieving the par B score.Accounting: Generation of inward and outward invoices in simple clicks, track income-expense transactions, financial reports, and forecasting on a single dashboard.Inventory: Manage your purchase orders, return sales, quotes, and products in your inventory to ensure seamless transactions.Staff: Track your employee's leaves, attendance, payrolls and assign tasks to get the most out of the people in your organization.Customer Relationships: Handle happy and angry customers with your services on a priority basis through one single app.For companies to grow from small business to MSME to a full-fledged enterprise market leader, one needs to achieve business efficiency and customer satisfaction.Big Business App envisions to reduce the business failure rate in India by making them more efficient in terms of financial and operations management using technology.We aim to enable small businesses to leverage the efficiency technology provides in an easy and seamless manner, keeping in mind your employees who will be using the same. Move from your inefficient notebooks and sheets, contact us to get a tour of our Bigbusinessapp today at cc.bigbusiness@gmail.com / +91 7386197412`,
   },
   {
     id: 1,
     title: "Features of big business",
+    img: blog1,
     content: `Big Business App aims to support product-based retail & wholesale stores, Micro Businesses and franchise-based businesses in increasing the efficiency of their business operations and giving them an identity that leads to better opportunities.
 
       If you are a trustworthy MSME or manage franchise businesses, we have provided a host of features that will help you manage your complete business operations across the web and mobile in a single place.
@@ -100,6 +59,7 @@ Having a par B-Score of 750 helps you gain access to our exclusive community whe
   {
     id: 2,
     title: "What is B-score",
+    img: blog3,
     content: `I still remember in August we were working on my startup idea which is to build a business management app, as a team we were figuring out our UVP ( unique value proposition ). On the other end, my brother wanted to start a trading business of masks and medical equipment that was an actual need of the hour for people at that time. My brother found a buyer and he started looking out for a seller; he started looking in the local directories, and finally, he got a seller ( let’s name him Raju ) from Punjab after having a conversation for few days or a week. My brother felt that he was a trustworthy guy because he shared GST number, address, pictures. 
 
     Now my brother requests my dad and asks him for an investment of 15,000. My dad gives him because he wanted him to progress in the business. Indeed that’s not a huge amount, my brother wanted to start on a small note. 

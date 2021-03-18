@@ -1,18 +1,14 @@
-/* .slider_main {
-  display: flex;
-  padding: 100px;
-} */
 .slider_data {
   margin: 0px 0px 0px 250px;
 }
-.slider{
+.slider {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 3vw;
 }
-.slider >img {
+.slider > img {
   width: 15em;
 }
 .slider {
@@ -62,12 +58,9 @@
   transform: scale(1.08);
 }
 
-
-
-
-.active{
+.active {
   background-color: white !important;
 }
-p{
+p {
   text-align: justify;
 }

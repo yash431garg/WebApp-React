@@ -5,12 +5,13 @@ function Blog(props) {
   return (
     <div className="blogs">
       <h2>{props.title}</h2>
+      <img src={props.img}></img>
       <p className="p_less">
         {props.content.length > 100
           ? props.content.substring(0, 250) + "...."
           : props.content}
       </p>
-      <p className="p_more">{props.content}</p>
+      <div className="p_more">{props.content}</div>
 
       <p
         className="p_link"

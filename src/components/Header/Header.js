@@ -42,9 +42,9 @@ function Header() {
           <i class="fas fa-info"></i>
         </li>
         <li className="li_end">
-          <Link to="/blogs" style={{ textDecoration: "none", color: "black" }}>
+          <a href="#blog_id" style={{ textDecoration: "none", color: "black" }}>
             <p>Blogs</p>
-          </Link>
+          </a>
           <i class="fas fa-blog"></i>
         </li>
         {/* <li className="li_end">

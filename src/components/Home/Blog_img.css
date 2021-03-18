@@ -5,21 +5,20 @@
   flex-direction: column;
   align-items: center;
 }
-.blog_images > img {
+.blog_images > a {
+  text-align: center;
   margin: 100px 30px 0px 30px;
-  
 }
-.blog1_img{
+
+.blog_img {
   width: 70%;
   height: auto;
-  
-  
 }
-.blog_left_leave{
+.blog_left_leave {
   position: absolute;
 }
-.blog_right_leave{
+.blog_right_leave {
   position: absolute;
   right: 0;
- z-index: -1;
+  z-index: -1;
 }

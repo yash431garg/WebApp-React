@@ -1,25 +1,24 @@
 import React, { useContext } from "react";
 import "./Home.css";
-import headIcon from "../../assets/headIcon.svg";
-import headMainIcon from "../../assets/headMainIcon.svg";
-import headCircleIcon from "../../assets/headCircleIcon.svg";
+import aboutIcon from "../../assets/aboutIcon.svg";
+// import headMainIcon from "../../assets/headMainIcon.svg";
+import sheadIcon from "../../assets/headIcon.svg";
 import Feature from "./Feature";
-import Blog from "./Blog";
+import BlogImg from "./Blog_img";
 import Contact from "./Contact";
 import Sign from "./Sign";
 import Footer from "./Footer";
 import LoginMain from "../login/LoginMain";
 import Toast from "react-bootstrap/Toast";
-import Slider from "../Slider/Slider";
 import { AuthContext } from "../../containers/AuthContext";
 
 function Home() {
   const { loginreducer } = useContext(AuthContext);
   const [state] = loginreducer;
   return (
-    <div>
+    <div className="home_main">
       <img
-        src={headMainIcon}
+        src={aboutIcon}
         className="head_main_icon"
         alt="head_main_icon"
       ></img>
@@ -54,12 +53,13 @@ function Home() {
               )}
             </div>
           </div>
-          <img src={headIcon} alt="headIcon"></img>
         </div>
       </div>
       {/* <Slider /> */}
       <Feature />
-      <Blog />
+      <div id="blog_id">
+        <BlogImg />
+      </div>
       <Contact />
       {/* <Sign /> */}
       <Footer />
