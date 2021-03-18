@@ -11,7 +11,7 @@ function Blog(props) {
           ? props.content.substring(0, 250) + "...."
           : props.content}
       </p>
-      <div className="p_more">{props.content}</div>
+      <p className="p_more">{props.content}</p>
 
       <p
         className="p_link"
