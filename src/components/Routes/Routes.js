@@ -48,16 +48,16 @@ function Routes() {
             <Route exact path='/' component={Home} />
             {/* <PrivateRoute exact path="/" component={Home} /> */}
             <Route exact path='/login' component={LoginMain} />
-            <PrivateRoute exact path="/mainfinance" component={MainFinance} />
-            <PrivateRoute exact path="/register" component={RegisterMain} />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/mainfinance" component={MainFinance} />
+            <Route exact path="/register" component={RegisterMain} />
+            <Route exact path="/dashboard" component={Dashboard} />
 
-            <PrivateRoute exact path="/Page" component={Page} />
-            <PrivateRoute exact path="/staff" component={StaffManagement} />
-            <PrivateRoute exact path="/inventory" component={Inventory} />
-            <PrivateRoute exact path="/invoice" component={Invoice} />
-            <PrivateRoute exact path="/invoicemanage" component={ManageInvoiceTable} />
-            <PrivateRoute exact path="/admin" component={StaffAdminDashboard} />
+            <Route exact path="/Page" component={Page} />
+            <Route exact path="/staff" component={StaffManagement} />
+            <Route exact path="/inventory" component={Inventory} />
+            <Route exact path="/invoice" component={Invoice} />
+            <Route exact path="/invoicemanage" component={ManageInvoiceTable} />
+            <Route exact path="/admin" component={StaffAdminDashboard} />
 
 
             <Route path='*' component={NotFound} />
