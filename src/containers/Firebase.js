@@ -4,13 +4,14 @@ import 'firebase/database';
 require('dotenv').config();
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAQaQHoA-w6F3qdcHrzk607ZW8BS-J5pqk",
-  authDomain: "bigbusinessapp-web-react.firebaseapp.com",
-  databaseURL: "https://bigbusinessapp-web-react-default-rtdb.firebaseio.com",
-  projectId: "bigbusinessapp-web-react",
-  storageBucket: "bigbusinessapp-web-react.appspot.com",
-  messagingSenderId: "600046682313",
-  appId: "1:600046682313:web:11fc5e5993d8ecf981cd18"
+  apiKey: "AIzaSyDwPtLhbNwh8obwiypkqlczLeAvRBFQ8q0",
+  authDomain: "bigbusinessapp-63860.firebaseapp.com",
+  databaseURL: "https://bigbusinessapp-63860-default-rtdb.firebaseio.com",
+  projectId: "bigbusinessapp-63860",
+  storageBucket: "bigbusinessapp-63860.appspot.com",
+  messagingSenderId: "729856840133",
+  appId: "1:729856840133:web:19903e7057e70e2e2f3bac",
+  measurementId: "G-F2K459TVZZ"
 };
 
 class firebase {
