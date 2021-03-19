@@ -14,14 +14,24 @@
 }
 .about_main {
   display: flex;
+
+  margin-top: 50px;
 }
 .about {
   display: flex;
   padding: 80px;
 }
 .about_data {
-  margin: 0px 500px 0px 0px;
+  margin: -50px 200px 0px 0px;
 }
 .about > img {
   width: 20em;
+}
+.about_data > p {
+  font-size: 1.4em;
+  width: 400px;
+}
+.about_data > h2 {
+  font-size: 2em;
+  font-weight: bolder;
 }

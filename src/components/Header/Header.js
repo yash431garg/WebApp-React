@@ -12,7 +12,7 @@ function Header() {
   const [state] = loginreducer;
   return (
     <header>
-      <ul className="ul">
+      <ul className="ul_main">
         <li className="li">
           <Link to="/">
             <img className="li_img" src={logo} alt="li_img"></img>

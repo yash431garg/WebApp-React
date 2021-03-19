@@ -1,10 +1,10 @@
-.ul_main {
+.ul {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+
   overflow: hidden;
-  position: sticky;
-  top: 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
 }
 
 .li {
@@ -21,21 +21,21 @@
   font-size: 1.2em;
   margin: 10px 30px 0px 0px;
 }
-.li_end {
+.li_side {
   float: right;
   font-size: 1.2em;
   color: black;
   margin: 10px 17px 0px 0px;
   text-decoration: none;
 }
-.li_end p {
+.li_side p {
   font-size: 1.3em;
 }
-.li_end > p:hover {
+.li_side > p:hover {
   text-decoration: none;
   outline: none;
 }
-.li_end > i {
+.li_side > i {
   display: none;
   position: absolute;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -43,11 +43,11 @@
   color: white;
   text-decoration: none;
 }
-/* .li_end:hover > i {
-  display: inline;
-  position: absolute;
-  border-radius: 6px;
-} */
+/* .li_side:hover > i {
+    display: inline;
+    position: absolute;
+    border-radius: 6px;
+  } */
 
 li a {
   display: block;

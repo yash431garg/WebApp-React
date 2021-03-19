@@ -4,10 +4,12 @@ import "./About.css";
 // import aboutIcon from "../../assets/aboutIcon.svg";
 // import aboutLeader from "../../assets/aboutLeader.svg";
 import Slider from "../Slider/Slider";
+import Sidebar from "../Sidebar/Sidebar";
 
 function About() {
   return (
     <div className="about_main">
+      {/* <Sidebar /> */}
       {/* <img src={aboutIcon} className="about_main_icon"></img> */}
 
       <div className="about">

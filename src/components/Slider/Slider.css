@@ -20,31 +20,10 @@
 }
 
 .image {
-  width: 15em;
-  height: 600px;
+  width: 12em;
+  height: 500px;
   border-radius: 10px;
-}
-
-.right-arrow {
-  position: absolute;
-  top: 50%;
-  right: 32px;
-  font-size: 3rem;
-  color: #000;
-  z-index: 10;
-  cursor: pointer;
-  user-select: none;
-}
-
-.left-arrow {
-  position: absolute;
-  top: 50%;
-  left: 32px;
-  font-size: 3rem;
-  color: #000;
-  z-index: 10;
-  cursor: pointer;
-  user-select: none;
+  margin-top: -25px;
 }
 
 .slide {
