@@ -1,12 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Form, Card, Button, Container } from "react-bootstrap";
 import { AuthContext } from "../../containers/AuthContext";
-import { useHistory } from "react-router-dom";
 // import firebase from '../../containers/firebase';
 // import { LoginContext } from "../../containers/AuthContext";
 
 const RegisterMain = () => {
-  const history = useHistory();
 
   const reg_FormData = {
     firstName: '',
@@ -64,7 +62,7 @@ const RegisterMain = () => {
     }
     console.log("new user: ", state.newuserdata);
     dispatch({ type: "newuserregistersuccess" });
-    history.push("/dashboard");
+    // history.push("/dashboard");
   };
 
   return (

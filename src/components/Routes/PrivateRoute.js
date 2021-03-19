@@ -10,8 +10,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     if (currentUser) {
         var showlogin = true;
     }
-    console.log(showlogin);
-
     return (
         <>
 

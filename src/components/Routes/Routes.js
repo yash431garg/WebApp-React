@@ -49,7 +49,7 @@ function Routes() {
       <Route exact path="/login" component={LoginMain} />
       <PrivateRoute exact path="/mainfinance" component={MainFinance} />
       <PrivateRoute exact path="/register" component={RegisterMain} />
-      <PrivateRoute exact path="/dashboard" component={Dashboard} />
+      <Route exact path="/dashboard" component={Dashboard} />
 
       <PrivateRoute exact path="/Page" component={Page} />
       <PrivateRoute exact path="/staff" component={StaffManagement} />

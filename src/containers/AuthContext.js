@@ -15,7 +15,6 @@ const reducer = (state, action) => {
             return { ...state, [action.field]: action.value }
         }
         case 'CHECK_IF_USER_ALREADY_REGISTERED': {
-            console.log(action.value)
             return { ...state, data: action.value }
         }
         case 'IF_OLD_USER': {
@@ -63,12 +62,11 @@ const reducer = (state, action) => {
 
             firebase.database.ref('Users').push({ 'profile': action.payload });
 
-
             return {
                 ...state,
                 newuserdata: action.payload,
                 showRegistrationForm: false,
-                showOtpForm: true
+                redirectreg: true
             }
         }
         case 'USER_SIGNED_IN': {
@@ -90,8 +88,9 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 isUserLoggedin: true,
+                showLoginForm: false,
                 showRegistrationForm: false,
-                showOtpForm: false
+                showOtpForm: true
             }
         }
 
@@ -101,6 +100,7 @@ const reducer = (state, action) => {
                 loginsuccess: true
             }
         }
+
         default:
             break;
     }
@@ -123,7 +123,7 @@ const initialState = {
     user: '',
     newuserdata: '',
     currentUser: null,
-    loginsuccess: false,
+    loginsuccess: false
 }
 
 const AuthContextProvider = (props) => {
@@ -161,11 +161,9 @@ const AuthContextProvider = (props) => {
         async function fetchDB() {
             try {
                 await firebase.database.ref('Users').once('value', (snap) => {
-                    console.log(snap.val());
                     const dbdata = snap.val();
                     let phones = [];
                     for (let i in dbdata) {
-                        console.log(dbdata[i].profile.mobileNumber);
                         phones.push(dbdata[i].profile.mobileNumber);
                     }
                     dispatch({ type: 'CHECK_IF_USER_ALREADY_REGISTERED', value: phones })
@@ -197,6 +195,7 @@ const AuthContextProvider = (props) => {
     //
 
 
+
     // db calls
     const checkIfOldUser = (data) => {
         let isMatchFound = false;
@@ -206,9 +205,11 @@ const AuthContextProvider = (props) => {
         // const trimphne = countryCode.concat(UserPhoneNumber.trim());
         console.log(data);
 
+
+        // check for user in db
         for (let i in data) {
             let mob = data[i];
-            if (mob === UserPhoneNumber) {
+            if (mob === UserPhoneNumber && !isMatchFound) {
                 isMatchFound = true
                 console.log('match found: ', isMatchFound)
                 dispatch({ type: ACTIONS.userisOld })
@@ -216,13 +217,21 @@ const AuthContextProvider = (props) => {
             }
         }
 
-        if (UserPhoneNumber in data && !isMatchFound) {
-            console.log("UserPhoneNumber");
-            isMatchFound = true
-            console.log('match found: ', isMatchFound)
-            dispatch({ type: ACTIONS.userisOld })
-            console.log(state)
-        }
+
+        // alternate logic start
+
+        // if (UserPhoneNumber in data && !isMatchFound) {
+        //     console.log("UserPhoneNumber");
+        //     isMatchFound = true
+        //     console.log('match found: ', isMatchFound)
+        //     dispatch({ type: ACTIONS.userisOld })
+        //     console.log(state)
+        // }
+
+        // alternate logic end
+
+
+
         // for (let i in data) {
         //     let dbphn = data[i].phone;
         //     let dbphntrim = dbphn.trim();
@@ -251,7 +260,7 @@ const AuthContextProvider = (props) => {
                 dispatch({ type: ACTIONS.user, payload: user });
                 dispatch({ type: 'loginsuccess' })
                 // alert(UserPhoneNumber + ' Logged in success.');
-                history.push('/');
+                history.push('/dashboard');
             })
         }).catch((error) => {
             alert(error.message);
