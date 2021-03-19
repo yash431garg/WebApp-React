@@ -65,7 +65,11 @@ function Header() {
           </Link>
           <p>Inventory</p>
         </li> */}
-        {/* <li className="li_end">
+        
+
+        
+
+        <li className="li_end">
           <button
             id="logout"
             className={
@@ -82,7 +86,10 @@ function Header() {
           >
             log out
           </button>
-        </li> */}
+        </li>
+
+
+
       </ul>
     </header>
   );

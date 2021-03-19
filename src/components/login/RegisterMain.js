@@ -9,12 +9,12 @@ const RegisterMain = () => {
   const history = useHistory();
 
   const reg_FormData = {
-    username: "",
-    bname: "",
-    email: "",
-    btype: "",
-    // city: '',
-    phone: "",
+    firstName: '',
+    lastName: '',
+    businessName: '',
+    businessType: '',
+    emailId: '',
+    mobileNumber: '',
   };
 
   const [registrationFinalState, setRegisterFinalState] = useState(
@@ -45,13 +45,12 @@ const RegisterMain = () => {
   const checkValidations = () => {
     if (
       registrationFinalState !== "" &&
-      registrationFinalState.username &&
-      registrationFinalState.bname &&
-      registrationFinalState.email &&
-      registrationFinalState.btype &&
-      registrationFinalState.btype !== "--Choose--" &&
-      // && registrationFinalState.city
-      registrationFinalState.phone
+      registrationFinalState.firstName &&
+      registrationFinalState.lastName &&
+      registrationFinalState.businessName &&
+      registrationFinalState.businessType !== "--Choose--" &&
+      registrationFinalState.emailId &&
+      registrationFinalState.mobileNumber
     ) {
       return true;
     }
@@ -80,43 +79,43 @@ const RegisterMain = () => {
               <Card.Body>
                 <h2 className="text-center mb-4">Sign Up</h2>
                 <Form autoComplete="off" onSubmit={onFormSubmit}>
-                  <Form.Group id="Name">
-                    <Form.Label>Name</Form.Label>
+                  <Form.Group id="firstName">
+                    <Form.Label>First Name</Form.Label>
                     <Form.Control
                       type="text"
-                      value={registrationFinalState.username}
-                      name="username"
+                      value={registrationFinalState.firstName}
+                      name="firstName"
                       onChange={(e) => handleFormDataChange(e)}
                       required
                     />
                   </Form.Group>
-                  <Form.Group id="businessname">
+                  <Form.Group id="lastName">
+                    <Form.Label>Last Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={registrationFinalState.lastName}
+                      name="lastName"
+                      onChange={(e) => handleFormDataChange(e)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group id="businessName">
                     <Form.Label>Business Name</Form.Label>
                     <Form.Control
                       type="text"
-                      value={registrationFinalState.bname}
-                      name="bname"
+                      value={registrationFinalState.businessName}
+                      name="businessName"
                       onChange={(e) => handleFormDataChange(e)}
                       required
                     />
                   </Form.Group>
-                  <Form.Group id="email">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                      type="email"
-                      value={registrationFinalState.email}
-                      name="email"
-                      onChange={(e) => handleFormDataChange(e)}
-                      required
-                    />
-                  </Form.Group>
-                  <Form.Group id="businesstype">
+                  <Form.Group id="businessType">
                     <Form.Label>Business Type</Form.Label>
                     <Form.Control
                       as="select"
                       size="lg"
-                      value={registrationFinalState.btype}
-                      name="btype"
+                      value={registrationFinalState.businessType}
+                      name="businessType"
                       onChange={(e) => handleFormDataChange(e)}
                       required
                     >
@@ -128,17 +127,17 @@ const RegisterMain = () => {
                       <option>Freelancer</option>
                     </Form.Control>
                   </Form.Group>
-                  {/* <Form.Group id='city'>
-                                        <Form.Label>City</Form.Label>
-                                        <Form.Control type='text' value={registrationFinalState.city} name='city' onChange={(e) => handleFormDataChange(e)} required />
-                                    </Form.Group> */}
-                  <Form.Group id="phone">
-                    <Form.Label>Phone</Form.Label>
+                  <Form.Group id='emailId'>
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type='text' value={registrationFinalState.emailId} name='emailId' onChange={(e) => handleFormDataChange(e)} required />
+                  </Form.Group>
+                  <Form.Group id="mobileNumber">
+                    <Form.Label>Mobile Number</Form.Label>
                     <Form.Control
                       className="alert-info"
                       type="tel"
-                      value={state.UserPhoneNumber}
-                      name="phone"
+                      value={registrationFinalState.mobileNumber}
+                      name="mobileNumber"
                       onChange={(e) => handleFormDataChange(e)}
                       required
                     />
