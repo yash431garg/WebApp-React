@@ -20,6 +20,13 @@
 .invoice > img {
   width: 10em;
 }
+.invoice_data > p {
+  font-size: 1.4em;
+}
+.invoice_data > h2 {
+  font-size: 2em;
+  font-weight: bolder;
+}
 .inventory {
   display: flex;
   padding: 100px;
@@ -30,6 +37,13 @@
 .inventory > img {
   width: 20em;
 }
+.inventory_data > p {
+  font-size: 1.4em;
+}
+.inventory_data > h2 {
+  font-size: 2em;
+  font-weight: bolder;
+}
 .finance {
   display: flex;
   padding: 100px;
@@ -37,8 +51,15 @@
 .finance_data {
   margin: 0px 0px 0px 250px;
 }
-.finance > img {
+.finance_data > img {
   width: 20em;
+}
+.finance_data > p {
+  font-size: 1.4em;
+}
+.finance > h2 {
+  font-size: 2em;
+  font-weight: bolder;
 }
 .staff {
   display: flex;
@@ -49,6 +70,13 @@
 }
 .staff > img {
   width: 20em;
+}
+.staff_data > p {
+  font-size: 1.4em;
+}
+.staff_data > h2 {
+  font-size: 2em;
+  font-weight: bolder;
 }
 .right_leave {
   position: absolute;
@@ -61,11 +89,4 @@
   position: absolute;
   z-index: -1;
   top: 50%;
-}
-p {
-  font-size: 1.3em;
-}
-h2 {
-  font-size: 2em;
-  font-weight: bolder;
 }

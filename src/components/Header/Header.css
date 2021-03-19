@@ -28,7 +28,10 @@ ul {
   margin: 10px 17px 0px 0px;
   text-decoration: none;
 }
-.li_end > p:hover{
+.li_end p {
+  font-size: 1.3em;
+}
+.li_end > p:hover {
   text-decoration: none;
   outline: none;
 }
@@ -61,6 +64,6 @@ li a:hover {
   background-color: #4caf50;
 }
 
-#logout{
+#logout {
   background-color: transparent;
 }

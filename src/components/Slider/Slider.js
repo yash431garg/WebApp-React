@@ -14,7 +14,7 @@ const Slider = ({ slides = SliderData }) => {
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
-  setTimeout(nextSlide, 3000);
+  setTimeout(nextSlide, 2000);
 
   // const prevSlide = () => {
   //   setCurrent(current === 0 ? length - 1 : current - 1);
