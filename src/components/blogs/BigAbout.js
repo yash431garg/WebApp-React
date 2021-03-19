@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./Blogs.css";
 import blog1 from "../../assets/blog1.png";
-import blogAbout1 from "../../assets/blogAbout1.jpg";
+import blogAbout1 from "../../assets/BigBusiness.jpeg";
 import blogAbout2 from "../../assets/blogAbout2.jpeg";
 
 function BigAbout() {
   return (
     <div className="blogs">
-      <h2>What is big business app</h2>
+      <h2>What is Big Business Application?</h2>
       <img src={blog1}></img>
 
       <div className="p_more">
@@ -26,7 +26,7 @@ function BigAbout() {
           Businesses, and franchise-based businesses in increasing the
           efficiency of their business operations.
         </p>
-        <img src={blogAbout1}></img>
+        <img id='images' src={blogAbout1} alt=''/>
 
         <p>
           {" "}
@@ -52,7 +52,7 @@ function BigAbout() {
           organization. Customer Relationships: Handle happy and angry customers
           with your services on a priority basis through one single app.
         </p>
-        <img src={blogAbout2}></img>
+        <img id="images" src={blogAbout2} alt=''/>
         <p>
           For companies to grow from small business to MSME to a full-fledged
           enterprise market leader, one needs to achieve business efficiency and
