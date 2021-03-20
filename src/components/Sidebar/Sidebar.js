@@ -7,7 +7,7 @@ function Sidebar() {
   const { loginreducer } = useContext(AuthContext);
   const [state] = loginreducer;
   return (
-    <header>
+    <div className="sidebar">
       <ul className="ul">
         {/* <li className="li_end">
           <Link to="/page">
@@ -66,7 +66,7 @@ function Sidebar() {
           </button>
         </li> */}
       </ul>
-    </header>
+    </div>
   );
 }
 

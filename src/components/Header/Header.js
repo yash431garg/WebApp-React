@@ -24,8 +24,8 @@ function Header() {
           <Link to="/page">
             <i class="fas fa-user-circle"></i>
           </Link>
-        </li>
-        <li className="li_end">
+        </li> */}
+        {/* <li className="li_end">
           <Link to="/staff">
             <i class="fas fa-users"></i>
           </Link>

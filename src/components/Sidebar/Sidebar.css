@@ -1,16 +1,21 @@
-.ul {
-  list-style-type: none;
-
-  overflow: hidden;
+.sidebar {
+  background-color: #5273eb;
   display: flex;
   justify-content: flex-start;
+}
+.ul {
+  list-style-type: none;
+  overflow: hidden;
+  display: flex;
   flex-direction: column;
+  justify-content: left;
 }
 
 .li {
   float: left;
   font-size: 1.2em;
   margin: 0px 0px 0px 10px;
+  width: fit-content;
 }
 .li_img {
   width: 40px;
@@ -51,7 +56,7 @@
 
 li a {
   display: block;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
