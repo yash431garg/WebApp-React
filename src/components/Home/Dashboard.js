@@ -1,13 +1,15 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../containers/AuthContext';
 import firebase from '../../containers/Firebase';
 
-var cu_uname;
-var cu_bname;
-var cu_email;
-var cu_btype;
-var cu_city;
-var cu_phn;
+
+
+var cu_firstName;
+var cu_lastName;
+var cu_businessName;
+var cu_emailID;
+var cu_businessType;
+var cu_mobileNumber;
 var ud = false;
 
 
@@ -16,39 +18,68 @@ const Dashboard = () => {
     const [state] = loginreducer;
     const { currentUser } = state;
 
+    const [rerender,setRerender] = useState(false);
+
+    useEffect(() => {
+        if (rerender === true) {
+            console.log('re-rendered :' ,rerender)
+        }
+
+    }, [rerender])
+
     if (currentUser) {
         var usermeta = currentUser.providerData[0];
         var id = currentUser.uid;
+        let userdatafound = false;
+        var cudata = [];
 
-        firebase.database.ref('Users').child('/uid1/profile')
-            .once('value', (snap) => {
-                console.log(snap.val());
+        firebase.database.ref('Users').once('value', (snap) => {
+            const dbdata = snap.val();
+            const cc = '+91';
+            for (let i in dbdata) {
+                const dbphone = cc.concat(dbdata[i].profile.mobileNumber);
+                if (currentUser.phoneNumber && dbphone === currentUser.phoneNumber) {
+                    console.log(dbdata[i].profile);
+                    userdatafound = true;
+                }
+                if (userdatafound === true) {
+                    cudata.push(dbdata[i].profile);
+                    const cu = cudata[0];
+                    cu_firstName = cu.firstName;
+                    cu_lastName = cu.lastName;
+                    cu_businessName = cu.businessName;
+                    cu_emailID = cu.emailId;
+                    cu_businessType = cu.businessType;
+                    cu_mobileNumber = cu.mobileNumber;
+                }
+
+            }
+            if (cudata !== null) {
                 ud = true;
-                const cu = snap.val();
-                cu_uname = cu.firstName;
-                cu_bname = cu.businessName;
-                cu_email = cu.emailId;
-                cu_btype = cu.businessType;
-                cu_phn = cu.mobileNumber;
-                // console.log('snap.val()', cu.bname);
-            })
+                setRerender(true);
+            }
+        })
     }
-    
+
+    console.log(cudata)
+
     return (
         <>
             {currentUser ? (<h1>Welcome {currentUser.phoneNumber}</h1>) : (<h2>No User Logged In..!</h2>)}
             {currentUser ? (<pre>User UID : {id}</pre>) : (<div></div>)}
             {currentUser ? (<div><span>AUTH metadata : </span> <pre>{JSON.stringify(usermeta)}</pre></div>) : (<div></div>)}
 
+            <hr/>
 
-            <pre>Data from RTDB:</pre>
 
-            {ud ? (<pre>UserName : {cu_uname}</pre>) : (<div></div>)}
-            {ud ? (<pre>Business Name : {cu_bname}</pre>) : (<div></div>)}
-            {ud ? (<pre>Email : {cu_email}</pre>) : (<div></div>)}
-            {ud ? (<pre>Business Type : {cu_btype}</pre>) : (<div></div>)}
-            {ud ? (<pre>City : {cu_city}</pre>) : (<div></div>)}
-            {ud ? (<pre>Phone : {cu_phn}</pre>) : (<div></div>)}
+            <div>Data from RTDB:</div>
+
+            {ud ? (<h6>firstName : <code>{cu_firstName}</code></h6>) : (<div></div>)}
+            {ud ? (<h6>lastName : <code>{cu_lastName}</code></h6>) : (<div></div>)}
+            {ud ? (<h6>Business Name : <code>{cu_businessName}</code></h6>) : (<div></div>)}
+            {ud ? (<h6>Email : <code>{cu_emailID}</code></h6>) : (<div></div>)}
+            {ud ? (<h6>Business Type : <code>{cu_businessType}</code></h6>) : (<div></div>)}
+            {ud ? (<h6>Phone : <code>{cu_mobileNumber}</code></h6>) : (<div></div>)}
 
 
         </>
