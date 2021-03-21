@@ -14,7 +14,7 @@ const InventoryItem = (props) => {
   let [price, setProductPrice] = useState(props.price);
   let [quantity, setProductQuantity] = useState(props.quantity);
   let id = useState(props.id);
-  let [showModal, setShowModal] = useState(false); 
+  let [showModal, setShowModal] = useState(false);
 
   useEffect(()=>{
     console.log(props.prodName);
@@ -36,20 +36,20 @@ const InventoryItem = (props) => {
   function handleClose() {
     setShowModal(false);
   }
-  
+
   function firebaseAction(data){
 
     if(props.itemState.includes('Add')){
       delete data.id;
       firebase.database.ref('Users/uid1').child('inventory').push(data);
     }
-      
-    else{      
+
+    else{
       let id =  data.id[0];
       delete data.id;
       firebase.database.ref('Users/uid1/inventory').child(id).update(data);
     }
-      
+
 
     props.submission(data);
     setShowModal(false);
@@ -60,11 +60,11 @@ const InventoryItem = (props) => {
       <div style={{ padding: "10px" }}>
         <Button variant="primary" onClick={handleShow} size="sm">
         {(props.valChange==='Delete')?<DeleteIcon/>:''}
-          {(props.valChange==='Update')?<EditIcon/>:''} 
-          {(props.valChange==='Add')?<AddCircleOutlineIcon/>:''}  
+          {(props.valChange==='Update')?<EditIcon/>:''}
+          {(props.valChange==='Add')?<AddCircleOutlineIcon/>:''}
           {'    '}
         {props.itemState}
-          
+
         </Button>
       </div>
       <Modal show={showModal} onHide={handleClose}>
@@ -112,7 +112,7 @@ const InventoryItem = (props) => {
                 quantity: quantity,
                 id:id
               })
-              
+
             }}
           >
             {" "}
@@ -121,6 +121,7 @@ const InventoryItem = (props) => {
         </Modal.Footer>
       </Modal>
     </div>
+
   );
 };
 

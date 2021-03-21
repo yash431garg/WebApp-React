@@ -1,52 +1,136 @@
-import React from "react";
-import FormElement from "./elements/FormElement";
+import { useContext, useState } from "react";
+import { Modal } from "react-bootstrap";
+import { InvoiceContext } from "./Invoice";
 
 const ReceiverDetailsForm = (props) => {
+  const { handleReceiverChange } = useContext(InvoiceContext);
   const { receiver } = props;
-  const formValues = [
-    {
-      key: "name",
-      type: "text",
-      value: receiver["name"],
-    },
-    {
-      key: "address",
-      type: "text",
-      value: receiver["address"],
-    },
-    {
-      key: "email",
-      type: "email",
-      value: receiver["email"],
-    },
-    {
-      key: "mobile",
-      type: "tel",
-      value: receiver["mobile"],
-    },
-    {
-      key: "gstin",
-      type: "text",
-      value: receiver["gstin"],
-    },
-    {
-      key: "region",
-      type: "text",
-      value: receiver["region"],
-    },
-  ];
 
-  const formname = "Receiver Details";
-  const objectName = "receiver";
-  // const objectName = receiver.toString();
+  const handleChange = (event) => {
+    const target = event.target;
+    const name = target.name;
+    const objvalue = target.value;
+    handleReceiverChange({ [name]: objvalue });
+  };
+
+  const formname = "Invoice";
+
+  let [showModal, setShowModal] = useState(false);
+  function handleShow() {
+    if (props.valChange === "Delete") {
+      setShowModal(false);
+    } else setShowModal(true);
+  }
+
+  function handleClose() {
+    setShowModal(false);
+  }
+
   return (
-    <FormElement
-      formname={formname}
-      formValues={formValues}
-      objectName={objectName}
-    />
+    // <Modal show={showModal} onHide={handleClose}>
+    //   {/* <Modal.Header closeButton>
+    //       <Modal.Title>{props.itemState}</Modal.Title>
+    //     </Modal.Header> */}
+    //   <Modal.Body>
+        <form>
+          <fieldset>
+            <legend>{formname.toUpperCase()}</legend>
+            <div id="form_input_elements">
+              <div className="label_input_container" id="name">
+                <label>Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={receiver["name"]}
+                  onChange={(event) => {
+                    handleChange(event);
+                  }}
+                  required
+                />
+              </div>
+              <div className="label_input_container" id="mobile">
+                <label>Mobile</label>
+                <input
+                  type="tel"
+                  name="mobile"
+                  value={receiver["mobile"]}
+                  onChange={(event) => {
+                    handleChange(event);
+                  }}
+                  required
+                />
+              </div>
+              <div className="label_input_container" id="address">
+                <label>Address</label>
+                <input
+                  type="text"
+                  name="address"
+                  value={receiver["address"]}
+                  onChange={(event) => {
+                    handleChange(event);
+                  }}
+                  required
+                />
+              </div>
+              <div className="label_input_container" id="gstin">
+                <label>GSTIN</label>
+                <input
+                  type="text"
+                  name="gstin"
+                  value={receiver["gstin"]}
+                  onChange={(event) => {
+                    handleChange(event);
+                  }}
+                  required
+                />
+              </div>
+              <div className="label_input_container" id="email">
+                <label>Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={receiver["email"]}
+                  onChange={(event) => {
+                    handleChange(event);
+                  }}
+                  required
+                />
+              </div>
+              <div className="label_input_container" id="region">
+                <label>Region</label>
+                <input
+                  type="text"
+                  name="region"
+                  value={receiver["region"]}
+                  onChange={(event) => {
+                    handleChange(event);
+                  }}
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+        </form>
+    //   </Modal.Body>
+    //   {/* <Modal.Footer>
+    //       <Button
+    //         variant="primary"
+    //         onClick={(e) => {
+    //           firebaseAction({
+    //             name: name,
+    //             price: price,
+    //             quantity: quantity,
+    //             id:id
+    //           })
+
+    //         }}
+    //       >
+    //         {" "}
+    //         {props.valChange}{" "}
+    //       </Button>
+    //     </Modal.Footer> */}
+    // </Modal>
   );
 };
 
 export default ReceiverDetailsForm;
-

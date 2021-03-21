@@ -1,35 +1,35 @@
-import React, { useMemo, useEffect, useState } from "react";
+import AddCircleOutlineIcon from "@material-ui/icons/AddCircleOutline";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Sort from "@material-ui/icons/Sort";
+import React, { useEffect, useMemo, useState } from "react";
 import {
-  useTable,
-  useSortBy,
   useGlobalFilter,
   usePagination,
+  useSortBy,
+  useTable,
 } from "react-table";
-
-import getDetails from "../InvoiceGeneration/InvoicePDF";
+import firebase from "../../containers/Firebase";
+import "./InvoiceManagement.css";
 import { COLUMNS } from "./TableColumn";
 import { TableGlobalFilter } from "./TableGlobalFilter";
-import Sort from "@material-ui/icons/Sort";
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
-import FilterListIcon from '@material-ui/icons/FilterList';
-import './InvoiceManagement.css';
-import firebase from "../../containers/Firebase";
 
 const ManageInvoiceTable = () => {
   const columns = useMemo(() => COLUMNS, []);
   const [data, setData] = useState([]);
   useEffect(() => {
-    firebase.database.ref('Users/uid1').child('invoice').on('value', function (snapshot) {
-      let json = snapshot.val();
-      let keys = Object.keys(json);
-      let vals = Object.values(json);
-      for (let i = 0; i < keys.length; i++) {
-        vals[i].id = keys[i];
-      }
-      console.log(vals);
-      setData(vals);
-    });
+    firebase.database
+      .ref("Users/uid1")
+      .child("invoice")
+      .on("value", function (snapshot) {
+        let json = snapshot.val();
+        let keys = Object.keys(json);
+        let vals = Object.values(json);
+        for (let i = 0; i < keys.length; i++) {
+          vals[i].id = keys[i];
+        }
+        console.log(vals);
+        setData(vals);
+      });
   }, []);
 
   const tableInstance = useTable(
@@ -57,22 +57,21 @@ const ManageInvoiceTable = () => {
   } = tableInstance;
 
   const { globalfilter } = state; //globalfilter prop
-  function getPDFDetails(){
+  function getPDFDetails() {
     console.log("Inside Get Details");
   }
   return (
     <div>
-    <h3 style={{marginLeft:"25px"}}>Invoice</h3>
+      <h3 style={{ marginLeft: "25px" }}>Invoice</h3>
       <div className="search_bar">
-        <TableGlobalFilter  filter={globalfilter} setFilter={setGlobalFilter} />
-        <Sort className='icons inpIcon'/>{'    '}
-        <i class="fas fa-filter inpIcon"></i>{'    '}
-        <AddCircleOutlineIcon className='icons' /> {'    '}
-        <span>
-          
-        </span>
+        <TableGlobalFilter filter={globalfilter} setFilter={setGlobalFilter} />
+        <Sort className="icons inpIcon" />
+        {"    "}
+        <i class="fas fa-filter inpIcon"></i>
+        {"    "}
+        <AddCircleOutlineIcon className="icons" /> {"    "}
+        <span></span>
       </div>
-      
 
       <table {...getTableProps()} className="invoice_table">
         <thead>
@@ -101,13 +100,11 @@ const ManageInvoiceTable = () => {
               <tr {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
-                    
                     <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
                   );
                 })}
                 <td>
-                  
-                    <MoreVertIcon onClick={() => getPDFDetails()}/>
+                  <MoreVertIcon onClick={() => getPDFDetails()} />
                 </td>
               </tr>
             );

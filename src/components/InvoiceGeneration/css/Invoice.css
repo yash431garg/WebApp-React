@@ -1,0 +1,62 @@
+#main_container {
+  width: 100%;
+  margin: 30px 30px 123px 30px;
+  padding: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#receiver_details_container {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 0px 30px 15px 30px;
+  max-width: 1070px;
+}
+
+#item_details_container {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 0px 30px 15px 30px;
+  max-width: 1070px;
+}
+
+#generate_invoice--button {
+  margin: 30px 0px;
+  padding: 10px;
+  background-color: #5273eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+  float: right;
+}
+
+legend {
+  font-weight: bold;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+}
+
+#form_input_elements {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.label_input_container {
+  flex-grow: 4;
+}
+
+.label_input_container label,
+.label_input_container input {
+  display: block;
+}
