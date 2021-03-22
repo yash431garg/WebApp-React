@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import "./Home.css";
 import aboutIcon from "../../assets/aboutIcon.svg";
-// import headMainIcon from "../../assets/headMainIcon.svg";
-import sheadIcon from "../../assets/headIcon.svg";
 import Feature from "./Feature";
 import BlogImg from "./Blog_img";
 import Contact from "./Contact";
-import Sign from "./Sign";
+import Header from "../Header/Header";
 import Footer from "./Footer";
 import LoginMain from "../login/LoginMain";
 import Toast from "react-bootstrap/Toast";
@@ -17,6 +15,7 @@ function Home() {
   const [state] = loginreducer;
   return (
     <div className="home_main">
+      <Header />
       <img
         src={aboutIcon}
         className="head_main_icon"
@@ -56,11 +55,15 @@ function Home() {
         </div>
       </div>
       {/* <Slider /> */}
-      <Feature />
+      <div id="feature_id">
+        <Feature />
+      </div>
       <div id="blog_id">
         <BlogImg />
       </div>
-      <Contact />
+      <div id="contact_id">
+        <Contact />
+      </div>
       {/* <Sign /> */}
       <Footer />
     </div>

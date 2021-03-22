@@ -39,30 +39,30 @@ function Routes() {
       {/* public Routes */}
       <Route exact path="/about" component={About} />
       <Route exact path="#blog_id" component={Home} />
-
+      <Route exact path="#contact_id" component={Home} />
+      <Route exact path="#feature_id" component={Home} />
       <Route exact path="/AboutBigBusiness" component={BigAbout} />
       <Route exact path="/FeaturesBigBusiness" component={Feature} />
       <Route exact path="/BusinessScore" component={Score} />
-
       <Route exact path="/" component={Home} />
       {/* <PrivateRoute exact path="/" component={Home} /> */}
+      {/* <Route exact path="/MainFinance" component={MainFinance} /> */}
       <Route exact path="/login" component={LoginMain} />
+      <Route exact path="/dashboard" component={Dashboard} />
+      <Route path="*" component={NotFound} />
+      {/* <Route exact path="/page" component={Page} /> */}
       <PrivateRoute exact path="/mainfinance" component={MainFinance} />
       <PrivateRoute exact path="/register" component={RegisterMain} />
-      <Route exact path="/dashboard" component={Dashboard} />
-
-      <PrivateRoute exact path="/Page" component={Page} />
       <PrivateRoute exact path="/staff" component={StaffManagement} />
       <PrivateRoute exact path="/inventory" component={Inventory} />
       <PrivateRoute exact path="/invoice" component={Invoice} />
+      <PrivateRoute exact path="/Page" component={Page} />
       <PrivateRoute
         exact
         path="/invoicemanage"
         component={ManageInvoiceTable}
       />
       <PrivateRoute exact path="/admin" component={StaffAdminDashboard} />
-
-      <Route path="*" component={NotFound} />
     </Switch>
   );
 }

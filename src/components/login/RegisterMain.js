@@ -5,14 +5,13 @@ import { AuthContext } from "../../containers/AuthContext";
 // import { LoginContext } from "../../containers/AuthContext";
 
 const RegisterMain = () => {
-
   const reg_FormData = {
-    firstName: '',
-    lastName: '',
-    businessName: '',
-    businessType: '',
-    emailId: '',
-    mobileNumber: '',
+    firstName: "",
+    lastName: "",
+    businessName: "",
+    businessType: "",
+    emailId: "",
+    mobileNumber: "",
   };
 
   const [registrationFinalState, setRegisterFinalState] = useState(
@@ -73,7 +72,7 @@ const RegisterMain = () => {
           style={{ minHeight: "100vh" }}
         >
           <div className="w-100" style={{ maxWidth: "400px" }}>
-            <Card>
+            <Card id="login_card" style={{ border: "none !important" }}>
               <Card.Body>
                 <h2 className="text-center mb-4">Sign Up</h2>
                 <Form autoComplete="off" onSubmit={onFormSubmit}>
@@ -125,9 +124,15 @@ const RegisterMain = () => {
                       <option>Freelancer</option>
                     </Form.Control>
                   </Form.Group>
-                  <Form.Group id='emailId'>
+                  <Form.Group id="emailId">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type='text' value={registrationFinalState.emailId} name='emailId' onChange={(e) => handleFormDataChange(e)} required />
+                    <Form.Control
+                      type="text"
+                      value={registrationFinalState.emailId}
+                      name="emailId"
+                      onChange={(e) => handleFormDataChange(e)}
+                      required
+                    />
                   </Form.Group>
                   <Form.Group id="mobileNumber">
                     <Form.Label>Mobile Number</Form.Label>

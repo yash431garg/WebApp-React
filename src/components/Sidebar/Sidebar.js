@@ -1,71 +1,44 @@
 import React, { useContext } from "react";
-import "../Header/Header.css";
 import { AuthContext } from "../../containers/AuthContext";
 import { Link } from "react-router-dom";
+import sidebarFinIcon from "../../assets/sidebarFinIcon.svg";
+import sidebarInvtIcon from "../../assets/sidebarInvtIcon.svg";
+import sidebarStaffIcon from "../../assets/sidebarStaffIcon.svg";
+import sidebarInvoIcon from "../../assets/sidebarInvoIcon.svg";
+
 import "./Sidebar.css";
 function Sidebar() {
   const { loginreducer } = useContext(AuthContext);
   const [state] = loginreducer;
   return (
     <div className="sidebar">
-      <ul className="ul">
-        {/* <li className="li_end">
-          <Link to="/page">
-            <i class="fas fa-user-circle"></i>
-          </Link>
-        </li> */}
-
+      <div className="ul">
         <li className="li_side">
           <Link to="/invoice">
-            <i class="fas fa-file-invoice"></i>
+            <img src={sidebarInvoIcon}></img>
             Invoice
           </Link>
         </li>
         <li className="li_side">
           <Link to="/inventory">
-            <i class="fas fa-cart-arrow-down"></i>
+            <img src={sidebarInvtIcon}></img>
             Inventory
           </Link>
         </li>
-        <li className="li_finance">
+        <li className="li_side ">
           <Link to="/mainfinance">
-            <i class="fas fa-wallet"></i>
+            <img src={sidebarFinIcon}></img>
             Finance
           </Link>
         </li>
 
-        {/* <li className="li_side">
-          <Link to="/invoicemanage">
-            Invoice Mangement
-            <i class="fas fa-file-invoice"></i>
-          </Link>
-        </li> */}
         <li className="li_side">
           <Link to="/staff">
-            <i class="fas fa-users"></i>
+            <img src={sidebarStaffIcon}></img>
             Staff
           </Link>
         </li>
-
-        {/* <li className="li_side">
-          <button
-            id="logout"
-            className={
-              state.isUserLoggedin
-                ? "btn btn-success !important"
-                : "btn btn-danger !important"
-            }
-            type="button"
-            onClick={() =>
-              firebase
-                .logout(state.isUserLoggedin)
-                .then(() => window.location.assign("/"))
-            }
-          >
-            log out
-          </button>
-        </li> */}
-      </ul>
+      </div>
     </div>
   );
 }

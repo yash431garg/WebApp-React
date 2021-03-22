@@ -4,6 +4,10 @@ import firebase from "../../containers/Firebase";
 import { AuthContext } from "../../containers/AuthContext";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
+import sidebarFinIcon from "../../assets/sidebarFinIcon.svg";
+import sidebarInvtIcon from "../../assets/sidebarInvtIcon.svg";
+import sidebarStaffIcon from "../../assets/sidebarStaffIcon.svg";
+import sidebarInvoIcon from "../../assets/sidebarInvoIcon.svg";
 // import { Link } from "react-scroll";
 // import { TransactionsTable } from '../Finance/Tables/TransactionsTable';
 //this func returns header and Transaction table as of now
@@ -17,7 +21,6 @@ function Header() {
           <Link to="/">
             <img className="li_img" src={logo} alt="li_img"></img>
           </Link>
-          <h5>BigBusiness</h5>
         </li>
 
         {/* <li className="li_end">
@@ -30,23 +33,62 @@ function Header() {
             <i class="fas fa-users"></i>
           </Link>
         </li> */}
-        {/* <li className="li_finance">
-          <Link to="/mainfinance">
-            <i class="fas fa-wallet"></i>
-          </Link>
-        </li> */}
+
+        <li className="li_end">
+          <button>Sign Up</button>
+        </li>
         <li className="li_end">
           <Link to="/about" style={{ textDecoration: "none", color: "black" }}>
-            <p>About</p>
+            <p>About Us</p>
           </Link>
           <i class="fas fa-info"></i>
         </li>
         <li className="li_end">
-          <a href="#blog_id" style={{ textDecoration: "none", color: "black" }}>
+          <a
+            href="/#contact_id"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <p>Contact Us</p>
+          </a>
+        </li>
+        <li className="li_end">
+          <a
+            href="/#blog_id"
+            style={{ textDecoration: "none", color: "black" }}
+          >
             <p>Blogs</p>
           </a>
           <i class="fas fa-blog"></i>
         </li>
+        <li className="li_end feature">
+          <a
+            href="#feature_id"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <p>Features</p>
+          </a>
+          <div class="feature_dropdown">
+            <Link to="/invoice">
+              <img src={sidebarInvoIcon}></img>
+              Invoice
+            </Link>
+            <Link to="/inventory">
+              <img src={sidebarInvtIcon}></img>
+              Inventory
+            </Link>
+
+            <Link to="/mainfinance">
+              <img src={sidebarFinIcon}></img>
+              Finance
+            </Link>
+
+            <Link to="/staff">
+              <img src={sidebarStaffIcon}></img>
+              Staff
+            </Link>
+          </div>
+        </li>
+
         {/* <li className="li_end">
           <Link to="/invoice">
             <i class="fas fa-file-invoice"></i>
@@ -65,9 +107,8 @@ function Header() {
           </Link>
           <p>Inventory</p>
         </li> */}
-        
 
-        
+        {/*         
 
         <li className="li_end">
           <button
@@ -86,10 +127,7 @@ function Header() {
           >
             log out
           </button>
-        </li>
-
-
-
+        </li> */}
       </ul>
     </header>
   );

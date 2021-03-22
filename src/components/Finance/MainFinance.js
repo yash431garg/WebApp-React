@@ -4,6 +4,8 @@ import PaymentReminders from "./Reminders/PaymentReminders";
 import { TransactionsTable } from "./TransactionTable/TransactionsTable";
 import { Container, Row, Col } from "react-bootstrap";
 import "./MainFinance.css";
+import Header1 from "../Header1/Header1";
+import Sidebar from "../Sidebar/Sidebar";
 // import Routes from './components/Routes';
 // import Header from './components/Header/Header';
 // react-bootstrap here
@@ -11,7 +13,10 @@ import "./MainFinance.css";
 const MainFinance = () => {
   return (
     <div className="container_main">
-    <h3 className='header'>Finance</h3>
+    
+      <Header1 />
+      <Sidebar />
+      <h3 className="header">Finance</h3>
       <div className="transaction">
         <TransactionsTable />
       </div>

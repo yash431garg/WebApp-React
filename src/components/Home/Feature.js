@@ -1,7 +1,7 @@
 import React from "react";
 import "./Feature.css";
 import invoiceIcon from "../../assets/invoiceIcon.svg";
-import Img1 from "../../assets/img1.svg";
+
 import staffIcon from "../../assets/staffIcon.svg";
 import inventoryIcon from "../../assets/inventoryIcon.svg";
 import financeIcon from "../../assets/financeIcon.svg";

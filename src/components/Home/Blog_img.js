@@ -1,7 +1,5 @@
 import React from "react";
-import blogImg1 from "../../assets/blogImg1.svg";
-import blogImg2 from "../../assets/blogImg2.svg";
-import blogImg3 from "../../assets/blogImg3.svg";
+
 import "./Blog_img.css";
 import blog1 from "../../assets/blog1.png";
 import blog2 from "../../assets/blog2.png";
