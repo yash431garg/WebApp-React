@@ -21,6 +21,14 @@ const ReceiverDetailsForm = (props) => {
     setReceiverArray([...ReceiverArray, receiver]);
     console.log(ReceiverArray);
     setShowModal(false);
+    // handleReceiverChange({
+    //   name: "",
+    //   mobile: "",
+    //   address: "",
+    //   gstin: "",
+    //   email: "",
+    //   region: "",
+    // });
   };
 
   const formname = "Receiver Details";
@@ -29,43 +37,21 @@ const ReceiverDetailsForm = (props) => {
   const handleShow = () => setShowModal(true);
   const handleClose = () => setShowModal(false);
 
-  const SelectDropDown = (ReceiverArray) => {
-    return (
-      <>
-        <select name="invoice_names" id="invoice_names--select">
-          <option value="default" disabled>
-            Select Invoice Name
-          </option>
-          {console.log(ReceiverArray)}
-          {ReceiverArray.length !== 0 &&
-            ReceiverArray.map((receiver, index) => (
-              <option key={index} value={receiver.name}>
-                {receiver.name}
-              </option>
-            ))}
-        </select>
-      </>
-    );
-  };
-
   return (
-    <>
+    <div>
       <legend>{formname.toUpperCase()}</legend>
-      {/* <SelectDropDown ReceiverArray={ReceiverArray} /> */}
-      <>
-        <select name="invoice_names" id="invoice_names--select">
-          <option value="default" disabled>
-            Select Invoice Name
-          </option>
-          {console.log(ReceiverArray)}
-          {ReceiverArray.length !== 0 &&
-            ReceiverArray.map((receiver, index) => (
-              <option key={index} value={receiver.name}>
-                {receiver.name}
-              </option>
-            ))}
-        </select>
-      </>
+      <select name="invoice_names" id="invoice_names--select">
+        <option value="default" disabled>
+          Select Invoice Name
+        </option>
+        {console.log(ReceiverArray)}
+        {ReceiverArray.length !== 0 &&
+          ReceiverArray.map((receiver, index) => (
+            <option key={index} value={receiver.name}>
+              {receiver.name}
+            </option>
+          ))}
+      </select>
       <Button variant="primary" id="add_paying--button" onClick={handleShow}>
         Add Paying
       </Button>
@@ -169,7 +155,7 @@ const ReceiverDetailsForm = (props) => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </>
+    </div>
   );
 };
 
