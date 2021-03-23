@@ -62,7 +62,7 @@ function Header() {
         </li>
         <li className="li_end feature">
           <a
-            href="#feature_id"
+            href="/#feature_id"
             style={{ textDecoration: "none", color: "black" }}
           >
             <p>Features</p>
