@@ -83,6 +83,8 @@ const Invoice = () => {
     handleItemInputsEdit,
   };
 
+  const [GST, setGST] = useState(true);
+
   return (
     <InvoiceContext.Provider value={InvoiceContextValue}>
       <div id="main_container">
@@ -93,6 +95,16 @@ const Invoice = () => {
           <div id="item_details_container">
             <ItemDetailsForm item={item} />
           </div>
+          <label htmlFor="gst">
+            <input
+              type="checkbox"
+              name=""
+              id=""
+              checked={GST}
+              onChange={() => setGST(GST ? false : true)}
+            />
+            Include GST
+          </label>
           <button
             id="generate_invoice--button"
             onClick={() => generateInvoice()}

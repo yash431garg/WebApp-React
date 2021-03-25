@@ -16,8 +16,10 @@ const ReceiverDetailsForm = (props) => {
   };
 
   const [ReceiverArray, setReceiverArray] = useState([]);
+  console.log(ReceiverArray);
   const handleSave = (receiver) => {
-    console.log(receiver);
+    // console.log(receiver);
+    console.log(ReceiverArray);
     setReceiverArray([...ReceiverArray, receiver]);
     console.log(ReceiverArray);
     setShowModal(false);
@@ -31,23 +33,55 @@ const ReceiverDetailsForm = (props) => {
     // });
   };
 
+  // const handleOptionSelect=(event)=>{
+  //   handleReceiverChange()
+  // setShowModal(true);
+  // }
+
   const formname = "Receiver Details";
 
   let [showModal, setShowModal] = useState(false);
-  const handleShow = () => setShowModal(true);
+  const handleShow = () => {
+    handleReceiverChange({
+      id: Math.random(),
+      name: "",
+      mobile: "",
+      address: "",
+      gstin: "",
+      email: "",
+      region: "",
+    });
+    setShowModal(true);
+  };
   const handleClose = () => setShowModal(false);
+
+  const [SelectValue, setSelectValue] = useState("default");
 
   return (
     <div>
       <legend>{formname.toUpperCase()}</legend>
-      <select name="invoice_names" id="invoice_names--select">
+      <select
+        name="invoice_names"
+        id="invoice_names--select"
+        value={SelectValue}
+        onChange={(event) => {
+          console.log(`SelectValue - ${SelectValue}`);
+          let index = event.target.value;
+          console.log(index, ReceiverArray[index]);
+          handleReceiverChange(ReceiverArray[index]);
+          console.log(receiver.name);
+          setSelectValue(receiver.name);
+          setShowModal(true);
+          console.log(`SelectValue - ${SelectValue}`);
+        }}
+      >
         <option value="default" disabled>
           Select Invoice Name
         </option>
-        {console.log(ReceiverArray)}
+        {/* {console.log(ReceiverArray)} */}
         {ReceiverArray.length !== 0 &&
           ReceiverArray.map((receiver, index) => (
-            <option key={index} value={receiver.name}>
+            <option key={index} value={index}>
               {receiver.name}
             </option>
           ))}
@@ -147,7 +181,7 @@ const ReceiverDetailsForm = (props) => {
           <Button
             variant="primary"
             onClick={() => {
-              console.log(receiver);
+              // console.log(receiver);
               handleSave(receiver);
             }}
           >
