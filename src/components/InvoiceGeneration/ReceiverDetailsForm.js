@@ -55,7 +55,7 @@ const ReceiverDetailsForm = (props) => {
   };
   const handleClose = () => setShowModal(false);
 
-  const [SelectValue, setSelectValue] = useState("default");
+  const [SelectInvoiceValue, setSelectInvoiceValue] = useState("default");
 
   return (
     <div>
@@ -63,16 +63,16 @@ const ReceiverDetailsForm = (props) => {
       <select
         name="invoice_names"
         id="invoice_names--select"
-        value={SelectValue}
+        defaultValue={SelectInvoiceValue}
         onChange={(event) => {
-          console.log(`SelectValue - ${SelectValue}`);
+          console.log(`SelectValue - ${SelectInvoiceValue}`);
           let index = event.target.value;
           console.log(index, ReceiverArray[index]);
           handleReceiverChange(ReceiverArray[index]);
           console.log(receiver.name);
-          setSelectValue(receiver.name);
+          setSelectInvoiceValue(receiver.name);
           setShowModal(true);
-          console.log(`SelectValue - ${SelectValue}`);
+          console.log(`SelectValue - ${SelectInvoiceValue}`);
         }}
       >
         <option value="default" disabled>
@@ -86,6 +86,7 @@ const ReceiverDetailsForm = (props) => {
             </option>
           ))}
       </select>
+
       <Button variant="primary" id="add_paying--button" onClick={handleShow}>
         Add Paying
       </Button>

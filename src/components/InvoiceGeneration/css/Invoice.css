@@ -46,6 +46,14 @@ input {
   border-bottom: 1px solid #bdbdbd;
 }
 
+select {
+  border: none;
+}
+
+select:hover {
+  border: 1px solid black;
+}
+
 #form_input_elements {
   display: flex;
   justify-content: space-around;

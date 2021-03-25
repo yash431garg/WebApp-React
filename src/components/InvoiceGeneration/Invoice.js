@@ -15,6 +15,7 @@ const Invoice = () => {
     email: "",
     mobile: "",
     gstin: "",
+    IncludeGST: true,
     region: "",
   };
   const [receiver, setReceiver] = useState(receiverSchema);
@@ -98,10 +99,13 @@ const Invoice = () => {
           <label htmlFor="gst">
             <input
               type="checkbox"
-              name=""
-              id=""
+              name="gst"
+              id="gst"
               checked={GST}
-              onChange={() => setGST(GST ? false : true)}
+              onChange={() => {
+                setGST(GST ? false : true);
+                handleReceiverChange({ IncludeGST: GST });
+              }}
             />
             Include GST
           </label>

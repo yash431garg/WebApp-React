@@ -25,8 +25,15 @@ function createPdf(ReceiverDetails, ItemInputsArray) {
   doc.setFontSize(24);
   doc.text("Tax Invoice", pageWidth / 2 - 22, finalY + 20);
 
-  const { name, address, email, mobile, gstin, region } = ReceiverDetails;
-  let IncludeGST = true;
+  const {
+    name,
+    address,
+    email,
+    mobile,
+    gstin,
+    IncludeGST,
+    region,
+  } = ReceiverDetails;
 
   doc.autoTable({
     theme: "grid",
