@@ -8,7 +8,7 @@ import {
   useSortBy,
   useTable,
 } from "react-table";
-import firebase from "../../containers/Firebase";
+import firebase from "../../../containers/Firebase";
 import "./InvoiceManagement.css";
 import { COLUMNS } from "./TableColumn";
 import { TableGlobalFilter } from "./TableGlobalFilter";

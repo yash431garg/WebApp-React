@@ -71,7 +71,13 @@ const Invoice = () => {
       receiver.gstin !== "" &&
       itemInputs.length !== 0
     ) {
-      getDetails({ receiver, itemInputs });
+      let InvoiceId = String(Math.random()).substring(2, 14);
+      let d = new Date();
+      let CreationDate = `${d.getDate()}-${
+        d.getMonth() + 1
+      }-${d.getFullYear()}`;
+
+      getDetails({ InvoiceId, CreationDate, receiver, itemInputs });
       setFormEmpty(false);
     } else setFormEmpty(true);
   };
