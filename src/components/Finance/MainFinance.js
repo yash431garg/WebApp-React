@@ -13,7 +13,6 @@ import Sidebar from "../Sidebar/Sidebar";
 const MainFinance = () => {
   return (
     <div className="container_main">
-    
       <Header1 />
       <Sidebar />
       <h3 className="header">Finance</h3>

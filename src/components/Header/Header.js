@@ -15,100 +15,89 @@ function Header() {
   const { loginreducer } = useContext(AuthContext);
   const [state] = loginreducer;
   return (
-    <header>
-      <ul className="ul_main">
-        <li className="li">
-          <Link to="/">
-            <img className="li_img" src={logo} alt="li_img"></img>
-          </Link>
-        </li>
+    <ul className="ul_main">
+      <li className="li">
+        <Link to="/">
+          <img className="li_img" src={logo} alt="li_img"></img>
+        </Link>
+      </li>
 
-        {/* <li className="li_end">
-          <Link to="/page">
-            <i class="fas fa-user-circle"></i>
-          </Link>
-        </li> */}
-        {/* <li className="li_end">
-          <Link to="/staff">
-            <i class="fas fa-users"></i>
-          </Link>
-        </li> */}
+      <li className="li_end">
+        <button>Sign Up</button>
+      </li>
+      <li className="li_end about_us">
+        <Link to="/about" style={{ textDecoration: "none", color: "black" }}>
+          <p>About us</p>
+        </Link>
+        <i class="fas fa-info"></i>
+      </li>
+      <li className="li_end li_contacts">
+        <a
+          href="/#contact_id"
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          <p>Contact us</p>
+        </a>
+      </li>
+      <li className="li_end li_blogs">
+        <a href="/#blog_id" style={{ textDecoration: "none", color: "black" }}>
+          <p>Blogs</p>
+        </a>
+        <i class="fas fa-blog"></i>
+      </li>
 
-        <li className="li_end">
-          <button>Sign Up</button>
-        </li>
-        <li className="li_end">
-          <Link to="/about" style={{ textDecoration: "none", color: "black" }}>
-            <p>About Us</p>
-          </Link>
-          <i class="fas fa-info"></i>
-        </li>
-        <li className="li_end">
-          <a
-            href="/#contact_id"
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            <p>Contact Us</p>
-          </a>
-        </li>
-        <li className="li_end">
+      <li className="li_end options">
+        <a href="#" style={{ textDecoration: "none", color: "black" }}>
+          <p>Options</p>
+        </a>
+        <div className="options_dropdown">
           <a
             href="/#blog_id"
-            style={{ textDecoration: "none", color: "black" }}
+            style={{ textDecoration: "none", color: "white" }}
           >
             <p>Blogs</p>
           </a>
-          <i class="fas fa-blog"></i>
-        </li>
-        <li className="li_end feature">
+          <Link to="/about" style={{ textDecoration: "none", color: "white" }}>
+            <p>About us</p>
+          </Link>
+
           <a
-            href="/#feature_id"
-            style={{ textDecoration: "none", color: "black" }}
+            href="/#contact_id"
+            style={{ textDecoration: "none", color: "white" }}
           >
-            <p>Features</p>
+            <p>Contact us</p>
           </a>
-          <div class="feature_dropdown">
-            <Link to="/invoice">
-              <img src={sidebarInvoIcon}></img>
-              Invoice
-            </Link>
-            <Link to="/inventory">
-              <img src={sidebarInvtIcon}></img>
-              Inventory
-            </Link>
 
-            <Link to="/mainfinance">
-              <img src={sidebarFinIcon}></img>
-              Finance
-            </Link>
-
-            <Link to="/staff">
-              <img src={sidebarStaffIcon}></img>
-              Staff
-            </Link>
-          </div>
-        </li>
-
-        {/* <li className="li_end">
+          <button className="option_button">Sign Up</button>
+        </div>
+      </li>
+      <li className="li_end feature">
+        <a href="/#" style={{ textDecoration: "none", color: "black" }}>
+          <p>Features</p>
+        </a>
+        <div className="feature_dropdown">
           <Link to="/invoice">
-            <i class="fas fa-file-invoice"></i>
+            <img src={sidebarInvoIcon}></img>
+            Invoice
           </Link>
-          <p>Invoice</p>
-        </li>
-        <li className="li_end">
-          <Link to="/invoicemanage">
-            <i class="fas fa-file-invoice"></i>
-          </Link>
-          <p>Invoice</p>
-        </li> */}
-        {/* <li className="li_end">
           <Link to="/inventory">
-            <i class="fas fa-cart-arrow-down"></i>
+            <img src={sidebarInvtIcon}></img>
+            Inventory
           </Link>
-          <p>Inventory</p>
-        </li> */}
 
-        {/*         
+          <Link to="/mainfinance">
+            <img src={sidebarFinIcon}></img>
+            Finance
+          </Link>
+
+          <Link to="/staff">
+            <img src={sidebarStaffIcon}></img>
+            Staff
+          </Link>
+        </div>
+      </li>
+
+      {/*         
 
         <li className="li_end">
           <button
@@ -128,8 +117,7 @@ function Header() {
             log out
           </button>
         </li> */}
-      </ul>
-    </header>
+    </ul>
   );
 }
 

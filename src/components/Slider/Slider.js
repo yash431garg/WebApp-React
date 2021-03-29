@@ -16,7 +16,7 @@ const Slider = ({ slides = SliderData }) => {
   }
 
   return (
-    <section className="slider">
+    <div className="slider">
       {SliderData.map((slide, index) => {
         return (
           <div
@@ -29,7 +29,7 @@ const Slider = ({ slides = SliderData }) => {
           </div>
         );
       })}
-    </section>
+    </div>
   );
 };
 

@@ -9,6 +9,7 @@ import Score from "../blogs/Score";
 import Inventory from "../inventoryManagement/Invetory";
 import Invoice from "../InvoiceGeneration/Invoice";
 import Page from "../Profile_Page/Page";
+import RegistrationPage from "../Registration/Registration_Page";
 import MainFinance from "../Finance/MainFinance";
 import LoginMain from "../login/LoginMain";
 import ManageInvoiceTable from "../InvoiceManagement/ManageInvoiceTable";
@@ -44,6 +45,7 @@ function Routes() {
       <Route exact path="/AboutBigBusiness" component={BigAbout} />
       <Route exact path="/FeaturesBigBusiness" component={Feature} />
       <Route exact path="/BusinessScore" component={Score} />
+      <Route exact path="/RegistrationPage" component={RegistrationPage} />
       <Route exact path="/" component={Home} />
       {/* <PrivateRoute exact path="/" component={Home} /> */}
       {/* <Route exact path="/MainFinance" component={MainFinance} /> */}

@@ -7,12 +7,11 @@ function Blog() {
     <div>
       <div className="footer">
         <img src={map}></img>
-        <div className="footer_info">
+        <section className="footer_info">
           <h2>Address</h2>
           <h2>We would love to hear from you.</h2>
           <p>We are always availbale to address the need of our user</p>
-          <p></p>
-        </div>
+        </section>
         <div className="footer_num"> +917386197412</div>
       </div>
     </div>

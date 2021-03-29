@@ -1,42 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
-* {
-  scroll-behavior: smooth;
-}
 
 .head_main_icon {
   position: absolute;
   z-index: -1;
-  top: 0;
-  right: 0;
-  width: 33em;
+  top: 0%;
+  right: 0%;
+  width: 33vw;
+  height: auto;
 }
-.head_circle_icon {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  width: 25em;
-}
+
 .head {
   display: flex;
-  padding: 80px;
+  margin: 100px;
 }
 
 .head_data > h2 {
   font-family: "Montserrat", sans-serif;
-  font-size: 2.5em;
-  width: 20em;
+  font-size: 3.5vw;
+  width: 50vw;
 }
-.head_data > p {
-  font-size: 1.1em;
-}
-.head > img {
-  width: 22em;
-}
+
 .login_option {
   border-radius: 2px solid black;
   padding: 10px;
-  /* box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.75); */
   width: fit-content;
   display: flex;
   justify-content: center;
@@ -56,4 +42,26 @@
   padding: 5px 10px 5px 10px;
   outline: none;
   border: none;
+}
+@media only screen and (max-width: 700px) {
+  .head_main_icon {
+    position: absolute;
+    z-index: -1;
+    top: 0%;
+    right: 0%;
+    width: 40vw;
+    height: auto;
+  }
+  .head {
+    margin: 200px 0px 150px 100px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .head {
+    margin: 200px 0px 150px 0px;
+  }
+  .head_data > h2 {
+    font-size: 4.5vw;
+    margin-left: 50px;
+  }
 }

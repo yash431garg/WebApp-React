@@ -1,24 +1,17 @@
-.head_style {
+.left_leave_home {
   position: absolute;
-  /* left: 61.56%;
-    right: -10%;
-    border-radius: 97px;
-    top: -13.42%;
-    bottom: 83.9%; */
-  background: #5273eb;
-  opacity: 1;
   z-index: -1;
-  transform: rotate(-8deg);
+  top: 40%;
 }
 .invoice {
   display: flex;
-  padding: 100px;
+  padding: 100px 100px 0px 100px;
 }
 .invoice_data {
   margin: 0px 0px 0px 250px;
 }
 .invoice > img {
-  width: 10em;
+  width: 15vw;
 }
 .invoice_data > p {
   font-size: 1.4em;
@@ -35,7 +28,7 @@
   margin: 0px 250px 0px 0px;
 }
 .inventory > img {
-  width: 20em;
+  width: 20vw;
 }
 .inventory_data > p {
   font-size: 1.4em;
@@ -61,6 +54,13 @@
   font-size: 2em;
   font-weight: bolder;
 }
+.right_leave {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  width: 20vw !important;
+  height: auto;
+}
 .staff {
   display: flex;
   padding: 100px;
@@ -78,15 +78,82 @@
   font-size: 2em;
   font-weight: bolder;
 }
-.right_leave {
+/* .head_style {
   position: absolute;
-  right: 0;
+  background: #5273eb;
+  opacity: 1;
   z-index: -1;
-  width: 15em !important;
-  height: auto;
+  transform: rotate(-8deg);
 }
-.left_leave_home {
-  position: absolute;
-  z-index: -1;
-  top: 50%;
+
+.staff {
+  display: flex;
+  padding: 100px;
+}
+.staff_data {
+  margin: 0px 250px 0px 0px;
+}
+.staff > img {
+  width: 20em;
+}
+.staff_data > p {
+  font-size: 1.4em;
+}
+.staff_data > h2 {
+  font-size: 2em;
+  font-weight: bolder;
+}
+
+
+*/
+@media only screen and (max-width: 900px) {
+  .invoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .invoice_data {
+    margin: 0px 0px 0px 0px;
+  }
+  .invoice > img {
+    width: 20vw;
+  }
+  .inventory {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .inventory_data {
+    margin: 0px 0px 0px 0px;
+  }
+  .inventory > img {
+    width: 25vw;
+  }
+  .finance {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .finance_data {
+    margin: 0px 0px 0px 0px;
+  }
+  .finance > img {
+    width: 25vw;
+  }
+  .staff {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .staff_data {
+    margin: 0px 0px 0px 0px;
+  }
+  .staff > img {
+    width: 50vw;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .left_leave_home {
+    top: 70%;
+  }
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import "./Feature.css";
 import invoiceIcon from "../../assets/invoiceIcon.svg";
-
 import staffIcon from "../../assets/staffIcon.svg";
 import inventoryIcon from "../../assets/inventoryIcon.svg";
 import financeIcon from "../../assets/financeIcon.svg";
@@ -11,12 +10,12 @@ import leftLeaves from "../../assets/leftLeaves.svg";
 function Feature() {
   return (
     <div>
+      <img className="left_leave_home" src={leftLeaves}></img>
       <h1
         style={{ textAlign: "center", fontSize: "3em", fontWeight: "bolder" }}
       >
         FEATURES
       </h1>
-      <img className="left_leave_home" src={leftLeaves}></img>
       <div className="invoice">
         <img src={invoiceIcon}></img>
         <div className="invoice_data">
@@ -41,7 +40,7 @@ function Feature() {
             customize the same.
           </p>
         </div>
-        <img src={inventoryIcon}></img>
+        <img src={inventoryIcon}></img>{" "}
       </div>
 
       <div className="finance">

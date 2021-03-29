@@ -1,36 +1,44 @@
 .blogs {
   display: flex;
   flex-direction: column;
-
-  width: 70%;
+  width: 70vw;
   margin-left: 15vw;
-  margin-top: 20px;
+  margin-top: 25px;
 }
-#images#images#images{
-  height:20%  !important;
-  width:50% !important;
+.blogs > h2 {
+  font-size: 5vw;
+  text-align: center;
+}
+.images {
+  width: 60% !important;
+  height: auto !important;
   margin-left: 25%;
 }
 
-.blogs  img {
-  width: 80%;
+.blogs > img {
+  width: 50vw;
   height: auto;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
-.blogs > .p_more {
-  font-size: 1.5em;
+.blogs > .p_more > p {
+  font-size: 2vw;
   font-weight: normal;
-  margin-left: auto;
-  margin-right: auto;
-
+  color: #1d2229;
   white-space: break-spaces;
 }
 .p_more > img {
   width: 80%;
   height: auto;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+}
+@media only screen and (max-width: 600px) {
+  .blogs > .p_more > p {
+    font-size: 15px;
+    color: #1d2229;
+  }
+  .blogs > h2 {
+    font-size: 6vw;
+  }
 }

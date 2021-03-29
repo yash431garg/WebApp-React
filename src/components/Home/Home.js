@@ -22,38 +22,35 @@ function Home() {
         alt="head_main_icon"
       ></img>
 
-      <div>
-        <div className="head">
-          <div className="head_data">
-            <h2>
-              Big business is building an ecosystem for trustworthy businesses.
-            </h2>
-            <p></p>
-
-            <div className="login_option">
-              {state.loginsuccess === false ? <LoginMain /> : <div></div>}
-              {state.loginsuccess === true ? (
+      <div className="head">
+        <div className="head_data">
+          <h2>
+            Big business is building an ecosystem for trustworthy businesses.
+          </h2>
+          <div className="login_option">
+            {state.loginsuccess === false ? <LoginMain /> : <div></div>}
+            {state.loginsuccess === true ? (
+              <div>
                 <div>
-                  <div>
-                    <img
-                      src="holder.js/20x20?text=%20"
-                      className="rounded mr-2"
-                      alt=""
-                    />
-                    <strong className="mr-auto">Authentication Status</strong>
-                    {/* <small> 1 mins ago</small> */}
-                  </div>
-                  <Toast.Body>
-                    {state.UserPhoneNumber + " logged in successfully."}
-                  </Toast.Body>
+                  <img
+                    src="holder.js/20x20?text=%20"
+                    className="rounded mr-2"
+                    alt=""
+                  />
+                  <strong className="mr-auto">Authentication Status</strong>
+                  {/* <small> 1 mins ago</small> */}
                 </div>
-              ) : (
-                <div></div>
-              )}
-            </div>
+                <Toast.Body>
+                  {state.UserPhoneNumber + " logged in successfully."}
+                </Toast.Body>
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
         </div>
       </div>
+
       {/* <Slider /> */}
       <div id="feature_id">
         <Feature />
@@ -61,10 +58,11 @@ function Home() {
       <div id="blog_id">
         <BlogImg />
       </div>
+
       <div id="contact_id">
         <Contact />
       </div>
-      {/* <Sign /> */}
+      {/* <Sign />*/}
       <Footer />
     </div>
   );

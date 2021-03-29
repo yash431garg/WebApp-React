@@ -1,13 +1,10 @@
 .sidebar {
   background-color: #5273eb;
   height: 90vh;
-  /* position:absolute; */
   width: fit-content;
-
   z-index: 1;
   left: 0;
   top: 10%;
-  background-color: #5273eb;
 }
 .li_side {
   width: 250px;

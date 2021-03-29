@@ -1,6 +1,6 @@
 .contact {
   display: flex;
-  padding: 100px;
+  padding: 100px 0px 100px 20px;
 }
 .contact_data {
   margin: 70px 250px 0px 0px;
@@ -8,14 +8,48 @@
 .contact > img {
   width: 30em;
 }
-.contact_icons >a > i{
+.contact_icons > a > i {
   font-size: 1.5em;
   margin: 20px 10px 0px 10px;
   color: #222831;
 }
-.left_leave{
+.left_leave {
   position: absolute;
-  
   z-index: -1;
-  
+}
+@media only screen and (max-width: 800px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact_icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact_data {
+    margin: 0;
+  }
+  .contact > img {
+    width: 20em;
+  }
+  .left_leave {
+    position: absolute;
+    z-index: -1;
+    margin-bottom: 100px;
+  }
+}
+@media only screen and (min-width: 700px) and(max-width: 1000px) {
+  .contact_icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact_data {
+    margin: 0;
+  }
 }
