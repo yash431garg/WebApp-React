@@ -16,7 +16,7 @@ const PaymentDues = () => {
       }
       setDues(vals);
     });
-  })
+  },[])
   return (
     <div className="dues">
       <p>{dues.id}</p>

@@ -31,3 +31,21 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StaffMemberCards);
+
+
+
+
+
+// firebase no-sql---- javascript
+// if we really firebase is new
+// old way debugs
+
+
+// express middle
+
+
+// first user --> otp --> login/register
+// get otp 
+// checkDB
+
+// if already exists

@@ -260,7 +260,7 @@ const AuthContextProvider = (props) => {
                 dispatch({ type: ACTIONS.user, payload: user });
                 dispatch({ type: 'loginsuccess' })
                 // alert(UserPhoneNumber + ' Logged in success.');
-                history.push('/dashboard');
+                history.push('/');
             })
         }).catch((error) => {
             alert(error.message);
