@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
-import CardDeck from "react-bootstrap/CardDeck";
-import CardGroup from "react-bootstrap/CardGroup";
+import getDetails from "../../InvoiceGeneration/InvoicePDF";
+import "./ManageInvoice.css";
 
 const ManageInvoice = () => {
   const SampleInvoiceData = [
@@ -42,8 +42,13 @@ const ManageInvoice = () => {
       ],
     },
   ];
-  const [InvoiceData, setInvoice] = useState(SampleInvoiceData);
-  console.log(InvoiceData);
+  const [InvoiceData, setInvoiceData] = useState(SampleInvoiceData);
+  console.log(`InvoiceData -> `, InvoiceData);
+
+  // Array of ID's that are selected
+  const [SelectedInvoiceId, setSelectedInvoiceId] = useState([]);
+  // console.log(`SelectedInvoiceId -> ${SelectedInvoiceId}`);
+  console.log(SelectedInvoiceId);
 
   const handleAddInvoice = (newInvoice) => {
     console.log("Working", newInvoice);
@@ -73,231 +78,109 @@ const ManageInvoice = () => {
             { id: 123456, name: "UnParsed", quantity: "0", rate: "0" },
           ],
         };
+
+        setInvoiceData([...InvoiceData, ...InvoiceObjectArray]);
       } else alert(`${file.name} - File Size must be less than 2 mb`);
     });
-    setInvoice([...InvoiceData, ...InvoiceObjectArray]);
 
     console.log(InvoiceData);
   };
-  const handleDeleteInvoice = (invoice) =>
-    setInvoice(
-      InvoiceData.filter((invoiceItem) => invoiceItem.id !== invoice.id)
+  const RemoveInvoice = (id) =>
+    setInvoiceData(
+      InvoiceData.filter((invoiceItem) => invoiceItem.InvoiceId !== id)
     );
+  const handleDeleteInvoice = () => {
+    SelectedInvoiceId.map((id) => {
+      console.log(`id -> ${id}\nInvoiceData -> `, InvoiceData);
+      RemoveInvoice(id);
+    });
+    setSelectedInvoiceId([]);
+  };
+
+  const handleAddId = (id) => setSelectedInvoiceId([...SelectedInvoiceId, id]);
+  const handleRemoveId = (id) =>
+    setSelectedInvoiceId(
+      SelectedInvoiceId.filter((InvoiceId) => InvoiceId !== id)
+    );
+  const handleAddAllId = () => {
+    InvoiceData.map((item) => handleAddId(item.InvoiceId));
+  };
+
+  const [CheckInvoiceCard, setCheckInvoiceCard] = useState(false);
 
   return (
     <div id="container">
+      {/* select_all, delete, sort, filter bar */}
       <div id="search_filter_add_bar">
-        <label htmlFor="addInvoiceFile">
+        {/* select_all */}
+        <label htmlFor="select_all--checkbox">
           <input
-            type="file"
-            accept=".pdf"
-            multiple
-            name="invoiceFile"
-            id="addInvoiceFile"
-            onChange={(event) => handleAddInvoice(event.target)}
+            type="checkbox"
+            name="select_all"
+            id="select_all--checkbox"
+            onChange={() => handleAddAllId()}
           />
-          HE
+          select all
         </label>
+
+        {/* delete */}
+        <input
+          type="button"
+          value="Delete"
+          onClick={() => handleDeleteInvoice()}
+        />
+        {/* sort */}
+        <input type="button" value="Sort" onClick={() => {}} />
+        {/* filter */}
       </div>
 
-      <div>
-        {InvoiceData.map((item) => (
-          <span>{item.receiver.name}</span>
+      {/* Cards container with all cards */}
+      <div id="card_container">
+        {InvoiceData.map((item, index) => (
+          <Card key={index} className="card_div">
+            <Card.Body className="card_body_div">
+              <Card.Title>{item.receiver.name}.pdf</Card.Title>
+              <Card.Text>
+                <input
+                  type="checkbox"
+                  name=""
+                  id="card_select--checkbox"
+                  onChange={(event) => {
+                    event.target.checked
+                      ? handleAddId(item.InvoiceId)
+                      : handleRemoveId(item.InvoiceId);
+                  }}
+                />
+              </Card.Text>
+              <button onClick={() => getDetails(item)}>Details</button>
+              <button>Share</button>
+            </Card.Body>
+          </Card>
         ))}
       </div>
 
-      <div id="cardgroup">
-        <CardGroup>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This card has supporting text below as a natural lead-in to
-                additional content.{" "}
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-        </CardGroup>
-      </div>
-
-      <div id="carddeck">
-        <CardDeck>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This card has supporting text below as a natural lead-in to
-                additional content.{" "}
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px160" />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This card has even longer content
-                than the first to show that equal height action.
-              </Card.Text>
-            </Card.Body>
-            <Card.Footer>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </Card.Footer>
-          </Card>
-         </CardDeck>
-      </div>
+      {/* Add Invoice button */}
+      <label htmlFor="addInvoiceFile">
+        <input
+          type="file"
+          accept="application/pdf"
+          multiple
+          name="invoiceFile"
+          id="addInvoiceFile"
+          onChange={(event) => handleAddInvoice(event.target)}
+        />
+        HE
+      </label>
     </div>
   );
 };
 
 export default ManageInvoice;
 // invoicetable
+
+// a = [
+//   { name: "abc", id: 0 },
+//   { name: "def", id: 1 },
+//   { name: "ghi", id: 2 },
+//   { name: "jkl", id: 3 },
+// ];

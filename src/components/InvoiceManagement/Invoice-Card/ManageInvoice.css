@@ -1,3 +1,9 @@
+.card_div {
+  border: 0.2px solid rgba(0, 0, 0, 1);
+  background: rgba(255, 239, 228, 1);
+
+}
+
 input[type="file"] {
   outline: none;
   border: none;
@@ -31,11 +37,11 @@ input[type="file"] {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
 
-.custom-file-input{
+.custom-file-input {
   height: 0px;
 }
 
-#invoice_file--label{
+#invoice_file--label {
   display: initial;
   width: 0px;
   height: 0px;

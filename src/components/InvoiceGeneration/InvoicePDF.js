@@ -10,7 +10,7 @@ function createPdf(InvoiceId, CreationDate, ReceiverDetails, ItemInputsArray) {
   let finalY = doc.lastAutoTable.finalY || 10;
   doc.setFontSize(24);
 
-  var companyName = "BigBusiness App";
+  var companyName = "BigBusinessApp";
   doc.text(companyName, pageWidth / 2 - 30, finalY);
 
   // let InvoiceId = String(Math.random()).substring(2, 14);
@@ -86,9 +86,9 @@ function createPdf(InvoiceId, CreationDate, ReceiverDetails, ItemInputsArray) {
   doc.save(`${name.toUpperCase()}.pdf`);
 }
 
-export default function getDetails(props) {
-  const InvoiceObject = props;
+export default function getDetails(InvoiceObject) {
+  // const InvoiceObject = props;
   const { InvoiceId, CreationDate, receiver, itemInputs } = InvoiceObject;
-  createPdf(receiver, itemInputs);
+  createPdf(InvoiceId, CreationDate, receiver, itemInputs);
   // AddInvoiceData(InvoiceObject);
 }
