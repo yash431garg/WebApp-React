@@ -9,8 +9,7 @@ import Invoice from "../InvoiceGeneration/Invoice";
 import Page from "../Profile_Page/Page";
 import MainFinance from "../Finance/MainFinance";
 import LoginMain from "../login/LoginMain";
-import ManageInvoiceTable from "../InvoiceManagement/Invoice-Table/ManageInvoiceTable";
-import InvoiceTable from '../InvoiceManagement/Invoice-Card/ManageInvoice'
+import ManageInvoice from '../InvoiceManagement/ManageInvoice'
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Home/Dashboard";
 import RegisterMain from "../login/RegisterMain";
@@ -51,8 +50,7 @@ function Routes() {
         <Route exact path="/staff" component={StaffManagement} />
         <Route exact path="/inventory" component={Inventory} />
         <Route exact path="/invoice" component={Invoice} />
-        <Route exact path="/invoicetable" component={InvoiceTable} />
-        <Route exact path="/invoicemanage" component={ManageInvoiceTable} />
+        <Route exact path="/invoicemanage" component={ManageInvoice} />
         <Route exact path="/admin" component={StaffAdminDashboard} />
 
         <Route path="*" component={NotFound} />

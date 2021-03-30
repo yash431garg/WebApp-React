@@ -78,6 +78,8 @@ const ManageInvoice = () => {
             { id: 123456, name: "UnParsed", quantity: "0", rate: "0" },
           ],
         };
+
+        setInvoiceData([...InvoiceData, ...InvoiceObjectArray]);
       } else alert(`${file.name} - File Size must be less than 2 mb`);
     });
 
@@ -174,6 +176,7 @@ const ManageInvoice = () => {
 };
 
 export default ManageInvoice;
+// invoicetable
 
 // a = [
 //   { name: "abc", id: 0 },
