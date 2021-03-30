@@ -1,55 +1,79 @@
 import jsPDF from "jspdf";
-import autoTable from "jspdf-autotable";
+import "jspdf-autotable";
 
-function createPdf(receiverDetails, inputs) {
+function createPdf(ReceiverDetails, ItemInputsArray) {
   var doc = new jsPDF();
 
   var pageSize = doc.internal.pageSize;
   var pageWidth = pageSize.width ? pageSize.width : pageSize.getWidth();
 
-  var finalY = doc.lastAutoTable.finalY || 10;
-
-  var companyName = "Bigbusiness App";
-
+  let finalY = doc.lastAutoTable.finalY || 10;
   doc.setFontSize(24);
+
+  var companyName = "BigBusiness App";
   doc.text(companyName, pageWidth / 2 - 30, finalY);
 
+  let InvoiceId = String(Math.random()).substring(2, 14);
+  let d = new Date();
+  let CreationDate = `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`;
+
+  doc.setFontSize(16);
+  doc.text(`Invoice No     :  ${InvoiceId}`, pageWidth - 100, finalY + 10);
+  doc.text(`Invoice Date  :  ${CreationDate}`, pageWidth - 100, finalY + 16);
+
+  finalY = doc.lastAutoTable.finalY || 20;
   doc.setFontSize(24);
   doc.text("Tax Invoice", pageWidth / 2 - 22, finalY + 20);
 
-  const { name, address, email, mobile, gstin, region } = receiverDetails;
+  const {
+    name,
+    address,
+    email,
+    mobile,
+    gstin,
+    IncludeGST,
+    region,
+  } = ReceiverDetails;
 
   doc.autoTable({
     theme: "grid",
     startY: finalY + 25,
-    head: [
-      ["TRANSACTION DETAILS", "SENDER(BILLED TO)", "RECEIVER(SHIPPED TO)"],
-    ],
+    head: [["SENDER(BILLED TO)", "RECEIVER(SHIPPED TO)"]],
     body: [
-      [`Invoice No     : `, `Name    : `, `Name    : ${name}`],
-      [`Invoice Date  : `, `Address : `, `Address : ${address}`],
-      [`State              : `, `Email     : `, `Email     : ${email}`],
-      [, `Mobile   : `, `Mobile   : ${mobile}`],
-      [, `GSTIN   : `, `GSTIN   : ${gstin}`],
-      [, `State      : `, `State      : ${region}`],
+      [`Name    : `, `Name    : ${name}`],
+      [`Address : `, `Address : ${address}`],
+      [`Email     : `, `Email     : ${email}`],
+      [`Mobile   : `, `Mobile   : ${mobile}`],
+      [`GSTIN   : `, `GSTIN   : ${gstin}`],
+      [`State      : `, `State      : ${region}`],
     ],
   });
 
   finalY = doc.lastAutoTable.finalY;
+
   var count = 0; // SL.NO
   var bodyArray = [];
-  for (const item of inputs) {
+  let sgst = IncludeGST ? 18 : 0;
+  let cgst = IncludeGST ? 18 : 0;
+  let totalItemAmount = 0;
+  let totalSum = 0;
+
+  for (const item of ItemInputsArray) {
     var itemArray = [];
     for (const key in item) {
       if (Object.hasOwnProperty.call(item, key) && key !== "id") {
         itemArray.push(item[key]);
       }
     }
+    totalItemAmount = item["quantity"] * item["rate"];
+    totalItemAmount += totalItemAmount * (sgst / 100) * (cgst / 100);
+    totalSum += totalItemAmount;
     itemArray.unshift(++count);
-    itemArray.push(2, 2, 200);
+    itemArray.push(sgst, cgst, totalItemAmount);
     bodyArray.push(itemArray);
   }
-  bodyArray.push([, , , , , "TOTAL AMOUNT", 1200]);
+  bodyArray.push([, , , , , "TOTAL AMOUNT", totalSum]);
+
   doc.autoTable({
     theme: "grid",
     startY: finalY + 2,
@@ -59,10 +83,11 @@ function createPdf(receiverDetails, inputs) {
     body: bodyArray,
   });
 
-  doc.save("Invoice.pdf");
+  doc.save(`${name.toUpperCase()}.pdf`);
 }
 
 export default function getDetails(props) {
   const { receiver, itemInputs } = props;
   createPdf(receiver, itemInputs);
+  // AddInvoiceData(InvoiceObject);
 }
