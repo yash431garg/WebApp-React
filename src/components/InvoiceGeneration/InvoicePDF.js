@@ -1,7 +1,7 @@
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
-function createPdf(ReceiverDetails, ItemInputsArray) {
+function createPdf(InvoiceId, CreationDate, ReceiverDetails, ItemInputsArray) {
   var doc = new jsPDF();
 
   var pageSize = doc.internal.pageSize;
@@ -10,12 +10,12 @@ function createPdf(ReceiverDetails, ItemInputsArray) {
   let finalY = doc.lastAutoTable.finalY || 10;
   doc.setFontSize(24);
 
-  var companyName = "BigBusiness App";
+  var companyName = "BigBusinessApp";
   doc.text(companyName, pageWidth / 2 - 30, finalY);
 
-  let InvoiceId = String(Math.random()).substring(2, 14);
-  let d = new Date();
-  let CreationDate = `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`;
+  // let InvoiceId = String(Math.random()).substring(2, 14);
+  // let d = new Date();
+  // let CreationDate = `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`;
 
   doc.setFontSize(16);
   doc.text(`Invoice No     :  ${InvoiceId}`, pageWidth - 100, finalY + 10);
@@ -86,8 +86,9 @@ function createPdf(ReceiverDetails, ItemInputsArray) {
   doc.save(`${name.toUpperCase()}.pdf`);
 }
 
-export default function getDetails(props) {
-  const { receiver, itemInputs } = props;
-  createPdf(receiver, itemInputs);
+export default function getDetails(InvoiceObject) {
+  // const InvoiceObject = props;
+  const { InvoiceId, CreationDate, receiver, itemInputs } = InvoiceObject;
+  createPdf(InvoiceId, CreationDate, receiver, itemInputs);
   // AddInvoiceData(InvoiceObject);
 }

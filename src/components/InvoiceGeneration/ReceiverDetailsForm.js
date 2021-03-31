@@ -15,13 +15,11 @@ const ReceiverDetailsForm = (props) => {
     handleReceiverChange({ [name]: objvalue });
   };
 
+  // Get the ReceiverArray Values from db
+  // Working : Show Existing values + Allow user to add
   const [ReceiverArray, setReceiverArray] = useState([]);
-  console.log(ReceiverArray);
   const handleSave = (receiver) => {
-    // console.log(receiver);
-    console.log(ReceiverArray);
     setReceiverArray([...ReceiverArray, receiver]);
-    console.log(ReceiverArray);
     setShowModal(false);
     // handleReceiverChange({
     //   name: "",
@@ -59,26 +57,21 @@ const ReceiverDetailsForm = (props) => {
 
   return (
     <div>
-      <legend>{formname.toUpperCase()}</legend>
+      <legend>{formname.toUpperCase()}</legend> {"    "}
       <select
         name="invoice_names"
         id="invoice_names--select"
         defaultValue={SelectInvoiceValue}
         onChange={(event) => {
-          console.log(`SelectValue - ${SelectInvoiceValue}`);
           let index = event.target.value;
-          console.log(index, ReceiverArray[index]);
           handleReceiverChange(ReceiverArray[index]);
-          console.log(receiver.name);
           setSelectInvoiceValue(receiver.name);
           setShowModal(true);
-          console.log(`SelectValue - ${SelectInvoiceValue}`);
         }}
       >
         <option value="default" disabled>
           Select Invoice Name
         </option>
-        {/* {console.log(ReceiverArray)} */}
         {ReceiverArray.length !== 0 &&
           ReceiverArray.map((receiver, index) => (
             <option key={index} value={index}>
@@ -86,11 +79,9 @@ const ReceiverDetailsForm = (props) => {
             </option>
           ))}
       </select>
-
       <Button variant="primary" id="add_paying--button" onClick={handleShow}>
         Add Paying
       </Button>
-
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Paying</Modal.Title>
@@ -182,7 +173,6 @@ const ReceiverDetailsForm = (props) => {
           <Button
             variant="primary"
             onClick={() => {
-              // console.log(receiver);
               handleSave(receiver);
             }}
           >

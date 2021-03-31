@@ -3,8 +3,8 @@ import "./css/ItemDetailsForm.css";
 import { InvoiceContext } from "./Invoice";
 
 const ItemDetailsForm = (props) => {
-  const { handleItemInputsAdd, handleItemChange } = useContext(InvoiceContext);
   const { item } = props;
+  const { handleItemInputsAdd, handleItemChange } = useContext(InvoiceContext);
   console.log(`item - ${item.name}`);
 
   // get this item array from JSON(inventory)
@@ -45,10 +45,10 @@ const ItemDetailsForm = (props) => {
   const [SelectItemValue, setSelectItemValue] = useState("");
   console.log(SelectItemValue);
   // handleItemChange({ ...SelectItemValue });
-  // const handleChange = () => {
-  //   handleItemChange({ ["name"]: SelectItemValue.name });
-  //   handleItemChange({ ["rate"]: SelectItemValue.rate });
-  // };
+  const handleChange = () => {
+    handleItemChange({ ["name"]: SelectItemValue.name });
+    handleItemChange({ ["rate"]: SelectItemValue.rate });
+  };
   // handleChange();
 
   const formname = "Item Details";
@@ -65,13 +65,14 @@ const ItemDetailsForm = (props) => {
                 id="item_names--select"
                 defaultValue={SelectItemValue.name}
                 onChange={(event) => {
-                  handleItemChange({ ...SelectItemValue });
-                  console.log(`SelectItemValue - ${SelectItemValue}`);
                   let index = event.target.value;
                   console.log(index, ItemArray[index]);
                   console.log(ItemArray[index].name);
                   setSelectItemValue(ItemArray[index]);
                   console.log(`SelectItemValue - ${SelectItemValue}`);
+                  // handleItemChange({ ...SelectItemValue });
+                  handleChange();
+                  console.log(item);
                 }}
               >
                 <option value="default" selected disabled>
@@ -111,7 +112,13 @@ const ItemDetailsForm = (props) => {
           </div>
         </fieldset>
       </form>
-      <button id="add_to_invoice--button" onClick={() => handleItemInputsAdd()}>
+      <button
+        id="add_to_invoice--button"
+        onClick={() => {
+          console.log("Clicked");
+          handleItemInputsAdd();
+        }}
+      >
         Add to Invoice
       </button>
     </div>
