@@ -1,27 +1,27 @@
-import React, { useState, useReducer,useEffect } from "react";
-import PayRollBreakFC from "./PayRollBreakFC";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import StaffMemberCards from "./StaffMemberCards";
-import store from "../redux-state-management/store";
 import firebase from "../../containers/Firebase";
-
+import store from "../redux-state-management/store";
+import PayRollBreakFC from "./PayRollBreakFC";
+import StaffMemberCards from "./StaffMemberCards";
 
 const StaffManagement = () => {
   const [employeeData, setEmployeeData] = useState();
   const [showPayrollView, setShowPayrollView] = useState(false);
-  const [employeesData,setEmployeesData] = useState([]);
+  const [employeesData, setEmployeesData] = useState([]);
   useEffect(() => {
-    firebase.database.ref('Users/uid1').child('staffDetails').on('value',function(snapshot){
-      let json = snapshot.val();
-      let keys = Object.keys(json);
-      let vals = Object.values(json);
-      for(let i=0;i<keys.length;i++){
-        vals[i].id = keys[i]; 
-      }
-      setEmployeesData(vals);
-
-    });
-    
+    firebase.database
+      .ref("Users/uid1")
+      .child("staffDetails")
+      .on("value", function (snapshot) {
+        let json = snapshot.val();
+        let keys = Object.keys(json);
+        let vals = Object.values(json);
+        for (let i = 0; i < keys.length; i++) {
+          vals[i].id = keys[i];
+        }
+        setEmployeesData(vals);
+      });
   }, []);
   return (
     <div className="container">
@@ -58,3 +58,5 @@ const StaffManagement = () => {
 const mapStateToProps = (state) => ({ employeeData: state.employeeData });
 
 export default connect(mapStateToProps)(StaffManagement);
+
+//
