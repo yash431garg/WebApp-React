@@ -32,8 +32,10 @@ const StaffManagement = () => {
       <Header1 />
       <div className='web_body'>
       <Sidebar />
-      <div
-        className="container_cards"
+      <div className='sideContent'>
+      <h2 className='serviceHeader'>Staff Payroll</h2>
+
+      <div className="container_cards"
         style={{
           width: showPayrollView ? "40vw" : "95vw",
           display: "flex",
@@ -58,6 +60,8 @@ const StaffManagement = () => {
           {...employeeData}
         />
       </div>
+      </div>
+      
       </div>
     </div>
   );

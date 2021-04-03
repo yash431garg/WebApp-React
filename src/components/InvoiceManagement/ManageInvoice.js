@@ -115,6 +115,8 @@ const ManageInvoice = () => {
     <Header1 />
     <div className='web_body'>
       <Sidebar />
+      <div className='sideContent'>
+      <h2 className='serviceHeader'>Invoice Management</h2>
       {/* select_all, delete, sort, filter bar */}
       <div id="search_filter_add_bar">
         {/* select_all */}
@@ -175,6 +177,7 @@ const ManageInvoice = () => {
           onChange={(event) => handleAddInvoice(event.target)}
         />
       </label>
+      </div>
       </div>
     </div>
   );

@@ -82,7 +82,7 @@
 
 .sidebar {
   background-color: #5273eb;
-  height: 90vh;
+  height: 100%;
   width: fit-content;
   z-index: 1;
   left: 0;

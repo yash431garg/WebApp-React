@@ -7,3 +7,9 @@ p {
 .web_body{
   display: flex;
 }
+.serviceHeader{
+  margin-top:15px;
+}
+.sideContent{
+  margin-left: 20px;
+}

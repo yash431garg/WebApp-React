@@ -23,7 +23,8 @@ const PaymentDues = () => {
     <Header1/>
     <div className="web_body">
     <Sidebar/>
-      <p>{dues.id}</p>
+    <div className='sideContent'>
+    <h2 className='serviceHeader'>Dues</h2>
       <div className="dues">
       {dues.map((task, index) => (
         <div
@@ -42,6 +43,7 @@ const PaymentDues = () => {
           <Button>Pay Now</Button>
         </div>
       ))}
+      </div>
       </div>
       </div>
     </div>

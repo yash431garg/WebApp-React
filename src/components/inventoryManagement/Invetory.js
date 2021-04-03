@@ -42,7 +42,8 @@ const Inventory = (props) => {
       <Header1 />
       <div className='web_body'>
       <Sidebar />
-      <h3>Inventory</h3>
+      <div className='sideContent'>
+      <h2 className='serviceHeader'>Inventory</h2>
       <form>
         <input
           className="input_search inpIcon"
@@ -99,6 +100,7 @@ const Inventory = (props) => {
               </div>
             );
           })}
+        </div>
         </div>
       </div>
       </div>

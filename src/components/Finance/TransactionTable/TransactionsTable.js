@@ -69,17 +69,8 @@ export const TransactionsTable = () => {
     <Header1 />
     <div className='web_body'>
       <Sidebar />
-      <h3
-        style={{
-          fontWeight: "lighter",
-          fontSize: "3em",
-          marginLeft: "50px",
-          textAlign: "center",
-        }}
-      >
-        Transactions History
-      </h3>
-      {/* <img className="table_img" src={transactionIcon}></img> */}
+      <div className='sideContent'>
+      <h3 className='serviceHeader'>Transactions History</h3><br/>
       <table {...getTableProps()} className="table">
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -114,6 +105,7 @@ export const TransactionsTable = () => {
           })}
         </tbody>
       </table>
+      </div>
       </div>
     </div>
   );

@@ -98,8 +98,10 @@ const Invoice = () => {
       <Header1 />
       <div className='web_body'>
       <Sidebar />
-      <div id="main_container">
+      <div className="sideContent">
         <div id="container">
+        <h2 className='serviceHeader'>Invoice Generation</h2>
+
           <div id="receiver_details_container">
             <ReceiverDetailsForm receiver={receiver} />
           </div>

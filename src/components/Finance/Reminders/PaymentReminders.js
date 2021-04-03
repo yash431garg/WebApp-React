@@ -41,6 +41,9 @@ const PaymentReminders = (props) => {
     <Header1 />
     <div className='web_body'>
       <Sidebar />
+      <div className='sideContent'>
+      <h2 className='serviceHeader'>Remainders</h2>
+
       <h2 style={{ fontWeight: "lighter",marginLeft:"20px"}}>
         {props.title}{" "}
         <SiAddthis
@@ -51,6 +54,7 @@ const PaymentReminders = (props) => {
       </h2>
       {showNewReminder && <NewReminder onSaveReminder={AddNewReminder} />}
       <Reminder redata={redata} onDelete={DeleteReminder} />
+    </div>
     </div>
     </div>
   );
