@@ -1,25 +1,28 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
-import NotFound from "../NotFound";
-import StaffManagement from "../staffManagement/StaffManagement";
-import StaffAdminDashboard from "../staffManagement/StaffAdminDashboard";
+import { Route, Switch } from "react-router-dom";
+import About from "../About/About";
 import BigAbout from "../blogs/BigAbout";
 import Feature from "../blogs/Feature";
 import Score from "../blogs/Score";
+import PaymentDues from "../Finance/Dues/PaymentDues";
+import MainFinance from "../Finance/MainFinance";
+import PaymentReminders from "../Finance/Reminders/PaymentReminders";
+import { TransactionsTable } from "../Finance/TransactionTable/TransactionsTable";
+import Dashboard from "../Home/Dashboard";
+import Home from "../Home/Home";
 import Inventory from "../inventoryManagement/Invetory";
 import Invoice from "../InvoiceGeneration/Invoice";
+import ManageInvoice from "../InvoiceManagement/ManageInvoice";
+import LoginMain from "../login/LoginMain";
+import RegisterMain from "../login/RegisterMain";
+import NotFound from "../NotFound";
 import Page from "../Profile_Page/Page";
 import Profile_Page from "../Profile_Page/Page";
 import RegistrationPage from "../Registration/Registration_Page";
-import MainFinance from "../Finance/MainFinance";
-import LoginMain from "../login/LoginMain";
-import ManageInvoiceTable from "../InvoiceManagement/ManageInvoiceTable";
+import StaffAdminDashboard from "../staffManagement/StaffAdminDashboard";
+import StaffManagement from "../staffManagement/StaffManagement";
+import StaffManagement2 from "../StaffManagement2/StaffManagement";
 import PrivateRoute from "./PrivateRoute";
-import Dashboard from "../Home/Dashboard";
-import RegisterMain from "../login/RegisterMain";
-import Home from "../Home/Home";
-import About from "../About/About";
-
 // this function routes through different components by checking urlpath.
 function Routes() {
   return (

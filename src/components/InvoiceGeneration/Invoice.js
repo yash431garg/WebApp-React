@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import ReceiverDetailsForm from "./ReceiverDetailsForm";
 import ItemDetailsForm from "./ItemDetailsForm";
@@ -7,10 +8,15 @@ import * as loader from "@revolist/revo-dropdown/loader";
 import firebase from "../../containers/Firebase";
 import Header1 from "../Header1/Header1";
 import Sidebar from "../Sidebar/Sidebar";
+=======
+import React, { useState } from "react";
+import "./css/Invoice.css";
+import getDetails from "./InvoicePDF";
+import ItemDetailsForm from "./ItemDetailsForm";
+import ItemDetailsTable from "./ItemDetailsTable";
+import ReceiverDetailsForm from "./ReceiverDetailsForm";
+>>>>>>> b6eb4aad29809b1d3f6d528da08002b0d35403d2
 
-if (loader.defineCustomElements) {
-  loader.defineCustomElements();
-}
 export const InvoiceContext = React.createContext();
 
 const Invoice = () => {
@@ -21,8 +27,10 @@ const Invoice = () => {
     email: "",
     mobile: "",
     gstin: "",
+    IncludeGST: true,
     region: "",
   };
+<<<<<<< HEAD
   let [inventoryItems, setInventoryItems] = useState([]);
   useEffect(() => {
     firebase.database
@@ -43,6 +51,9 @@ const Invoice = () => {
   for (var q = 0; q < dropdowns.length; q++) {
     dropdowns[q].source = inventoryItems;
   }
+=======
+  const [receiver, setReceiver] = useState(receiverSchema);
+>>>>>>> b6eb4aad29809b1d3f6d528da08002b0d35403d2
 
   const itemSchema = {
     id: -9999,
@@ -95,7 +106,13 @@ const Invoice = () => {
       receiver.gstin !== "" &&
       itemInputs.length !== 0
     ) {
-      getDetails({ receiver, itemInputs });
+      let InvoiceId = String(Math.random()).substring(2, 14);
+      let d = new Date();
+      let CreationDate = `${d.getDate()}-${
+        d.getMonth() + 1
+      }-${d.getFullYear()}`;
+
+      getDetails({ InvoiceId, CreationDate, receiver, itemInputs });
       setFormEmpty(false);
     } else setFormEmpty(true);
   };
@@ -108,6 +125,7 @@ const Invoice = () => {
     handleItemInputsEdit,
   };
 
+<<<<<<< HEAD
   return (
     <InvoiceContext.Provider value={InvoiceContextValue}>
       <Header1 />
@@ -134,6 +152,49 @@ const Invoice = () => {
           setTimeout(() => {
             setFormEmpty(false);
           }, 5000) && <p>PLEASE FILL RECEIVER DETAILS AND ITEM DETAILS FORM</p>}
+=======
+  const [GST, setGST] = useState(true);
+
+  return (
+    <InvoiceContext.Provider value={InvoiceContextValue}>
+      <div id="main_container">
+        <div id="container">
+          <div id="receiver_details_container">
+            <ReceiverDetailsForm receiver={receiver} />
+          </div>
+          <div id="item_details_container">
+            <ItemDetailsForm item={item} />
+          </div>
+          <label htmlFor="gst">
+            <input
+              type="checkbox"
+              name="gst"
+              id="gst"
+              checked={GST}
+              onChange={() => {
+                setGST(GST ? false : true);
+                handleReceiverChange({ IncludeGST: GST });
+              }}
+            />
+            Include GST
+          </label>
+          <button
+            id="generate_invoice--button"
+            onClick={() => generateInvoice()}
+          >
+            Generate Invoice as PDF
+          </button>
+          <ItemDetailsTable itemInputs={itemInputs} />
+          <>
+            {formEmpty &&
+              setTimeout(() => {
+                setFormEmpty(false);
+              }, 5000) && (
+                <p>PLEASE FILL RECEIVER DETAILS AND ITEM DETAILS FORM</p>
+              )}
+          </>
+        </div>
+>>>>>>> b6eb4aad29809b1d3f6d528da08002b0d35403d2
       </div>
     </InvoiceContext.Provider>
   );
