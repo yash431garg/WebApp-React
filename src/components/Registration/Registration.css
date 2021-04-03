@@ -76,3 +76,9 @@
   .Profile_Img {
     width: fit-content;
   } */
+@media only screen and (max-width: 600px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -1,31 +1,28 @@
-.ul_main1 {
+.ul_main_header1 {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color:#5273eb;
+  background-color: #5273eb;
+  /* display: flex;
+  justify-content: center; */
 }
 
-.li {
+.li_header1 {
   float: left;
   font-size: 1.2em;
-  margin: 0px 0px 0px 10px;
-}
-.li_img {
-  width: 40px;
-  height: auto;
+  margin: 0px 0px 0px 20px;
 }
 
-.li_end {
+.li_end_header1 {
   float: right;
   font-size: 1.2em;
   color: black;
-  margin: 10px 17px 0px 0px;
+  margin: 15px 30px 0px 0px;
   text-decoration: none;
 }
 
-
-.li_end > i {
+.li_end_header1 > i {
   display: none;
   position: absolute;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -34,20 +31,103 @@
   text-decoration: none;
 }
 
-.li a {
+.li_header1 a {
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  /* padding: 14px 16px; */
   text-decoration: none;
 }
-.li_end a {
+.li_end_header1 a {
   display: block;
-  color: black;
+  color: white !important;
   text-align: center;
-  padding: 14px 16px;
+  /* padding: 14px 16px; */
   text-decoration: none;
 }
 
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #5273eb;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
 
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left 0.5s;
+}
+
+.sidebar {
+  background-color: #5273eb;
+  height: 90vh;
+  width: fit-content;
+  z-index: 1;
+  left: 0;
+  top: 10%;
+}
+.li_side {
+  width: 250px;
+  list-style: none;
+}
+.li_side a:hover {
+  background-color: #fac419;
+}
+.li_side a {
+  padding: 25px 25px 25px 0px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+.li_side > a > img {
+  padding: 0px 50px 0px 25px;
+}
+.li_side > a > i {
+  padding: 0px 50px 0px 25px;
+}
+#logout {
+  background-color: transparent;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  #main {
+    display: block !important;
+  }
+}

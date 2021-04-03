@@ -9,6 +9,7 @@ import Score from "../blogs/Score";
 import Inventory from "../inventoryManagement/Invetory";
 import Invoice from "../InvoiceGeneration/Invoice";
 import Page from "../Profile_Page/Page";
+import Profile_Page from "../Profile_Page/Page";
 import RegistrationPage from "../Registration/Registration_Page";
 import MainFinance from "../Finance/MainFinance";
 import LoginMain from "../login/LoginMain";
@@ -23,21 +24,6 @@ import About from "../About/About";
 function Routes() {
   return (
     <Switch>
-      {/* <Route exact path="#remainder" component={MainFinance} />
-            <Route exact path="#due" component={MainFinance} />
-            <Route exact path="/MainFinance" component={MainFinance} />
-            <Route exact path="/blogs" component={Blogs} />
-            <Route exact path="/Page" component={Page} />
-            <Route exact path="/staff" component={StaffManagement} />
-            <Route exact path="/inventory" component={Inventory} />
-            <Route exact path="/invoice" component={Invoice} />
-            <Route exact path="/invoicemanage" component={ManageInvoiceTable} />
-            <Route exact path="/admin" component={StaffAdminDashboard} />
-            <Route exact path="/login" component={LoginMain} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="*" component={Home} /> */}
-
-      {/* public Routes */}
       <Route exact path="/about" component={About} />
       <Route exact path="#blog_id" component={Home} />
       <Route exact path="#contact_id" component={Home} />
@@ -45,26 +31,36 @@ function Routes() {
       <Route exact path="/AboutBigBusiness" component={BigAbout} />
       <Route exact path="/FeaturesBigBusiness" component={Feature} />
       <Route exact path="/BusinessScore" component={Score} />
-      <Route exact path="/RegistrationPage" component={RegistrationPage} />
       <Route exact path="/" component={Home} />
-      {/* <PrivateRoute exact path="/" component={Home} /> */}
-      {/* <Route exact path="/MainFinance" component={MainFinance} /> */}
+      {/* Complete */}
+      <Route exact path="/RegistrationPage" component={RegistrationPage} />
+      <Route exact path="/Page" component={Profile_Page} />
+      <Route exact path="/invoicemanage" component={ManageInvoiceTable} />
+      <Route exact path="/mainfinance" component={MainFinance} />
+      <Route exact path="/invoice" component={Invoice} />
+      <Route exact path="/inventory" component={Inventory} />
+      <Route exact path="/staff" component={StaffManagement} />
+      <Route exact path="/admin" component={StaffAdminDashboard} />
+      {/* Remain  */}
+      <Route exact path="/register" component={RegisterMain} />
       <Route exact path="/login" component={LoginMain} />
       <Route exact path="/dashboard" component={Dashboard} />
       <Route path="*" component={NotFound} />
-      {/* <Route exact path="/page" component={Page} /> */}
-      <PrivateRoute exact path="/mainfinance" component={MainFinance} />
-      <PrivateRoute exact path="/register" component={RegisterMain} />
-      <PrivateRoute exact path="/staff" component={StaffManagement} />
-      <PrivateRoute exact path="/inventory" component={Inventory} />
-      <PrivateRoute exact path="/invoice" component={Invoice} />
-      <PrivateRoute exact path="/Page" component={Page} />
-      <PrivateRoute
+
+      {/* public Routes */}
+      {/* <PrivateRoute exact path="/" component={Home} /> */}
+      {/* <PrivateRoute exact path="/mainfinance" component={MainFinance} /> */}
+      {/* <PrivateRoute exact path="/register" component={RegisterMain} /> */}
+      {/* <PrivateRoute exact path="/staff" component={StaffManagement} /> */}
+      {/* <PrivateRoute exact path="/inventory" component={Inventory} /> */}
+      {/* <PrivateRoute exact path="/invoice" component={Invoice} /> */}
+      {/* <PrivateRoute exact path="/Page" component={Page} /> */}
+      {/* <PrivateRoute
         exact
         path="/invoicemanage"
         component={ManageInvoiceTable}
-      />
-      <PrivateRoute exact path="/admin" component={StaffAdminDashboard} />
+      /> */}
+      {/* <PrivateRoute exact path="/admin" component={StaffAdminDashboard} /> */}
     </Switch>
   );
 }
