@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import getDetails from "../InvoiceGeneration/InvoicePDF";
+import Header1 from "../Header1/Header1";
+import Sidebar from "../Sidebar/Sidebar";
 import "./ManageInvoice.css";
 
 const ManageInvoice = () => {
@@ -110,6 +112,9 @@ const ManageInvoice = () => {
 
   return (
     <div id="container">
+    <Header1 />
+    <div className='web_body'>
+      <Sidebar />
       {/* select_all, delete, sort, filter bar */}
       <div id="search_filter_add_bar">
         {/* select_all */}
@@ -169,8 +174,8 @@ const ManageInvoice = () => {
           id="addInvoiceFile"
           onChange={(event) => handleAddInvoice(event.target)}
         />
-        HE
       </label>
+      </div>
     </div>
   );
 };

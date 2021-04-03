@@ -1,5 +1,5 @@
 .adminDashboard {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
 }
 .admin_staff {

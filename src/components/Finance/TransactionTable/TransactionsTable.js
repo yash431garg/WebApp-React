@@ -9,7 +9,8 @@ import { COLUMNS } from "./TableColumn";
 import { TableGlobalFilter } from "./TableGlobalFilter";
 import "./Table.css";
 import firebase from "../../../containers/Firebase";
-
+import Header1 from "../../Header1/Header1";
+import Sidebar from "../../Sidebar/Sidebar";
 // import transactionIcon from "../../../assets/transactionIcon.svg";
 
 export const TransactionsTable = () => {
@@ -65,6 +66,9 @@ export const TransactionsTable = () => {
 
   return (
     <div className="transaction_table">
+    <Header1 />
+    <div className='web_body'>
+      <Sidebar />
       <h3
         style={{
           fontWeight: "lighter",
@@ -110,6 +114,7 @@ export const TransactionsTable = () => {
           })}
         </tbody>
       </table>
+      </div>
     </div>
   );
 };

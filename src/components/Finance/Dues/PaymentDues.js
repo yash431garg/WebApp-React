@@ -3,7 +3,8 @@ import { useState,useEffect } from "react";
 import "./Dues.css";
 import {Button} from 'react-bootstrap';
 import firebase from "../../../containers/Firebase";
-
+import Header1 from "../../Header1/Header1";
+import Sidebar from "../../Sidebar/Sidebar";
 const PaymentDues = () => {
   const [dues,setDues] = useState([]);
   useEffect(() => {
@@ -18,8 +19,12 @@ const PaymentDues = () => {
     });
   },[])
   return (
-    <div className="dues">
+    <div >
+    <Header1/>
+    <div className="web_body">
+    <Sidebar/>
       <p>{dues.id}</p>
+      <div className="dues">
       {dues.map((task, index) => (
         <div
           key={index}
@@ -37,6 +42,8 @@ const PaymentDues = () => {
           <Button>Pay Now</Button>
         </div>
       ))}
+      </div>
+      </div>
     </div>
   );
 };

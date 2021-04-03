@@ -41,6 +41,7 @@ const StaffAdminDashboard = (props) => {
   return (
     <div className="adminDashboard">
       <Header1 />
+      <div className='web_body'>
       <Sidebar />
       <div className="admin_staff">
         {employeesData.map((staffMember) => {
@@ -56,6 +57,7 @@ const StaffAdminDashboard = (props) => {
       <ChatView className="chatView"></ChatView>
       <div className="attendanceView">
         <AdminViewEmployeeHolidays leaves={leaves} holidays={holidays} />
+      </div>
       </div>
     </div>
   );

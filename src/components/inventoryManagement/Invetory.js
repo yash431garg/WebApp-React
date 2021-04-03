@@ -40,6 +40,7 @@ const Inventory = (props) => {
   return (
     <div className="page">
       <Header1 />
+      <div className='web_body'>
       <Sidebar />
       <h3>Inventory</h3>
       <form>
@@ -99,6 +100,7 @@ const Inventory = (props) => {
             );
           })}
         </div>
+      </div>
       </div>
     </div>
   );

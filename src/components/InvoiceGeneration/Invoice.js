@@ -96,6 +96,7 @@ const Invoice = () => {
   return (
     <InvoiceContext.Provider value={InvoiceContextValue}>
       <Header1 />
+      <div className='web_body'>
       <Sidebar />
       <div id="main_container">
         <div id="container">
@@ -125,15 +126,16 @@ const Invoice = () => {
             Generate Invoice as PDF
           </button>
           <ItemDetailsTable itemInputs={itemInputs} />
-          <>
+          <div>
             {formEmpty &&
               setTimeout(() => {
                 setFormEmpty(false);
               }, 5000) && (
                 <p>PLEASE FILL RECEIVER DETAILS AND ITEM DETAILS FORM</p>
               )}
-          </>
+          </div>
         </div>
+      </div>
       </div>
     </InvoiceContext.Provider>
   );

@@ -37,6 +37,9 @@ function Routes() {
       <Route exact path="/BusinessScore" component={Score} />
       <Route exact path="/" component={Home} />
       {/* Complete */}
+      <Route exact path="/dues" component={PaymentDues} />
+      <Route exact path="/remainders" component={PaymentReminders} />
+      <Route exact path="/transactions" component={TransactionsTable} />
       <Route exact path="/RegistrationPage" component={RegistrationPage} />
       <Route exact path="/Page" component={Profile_Page} />
       <Route exact path="/invoicemanage" component={ManageInvoice} />
