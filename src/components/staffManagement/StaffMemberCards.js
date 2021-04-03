@@ -1,17 +1,18 @@
-import { Card, Button } from "react-bootstrap";
-import React, { Component } from "react";
+import React from "react";
+import { Button, Card } from "react-bootstrap";
 import { connect } from "react-redux";
-
 import {
   setEmployeeData,
   setPayRollView,
 } from "../redux-state-management/actionCreators";
+
 const StaffMemberCards = (props) => {
   return (
     <Card>
       <Card.Body>
         <Card.Text>
-          Name : {props.staffDetails.firstName} {props.staffDetails.lastName} <br />
+          Name : {props.staffDetails.firstName} {props.staffDetails.lastName}{" "}
+          <br />
           Phone Number : {props.staffDetails.mobileNumber}
         </Card.Text>
         <Button onClick={(e) => props.payrollBreakup(props.staffDetails)}>
@@ -31,3 +32,15 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StaffMemberCards);
+
+// firebase no-sql---- javascript
+// if we really firebase is new
+// old way debugs
+
+// express middle
+
+// first user --> otp --> login/register
+// get otp
+// checkDB
+
+// if already exists

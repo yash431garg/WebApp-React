@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { getDay, getDate } from "date-fns";
+
 import { ListGroup } from "react-bootstrap";
-import { Card, Table, Button } from "react-bootstrap";
-import { DateRangePickerCalendar, START_DATE } from "react-nice-dates";
 import "react-nice-dates/build/style.css";
-import ChatView from "./ChatView";
 import { connect } from "react-redux";
+import firebase from "../../containers/Firebase";
 import { setAdminEmployeeDataView } from "../redux-state-management/actionCreators";
 import AdminViewEmployeeHolidays from "./AdminViewEmployeeHolidays";
-import "./StaffManagement.css";
-import firebase from "../../containers/Firebase";
+
 import Header1 from "../Header1/Header1";
 import Sidebar from "../Sidebar/Sidebar";
+import ChatView from "./ChatView";
+import "./css/StaffManagement.css";
 
 const StaffAdminDashboard = (props) => {
   let holidayList = [];

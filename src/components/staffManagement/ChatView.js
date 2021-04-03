@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import "./StaffManagement.css";
+import React from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import { connect } from "react-redux";
+import "./css/StaffManagement.css";
 
 const ChatView = (props) => {
   return (

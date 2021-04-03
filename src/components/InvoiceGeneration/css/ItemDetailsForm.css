@@ -1,0 +1,26 @@
+.item_details {
+  display: inline-flex;
+}
+
+#add_to_invoice--button {
+  margin: 80px 0px 0px 0px;
+  padding: 5px;
+  width: 150px;
+  height: 60px;
+  background-color: #5273eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.label_input_container {
+  margin: 10px;
+}
+
+/* #name,
+#quantity,
+#rate,
+label,
+input {
+  display: inline;
+} */

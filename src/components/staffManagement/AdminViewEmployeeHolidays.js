@@ -1,11 +1,10 @@
+import { getDate, getDay, getMonth } from "date-fns";
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import { Card, Table } from "react-bootstrap";
 import DayPicker from "react-day-picker";
 import "react-day-picker/lib/style.css";
-
-import { getDay, getDate, getMonth } from "date-fns";
-import { Card, Table } from "react-bootstrap";
-import "./StaffManagement.css";
+import { connect } from "react-redux";
+import "./css/StaffManagement.css";
 
 const AdminViewEmployeeHolidays = (props) => {
   const [leaveList, setLeaveList] = useState([10, 1, 5, 6]);

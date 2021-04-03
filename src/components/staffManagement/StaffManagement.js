@@ -1,11 +1,13 @@
 import React, { useState, useReducer, useEffect } from "react";
 import PayRollBreakFC from "./PayRollBreakFC";
+
 import { connect } from "react-redux";
-import StaffMemberCards from "./StaffMemberCards";
-import store from "../redux-state-management/store";
 import firebase from "../../containers/Firebase";
 import Header1 from "../Header1/Header1";
 import Sidebar from "../Sidebar/Sidebar";
+import store from "../redux-state-management/store";
+
+import StaffMemberCards from "./StaffMemberCards";
 
 const StaffManagement = () => {
   const [employeeData, setEmployeeData] = useState();
@@ -62,3 +64,5 @@ const StaffManagement = () => {
 const mapStateToProps = (state) => ({ employeeData: state.employeeData });
 
 export default connect(mapStateToProps)(StaffManagement);
+
+//

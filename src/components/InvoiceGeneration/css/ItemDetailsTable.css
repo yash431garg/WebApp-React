@@ -1,0 +1,32 @@
+.tableDetail {
+  width: 100%;
+  max-width: 1070px;
+}
+
+.tableDetail tr {
+  border: 1px solid black;
+}
+
+.tableDetail td {
+  margin-left: 8px;
+  border: 1px solid black;
+}
+
+.tableDetail td:nth-child(2),
+.tableDetail td:nth-child(3) {
+  text-align: right;
+}
+
+.tableDetail td:nth-child(4),
+.tableDetail td:nth-child(5) {
+  text-align: center;
+}
+
+.tableDetail th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #5273eb;
+  color: white;
+  border: 1px solid #ddd;
+}
